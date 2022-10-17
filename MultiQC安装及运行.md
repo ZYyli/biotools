@@ -64,13 +64,13 @@
 ![](https://raw.githubusercontent.com/ZYyli/bioinfosoftware/master/2022/10/11/4yKeNgEB8mh1VAfz.jpeg)
  ![](https://raw.githubusercontent.com/ZYyli/bioinfosoftware/master/2022/10/11/swPO0YZSqgkpTduY.png)
 
-## 对SRR6232298实际操作
+## 对SRR6232298和SRR6208854实际操作
 
- 1. 先用prefetch下载SRR6232298文件
+ 1. 先用prefetch下载SRR6232298和SRR6208854文件
  2. 解压其为fastq.gz文件
  3. fastqc评价测试数据质量
  4. multiqc整合多个质控结果
-![](https://raw.githubusercontent.com/ZYyli/bioinfosoftware/master/2022/10/17/mf6NyCItggKiwrct.png)
+![](https://raw.githubusercontent.com/ZYyli/bioinfosoftware/master/2022/10/17/KL0mx1CC4sxhlGlA.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzMDkwNjk3MV19
+eyJoaXN0b3J5IjpbLTEyNzY3OTIwNDUsMjAzMDkwNjk3MV19
 -->
