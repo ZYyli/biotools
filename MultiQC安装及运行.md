@@ -53,12 +53,25 @@
 <p>在Windows下载Winscp，将Linux文件拖拽至Windows，打开html文件浏览</p>
 <h2 id="multiqc整合多个质控结果">multiqc整合多个质控结果</h2>
 <p>#安装conda（前面已安装过）</p>
-<pre><code>conda create --name python2 python=2.7 -c https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/ -y
+<pre><code>1.conda create --name python2 python=2.7 -c https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/ -y
 #安装python2环境
-conda activate python2
+2.conda activate python2
 #进入python2环境
-conda install multiqc -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda
+3.conda install multiqc -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda
 #conda里面下载multiqc
-multiqc .
+#将fastqc评价测试数据质量得到报告存入fastQC文件夹中
+4.cd fastQC/
+5.multiqc .
+#生成multiqc报告并将其拖拽到本地查看
 </code></pre>
+<p><img src="https://raw.githubusercontent.com/ZYyli/bioinfosoftware/master/2022/10/11/4yKeNgEB8mh1VAfz.jpeg" alt=""><br>
+<img src="https://raw.githubusercontent.com/ZYyli/bioinfosoftware/master/2022/10/11/swPO0YZSqgkpTduY.png" alt=""></p>
+<h2 id="对srr6232298实际操作">对SRR6232298实际操作</h2>
+<ol>
+<li>先用prefetch下载SRR6232298文件</li>
+<li>解压其为fastq.gz文件</li>
+<li>fastqc评价测试数据质量</li>
+<li>multiqc整合多个质控结果<br>
+<img src="https://raw.githubusercontent.com/ZYyli/bioinfosoftware/master/2022/10/17/mf6NyCItggKiwrct.png" alt=""></li>
+</ol>
 
