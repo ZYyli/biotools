@@ -9,10 +9,10 @@
 </head>
 
 <body class="stackedit">
-  <div class="stackedit__html"><h3 id="介绍"><span class="prefix"></span><span class="content">介绍</span><span class="suffix"></span></h3>
+  <div class="stackedit__html"><h2 id="介绍"><span class="prefix"></span><span class="content">介绍</span><span class="suffix"></span></h2>
 <p>一个高通量测序数据下载工具，用户提供Run accessions或者BioProject accessions，即可在<strong>ENA、SRA、Amazon AWS</strong>以及<strong>Google Cloud</strong>等数据库中下载目标数据。<strong>Kingfisher会尝试从一系列的数据源进行数据下载，直到某个源能够work。</strong><br>
 此外，还能根据用户的需求<strong>将下载数据直接输出为SRA、Fastq、Fasta或Gzip等格式</strong>，非常方便，不需要自己再对SRA数据通过fasterq-dump进行拆分转换</p>
-<h3 id="安装"><span class="prefix"></span><span class="content">安装</span><span class="suffix"></span></h3>
+<h2 id="安装"><span class="prefix"></span><span class="content">安装</span><span class="suffix"></span></h2>
 <p><code>conda create -c conda-forge -c bioconda -n kingfisher pigz python extern curl sra-tools pandas requests aria2</code><br>
 <code>conda activate kingfisher</code><br>
 <code>#使用conda activate不能成功激活环境时可以尝试使用：source activate kingfisher</code><br>
@@ -31,6 +31,8 @@
 <h4 id="prefetch，调用prefetch从ncbi-sra数据库中下载sra数据，然后默认使用fasterq-dump对其进行拆分转换"><span class="prefix"></span><span class="content">prefetch，调用prefetch从NCBI SRA数据库中下载SRA数据，然后默认使用fasterq-dump对其进行拆分转换</span><span class="suffix"></span></h4>
 <h4 id="aws-http，调用aria2c从aws-open-data-program中下载sra数据，然后默认使用fasterq-dump对其进行拆分转换"><span class="prefix"></span><span class="content">aws-http，调用aria2c从AWS Open Data Program中下载SRA数据，然后默认使用fasterq-dump对其进行拆分转换</span><span class="suffix"></span></h4>
 <p><strong>也就是说，如果是用的ENA源 直接下载的就是fastq，如果用的SRA或其他，那就是下载SRA数据 然后kingfisher再自动调用fasterq-dump转换成fastq</strong></p>
+<h2 id="检查数据是否完整"><span class="prefix"></span><span class="content">检查数据是否完整</span><span class="suffix"></span></h2>
+<p><code>vdb-validate xx</code></p>
 </div>
 </body>
 
