@@ -21,8 +21,10 @@ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_G
 wget
 https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.gtf.gz
 `
-
+cellranger mkref命令构建
+`
+`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Nzk3OTQyMywtMTYzODQyNzk3MCwtOT
-k3MDY0NDUwXX0=
+eyJoaXN0b3J5IjpbLTE3NTU0MDcyNDAsLTE3Nzk3OTQyMywtMT
+YzODQyNzk3MCwtOTk3MDY0NDUwXX0=
 -->
