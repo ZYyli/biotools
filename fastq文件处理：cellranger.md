@@ -21,6 +21,7 @@ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_G
 wget
 https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.gtf.gz
 `
+#### Cellranger mkgtf 对GTF文件进行过滤
 #### cellranger mkref命令构建
 --genome：生成索引的目录
 --fasta：基因组序列
@@ -31,6 +32,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna.gz
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf.gz`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTExMDU2MTMsLTE3NTU0MDcyNDAsLT
-E3Nzk3OTQyMywtMTYzODQyNzk3MCwtOTk3MDY0NDUwXX0=
+eyJoaXN0b3J5IjpbMTcwMTA0Mzc2NiwtMTQ1MTEwNTYxMywtMT
+c1NTQwNzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcw
+NjQ0NTBdfQ==
 -->
