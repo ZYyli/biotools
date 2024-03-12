@@ -54,10 +54,24 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 ### cellranger count定量
 #### fastq文件改名
 `cat SRR.txt | while read i ;do (mv ${i}_1*.gz ${i}_S1_L001_R1_001.fastq.gz;mv ${i}_2*.gz ${i}_S1_L001_R2_001.fastq.gz);done`
-
+#### count函数解释
+`
+cellranger count --id=sample \
+                   --transcriptome=/opt/refdata-cellranger-GRCh38-1.2.0 \
+                   --fastqs=/home/scRNA/runs/HAWT7ADXX/outs/fastq_path \
+                   --sample=mysample \
+                   --expect-cells=1000 \
+                   --nosecondary
+#id指定输出文件存放目录名
+#transcriptome指定与CellRanger兼容的参考基因组
+#fastqs指定mkfastq或者自定义的测序文件
+#sample要和fastq文件的前缀中的sample保持一致，作为软件识别的标志
+#expect-cells指定复现的细胞数量，这个要和实验设计结合起来
+#nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
+`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzg1ODQzNjcsLTExNjQwNDQyMjMsLTUwMT
-M3NTU2NywtODg0OTcwNjU1LDE3MTc4MzI4NTEsLTMxNzQxNzI5
-MSwtMTQ1MTEwNTYxMywtMTc1NTQwNzI0MCwtMTc3OTc5NDIzLC
-0xNjM4NDI3OTcwLC05OTcwNjQ0NTBdfQ==
+eyJoaXN0b3J5IjpbMTUzNjAyNDI3MSwtMTE2NDA0NDIyMywtNT
+AxMzc1NTY3LC04ODQ5NzA2NTUsMTcxNzgzMjg1MSwtMzE3NDE3
+MjkxLC0xNDUxMTA1NjEzLC0xNzU1NDA3MjQwLC0xNzc5Nzk0Mj
+MsLTE2Mzg0Mjc5NzAsLTk5NzA2NDQ1MF19
 -->
