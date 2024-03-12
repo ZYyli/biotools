@@ -22,12 +22,15 @@ wget
 https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.gtf.gz
 `
 cellranger mkref命令构建
+--genome：生成索引的目录
+--fasta：基因组序列
+--genes：基因注释文件（gtf格式）
 `cellranger mkref 
 --genome=./ref/
 --nthreads=12
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna.gz
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf.gz`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4OTIzNDAzNSwtMTc1NTQwNzI0MCwtMT
+eyJoaXN0b3J5IjpbMTEwNjc3NTQ2NiwtMTc1NTQwNzI0MCwtMT
 c3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNjQ0NTBdfQ==
 -->
