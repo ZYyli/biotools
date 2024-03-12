@@ -12,7 +12,7 @@ source ~/.bashrc
 cellranger count --help
 `
 ## 使用
-#### 建立参考基因组
+### 建立参考基因组
 10x官方有人和小鼠的参考基因组，但我这里采用最新人类参考基因组
 ![输入图片说明](https://raw.githubusercontent.com/ZYyli/bioinfosoft_pictures/master/imgs/2024-03-12/iV1bwhDfgivcnMFL.png)
 下载参考基因组(fasta)和注释基因(GTF)
@@ -21,7 +21,7 @@ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_G
 wget
 https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.gtf.gz
 `
-cellranger mkref命令构建
+#### cellranger mkref命令构建
 --genome：生成索引的目录
 --fasta：基因组序列
 --genes：基因注释文件（gtf格式）
@@ -31,6 +31,6 @@ cellranger mkref命令构建
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna.gz
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf.gz`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwNjc3NTQ2NiwtMTc1NTQwNzI0MCwtMT
-c3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNjQ0NTBdfQ==
+eyJoaXN0b3J5IjpbLTE0NTExMDU2MTMsLTE3NTU0MDcyNDAsLT
+E3Nzk3OTQyMywtMTYzODQyNzk3MCwtOTk3MDY0NDUwXX0=
 -->
