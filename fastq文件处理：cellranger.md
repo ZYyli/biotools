@@ -19,9 +19,9 @@ cellranger count --help
 `
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
 wget
-
+wghttps://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.gtf.gz
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1OTQwNDU2MiwtMTYzODQyNzk3MCwtOT
-k3MDY0NDUwXX0=
+eyJoaXN0b3J5IjpbOTkyOTk2ODk5LC0xNjM4NDI3OTcwLC05OT
+cwNjQ0NTBdfQ==
 -->
