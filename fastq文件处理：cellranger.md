@@ -23,25 +23,25 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 `
 #### Cellranger mkgtf 对GTF文件进行过滤
 10x单细胞使用的polydT进行RNA逆转录，只能测到带有polyA尾的RNA序列，所以我们需要从GTF文件中过滤掉non-polyA的基因。Cellranger的mkgtf命令可以对GTF文件进行过滤，通过--attribute参数指定需要保留的基因类型
-`cellranger mkgtf Homo_sapiens.GRCh38.ensembl.gtf Homo_sapiens.GRCh38.ensembl.filtered.gtf
- --attribute=gene_biotype:protein_coding
-  --attribute=gene_biotype:lincRNA
-  --attribute=gene_biotype:antisense
-  --attribute=gene_biotype:IG_LV_gene
-  --attribute=gene_biotype:IG_V_gene
-  --attribute=gene_biotype:IG_V_pseudogene
-  --attribute=gene_biotype:IG_D_gene
-  --attribute=gene_biotype:IG_J_gene
-10.  --attribute=gene_biotype:IG_J_pseudogene
-11.  --attribute=gene_biotype:IG_C_gene
-12.  --attribute=gene_biotype:IG_C_pseudogene
-13.  --attribute=gene_biotype:TR_V_gene
-14.  --attribute=gene_biotype:TR_V_pseudogene
-15.  --attribute=gene_biotype:TR_D_gene
-16.  --attribute=gene_biotype:TR_J_gene
-17.  --attribute=gene_biotype:TR_J_pseudogene
-18.  --attribute=gene_biotype:TR_C_gene
-19.  # 这样得到的Homo_sapiens.GRCh38.ensembl.filtered.gtf结果中就不包含gene_biotype:pseudogene这部分`
+`cellranger mkgtf Homo_sapiens.GRCh38.ensembl.gtf Homo_sapiens.GRCh38.ensembl.filtered.gtf`
+` --attribute=gene_biotype:protein_coding`
+`  --attribute=gene_biotype:lincRNA`
+`  --attribute=gene_biotype:antisense`
+`  --attribute=gene_biotype:IG_LV_gene`
+`  --attribute=gene_biotype:IG_V_gene`
+`  --attribute=gene_biotype:IG_V_pseudogene`
+`  --attribute=gene_biotype:IG_D_gene`
+`  --attribute=gene_biotype:IG_J_gene
+  --attribute=gene_biotype:IG_J_pseudogene
+  --attribute=gene_biotype:IG_C_gene
+  --attribute=gene_biotype:IG_C_pseudogene
+  --attribute=gene_biotype:TR_V_gene
+  --attribute=gene_biotype:TR_V_pseudogene
+  --attribute=gene_biotype:TR_D_gene
+  --attribute=gene_biotype:TR_J_gene
+  --attribute=gene_biotype:TR_J_pseudogene
+  --attribute=gene_biotype:TR_C_gene
+ #这样得到的Homo_sapiens.GRCh38.ensembl.filtered.gtf结果中就不包含gene_biotype:pseudogene这部分`
 #### cellranger mkref命令构建
 --genome：生成索引的目录
 --fasta：基因组序列
@@ -52,7 +52,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna.gz
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf.gz`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDI1MjUzNiwtMTQ1MTEwNTYxMywtMT
+eyJoaXN0b3J5IjpbMTY4MTI3MTY4MywtMTQ1MTEwNTYxMywtMT
 c1NTQwNzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcw
 NjQ0NTBdfQ==
 -->
