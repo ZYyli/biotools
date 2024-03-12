@@ -25,22 +25,25 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 10x单细胞使用的polydT进行RNA逆转录，只能测到带有polyA尾的RNA序列，所以我们需要从GTF文件中过滤掉non-polyA的基因。Cellranger的mkgtf命令可以对GTF文件进行过滤，--attribute=gene_biotype:protein_coding
 `cellranger mkgtf GCF_000001405.40_GRCh38.p14_genomic.gtf GCF_000001405.40_GRCh38.p14_genomic.filtered.gtf`
 ` --attribute=gene_biotype:protein_coding`
-`  --attribute=gene_biotype:lincRNA`
-`  --attribute=gene_biotype:antisense`
-`  --attribute=gene_biotype:IG_LV_gene`
-`  --attribute=gene_biotype:IG_V_gene`
-`  --attribute=gene_biotype:IG_V_pseudogene`
-`  --attribute=gene_biotype:IG_D_gene`
-`  --attribute=gene_biotype:IG_J_gene`
-`  --attribute=gene_biotype:IG_J_pseudogene`
-` --attribute=gene_biotype:IG_C_gene`
-`  --attribute=gene_biotype:IG_C_pseudogene`
-`  --attribute=gene_biotype:TR_V_gene`
-` --attribute=gene_biotype:TR_V_pseudogene`
-`  --attribute=gene_biotype:TR_D_gene`
-`  --attribute=gene_biotype:TR_J_gene`
-`  --attribute=gene_biotype:TR_J_pseudogene`
-` --attribute=gene_biotype:TR_C_gene`
+`  cellranger mkgtf GCF_000001405.40_GRCh38.p14_genomic.gtf.gz GCF_000001405.40_GRCh38.p14_genomic.filtered.gtf.gz
+              --attribute=gene_biotype:protein_coding
+              --attribute=gene_biotype:lincRNA
+              --attribute=gene_biotype:antisense
+              --attribute=gene_biotype:IG_LV_gene
+              --attribute=gene_biotype:IG_V_gene
+              --attribute=gene_biotype:IG_V_pseudogene
+              --attribute=gene_biotype:IG_D_gene
+              --attribute=gene_biotype:IG_J_gene
+             --attribute=gene_biotype:IG_J_pseudogene
+            --attribute=gene_biotype:IG_C_gene
+             --attribute=gene_biotype:IG_C_pseudogene
+              --attribute=gene_biotype:TR_V_gene
+               --attribute=gene_biotype:TR_V_pseudogene
+                --attribute=gene_biotype:TR_D_gene
+                 --attribute=gene_biotype:TR_J_gene
+              --attribute=gene_biotype:TR_J_pseudogene
+              --attribute=gene_biotype:TR_C_gene
+
 ` #这样得到的Homo_sapiens.GRCh38.ensembl.filtered.gtf结果中就不包含gene_biotype:pseudogene这部分`
 #### cellranger mkref命令构建
 --genome：生成索引的目录
@@ -52,7 +55,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna.gz
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf.gz`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxNzgzMjg1MSwtMzE3NDE3MjkxLC0xND
-UxMTA1NjEzLC0xNzU1NDA3MjQwLC0xNzc5Nzk0MjMsLTE2Mzg0
-Mjc5NzAsLTk5NzA2NDQ1MF19
+eyJoaXN0b3J5IjpbMjIyNDgxNDIzLDE3MTc4MzI4NTEsLTMxNz
+QxNzI5MSwtMTQ1MTEwNTYxMywtMTc1NTQwNzI0MCwtMTc3OTc5
+NDIzLC0xNjM4NDI3OTcwLC05OTcwNjQ0NTBdfQ==
 -->
