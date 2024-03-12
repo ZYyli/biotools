@@ -51,9 +51,11 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 --nthreads=12
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf`
+### cellranger count定量
+#### fastq文件改名
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMTM3NTU2NywtODg0OTcwNjU1LDE3MT
-c4MzI4NTEsLTMxNzQxNzI5MSwtMTQ1MTEwNTYxMywtMTc1NTQw
-NzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNjQ0NT
-BdfQ==
+eyJoaXN0b3J5IjpbLTExMjc4NTU4NzUsLTUwMTM3NTU2NywtOD
+g0OTcwNjU1LDE3MTc4MzI4NTEsLTMxNzQxNzI5MSwtMTQ1MTEw
+NTYxMywtMTc1NTQwNzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OT
+cwLC05OTcwNjQ0NTBdfQ==
 -->
