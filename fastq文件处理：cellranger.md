@@ -23,11 +23,11 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 `
 cellranger mkref命令构建
 `cellranger mkref 
---genome= 
+--genome=./ref/
 --nthreads=12
---fasta=
---genes=TAIR10_GFF3_genes.miRBase20.gtf`
+--fasta=GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+--genes=GCF_000001405.40_GRCh38.p14_genomic.gtf.gz`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzA2MjU4OTUsLTE3NTU0MDcyNDAsLT
-E3Nzk3OTQyMywtMTYzODQyNzk3MCwtOTk3MDY0NDUwXX0=
+eyJoaXN0b3J5IjpbMTc4OTIzNDAzNSwtMTc1NTQwNzI0MCwtMT
+c3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNjQ0NTBdfQ==
 -->
