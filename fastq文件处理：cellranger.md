@@ -54,9 +54,10 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 ### cellranger count定量
 #### fastq文件改名
 `cat SRR.txt | while read i ;do (mv ${i}_1*.gz ${i}_S1_L001_R1_001.fastq.gz;mv ${i}_2*.gz ${i}_S1_L001_R2_001.fastq.gz);done`
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjQwNDQyMjMsLTUwMTM3NTU2NywtOD
-g0OTcwNjU1LDE3MTc4MzI4NTEsLTMxNzQxNzI5MSwtMTQ1MTEw
-NTYxMywtMTc1NTQwNzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OT
-cwLC05OTcwNjQ0NTBdfQ==
+eyJoaXN0b3J5IjpbNzg1ODQzNjcsLTExNjQwNDQyMjMsLTUwMT
+M3NTU2NywtODg0OTcwNjU1LDE3MTc4MzI4NTEsLTMxNzQxNzI5
+MSwtMTQ1MTEwNTYxMywtMTc1NTQwNzI0MCwtMTc3OTc5NDIzLC
+0xNjM4NDI3OTcwLC05OTcwNjQ0NTBdfQ==
 -->
