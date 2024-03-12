@@ -15,10 +15,12 @@ cellranger count --help
 #### 建立参考基因组
 10x官方有人和小鼠的参考基因组，但我这里采用最新人类参考基因组
 ![输入图片说明](https://raw.githubusercontent.com/ZYyli/bioinfosoft_pictures/master/imgs/2024-03-12/iV1bwhDfgivcnMFL.png)
-下载参考基因组
+下载参考基因组(fasta)和注释基因(GTF)
 `
+wept https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA5MzcwODAzLC0xNjM4NDI3OTcwLC05OT
-cwNjQ0NTBdfQ==
+eyJoaXN0b3J5IjpbLTExNTk0MjE1ODQsLTE2Mzg0Mjc5NzAsLT
+k5NzA2NDQ1MF19
 -->
