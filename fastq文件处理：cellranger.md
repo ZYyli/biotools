@@ -23,7 +23,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 `
 #### Cellranger mkgtf 对GTF文件进行过滤
 10x单细胞使用的polydT进行RNA逆转录，只能测到带有polyA尾的RNA序列，所以我们需要从GTF文件中过滤掉non-polyA的基因。Cellranger的mkgtf命令可以对GTF文件进行过滤，--attribute=gene_biotype:protein_coding
-`cellranger mkgtf GCF_000001405.40_GRCh38.p14_genomic.gtf.gz GCF_000001405.40_GRCh38.p14_genomic.filtered.gtf.gz
+`cellranger mkgtf GCF_000001405.40_GRCh38.p14_genomic.gtf GCF_000001405.40_GRCh38.p14_genomic.filtered.gtf
               --attribute=gene_biotype:protein_coding
               --attribute=gene_biotype:lincRNA
               --attribute=gene_biotype:antisense
@@ -49,10 +49,11 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 `cellranger mkref 
 --genome=./ref/
 --nthreads=12
---fasta=GCF_000001405.40_GRCh38.p14_genomic.fna.gz
---genes=GCF_000001405.40_GRCh38.p14_genomic.gtf.gz`
+--fasta=GCF_000001405.40_GRCh38.p14_genomic.fna
+--genes=GCF_000001405.40_GRCh38.p14_genomic.gtf`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4NDk3MDY1NSwxNzE3ODMyODUxLC0zMT
-c0MTcyOTEsLTE0NTExMDU2MTMsLTE3NTU0MDcyNDAsLTE3Nzk3
-OTQyMywtMTYzODQyNzk3MCwtOTk3MDY0NDUwXX0=
+eyJoaXN0b3J5IjpbLTUwMTM3NTU2NywtODg0OTcwNjU1LDE3MT
+c4MzI4NTEsLTMxNzQxNzI5MSwtMTQ1MTEwNTYxMywtMTc1NTQw
+NzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNjQ0NT
+BdfQ==
 -->
