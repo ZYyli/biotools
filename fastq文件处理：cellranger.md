@@ -12,8 +12,9 @@ source ~/.bashrc
 cellranger count --help
 `
 ## 使用
+#### 建立参考基因组
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2MTExMDkzOSwtMTYzODQyNzk3MCwtOT
-k3MDY0NDUwXX0=
+eyJoaXN0b3J5IjpbLTQwNjEwNDAzLC0xNjM4NDI3OTcwLC05OT
+cwNjQ0NTBdfQ==
 -->
