@@ -53,8 +53,9 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf`
 ### cellranger count定量
 #### fastq文件改名
+`1.  cat SRR.txt | while read i ;do (mv ${i}_1*.gz ${i}_S1_L001_I1_001.fastq.gz;mv ${i}_2*.gz ${i}_S1_L001_R1_001.fastq.gz;mv ${i}_3*.gz ${i}_S1_L001_R2_001.fastq.gz);done`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjc4NTU4NzUsLTUwMTM3NTU2NywtOD
+eyJoaXN0b3J5IjpbLTE0ODgwMTU4MTcsLTUwMTM3NTU2NywtOD
 g0OTcwNjU1LDE3MTc4MzI4NTEsLTMxNzQxNzI5MSwtMTQ1MTEw
 NTYxMywtMTc1NTQwNzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OT
 cwLC05OTcwNjQ0NTBdfQ==
