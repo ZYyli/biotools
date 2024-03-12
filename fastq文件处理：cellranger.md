@@ -17,10 +17,11 @@ cellranger count --help
 ![输入图片说明](https://raw.githubusercontent.com/ZYyli/bioinfosoft_pictures/master/imgs/2024-03-12/iV1bwhDfgivcnMFL.png)
 下载参考基因组(fasta)和注释基因(GTF)
 `
-wept https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+wget
 
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTk0MjE1ODQsLTE2Mzg0Mjc5NzAsLT
-k5NzA2NDQ1MF19
+eyJoaXN0b3J5IjpbLTY1OTQwNDU2MiwtMTYzODQyNzk3MCwtOT
+k3MDY0NDUwXX0=
 -->
