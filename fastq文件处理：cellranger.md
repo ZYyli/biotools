@@ -11,7 +11,9 @@ echo 'export PATH=/cellranger-7.2.0/:$PATH' >> ~/.bashrc`
 source ~/.bashrc
 cellranger count --help
 `
+## 使用
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Mzg0Mjc5NzAsLTk5NzA2NDQ1MF19
+eyJoaXN0b3J5IjpbMTI2MTExMDkzOSwtMTYzODQyNzk3MCwtOT
+k3MDY0NDUwXX0=
 -->
