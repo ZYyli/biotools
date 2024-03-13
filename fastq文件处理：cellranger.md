@@ -23,24 +23,8 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 `
 #### Cellranger mkgtf 对GTF文件进行过滤
 10x单细胞使用的polydT进行RNA逆转录，只能测到带有polyA尾的RNA序列，所以我们需要从GTF文件中过滤掉non-polyA的基因。Cellranger的mkgtf命令可以对GTF文件进行过滤，--attribute=gene_biotype:protein_coding
-`cellranger mkgtf GCF_000001405.40_GRCh38.p14_genomic.gtf GCF_000001405.40_GRCh38.p14_genomic.filtered.gtf
-              --attribute=gene_biotype:protein_coding
-              --attribute=gene_biotype:lincRNA
-              --attribute=gene_biotype:antisense
-              --attribute=gene_biotype:IG_LV_gene
-              --attribute=gene_biotype:IG_V_gene
-              --attribute=gene_biotype:IG_V_pseudogene
-              --attribute=gene_biotype:IG_D_gene
-              --attribute=gene_biotype:IG_J_gene
-             --attribute=gene_biotype:IG_J_pseudogene
-            --attribute=gene_biotype:IG_C_gene
-             --attribute=gene_biotype:IG_C_pseudogene
-              --attribute=gene_biotype:TR_V_gene
-               --attribute=gene_biotype:TR_V_pseudogene
-                --attribute=gene_biotype:TR_D_gene
-                 --attribute=gene_biotype:TR_J_gene
-              --attribute=gene_biotype:TR_J_pseudogene
-              --attribute=gene_biotype:TR_C_gene`
+`cellranger mkgtf GCF_000001405.40_GRCh38.p14_genomic.gtf GCF_000001405.40_GRCh38.p14_genomic.filtered.gtf --attribute=gene_biotype:protein_coding
+--attribute=gene_biotype:lincRNA --attribute=gene_biotype:antisense  --attribute=gene_biotype:IG_LV_gene --attribute=gene_biotype:IG_V_gene --attribute=gene_biotype:IG_V_pseudogene  --attribute=gene_biotype:IG_D_gene --attribute=gene_biotype:IG_J_gene --attribute=gene_biotype:IG_J_pseudogene --attribute=gene_biotype:IG_C_gene  --attribute=gene_biotype:IG_C_pseudogene`
 ` #这样得到的Homo_sapiens.GRCh38.ensembl.filtered.gtf结果中就不包含gene_biotype:pseudogene这部分`
 #### cellranger mkref命令构建
 --genome：生成索引的目录
@@ -70,9 +54,9 @@ cellranger count --id=sample \
 #nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMzk3MjQwMywxNTM2MDI0MjcxLC0xMT
-Y0MDQ0MjIzLC01MDEzNzU1NjcsLTg4NDk3MDY1NSwxNzE3ODMy
-ODUxLC0zMTc0MTcyOTEsLTE0NTExMDU2MTMsLTE3NTU0MDcyND
-AsLTE3Nzk3OTQyMywtMTYzODQyNzk3MCwtOTk3MDY0NDUwXX0=
-
+eyJoaXN0b3J5IjpbNDg1MjgyMDc4LC03MDM5NzI0MDMsMTUzNj
+AyNDI3MSwtMTE2NDA0NDIyMywtNTAxMzc1NTY3LC04ODQ5NzA2
+NTUsMTcxNzgzMjg1MSwtMzE3NDE3MjkxLC0xNDUxMTA1NjEzLC
+0xNzU1NDA3MjQwLC0xNzc5Nzk0MjMsLTE2Mzg0Mjc5NzAsLTk5
+NzA2NDQ1MF19
 -->
