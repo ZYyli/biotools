@@ -1,3 +1,4 @@
+1.下载数据---------基因表达定量
 ## 安装
 [Download Cell Ranger - Official 10x Genomics Support](https://www.10xgenomics.com/support/software/cell-ranger/downloads)
 ![输入图片说明](https://raw.githubusercontent.com/ZYyli/bioinfosoft_pictures/master/imgs/2024-03-12/XAfV8AXbIBQzeil0.jpeg)
@@ -60,10 +61,11 @@ done
 #nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ5MjM4NzMyLDg0NzAzMTIzNCwtMTk2MD
-IyMTcyNiw2MzE3MzcyMzIsLTMzOTQ5OTYwMiwtODgyMDM5Njgx
-LC03MDM5NzI0MDMsMTUzNjAyNDI3MSwtMTE2NDA0NDIyMywtNT
-AxMzc1NTY3LC04ODQ5NzA2NTUsMTcxNzgzMjg1MSwtMzE3NDE3
-MjkxLC0xNDUxMTA1NjEzLC0xNzU1NDA3MjQwLC0xNzc5Nzk0Mj
-MsLTE2Mzg0Mjc5NzAsLTk5NzA2NDQ1MF19
+eyJoaXN0b3J5IjpbLTg3MzkxNzQzNSwyNDkyMzg3MzIsODQ3MD
+MxMjM0LC0xOTYwMjIxNzI2LDYzMTczNzIzMiwtMzM5NDk5NjAy
+LC04ODIwMzk2ODEsLTcwMzk3MjQwMywxNTM2MDI0MjcxLC0xMT
+Y0MDQ0MjIzLC01MDEzNzU1NjcsLTg4NDk3MDY1NSwxNzE3ODMy
+ODUxLC0zMTc0MTcyOTEsLTE0NTExMDU2MTMsLTE3NTU0MDcyND
+AsLTE3Nzk3OTQyMywtMTYzODQyNzk3MCwtOTk3MDY0NDUwXX0=
+
 -->
