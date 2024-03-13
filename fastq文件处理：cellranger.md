@@ -42,6 +42,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 `cat SRR.txt | while read i ;do (mv ${i}_1*.gz ${i}_S1_L001_R1_001.fastq.gz;mv ${i}_2*.gz ${i}_S1_L001_R2_001.fastq.gz);done`
 #### count函数解释
 `
+for i in $sample
 cellranger count 
 --id=$i 
 --transcriptome=refdata-cellranger-GRCh38-1.2.0 
@@ -57,10 +58,10 @@ cellranger count
 #nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwNTk0MjMxMiw2MzE3MzcyMzIsLTMzOT
-Q5OTYwMiwtODgyMDM5NjgxLC03MDM5NzI0MDMsMTUzNjAyNDI3
-MSwtMTE2NDA0NDIyMywtNTAxMzc1NTY3LC04ODQ5NzA2NTUsMT
-cxNzgzMjg1MSwtMzE3NDE3MjkxLC0xNDUxMTA1NjEzLC0xNzU1
-NDA3MjQwLC0xNzc5Nzk0MjMsLTE2Mzg0Mjc5NzAsLTk5NzA2ND
-Q1MF19
+eyJoaXN0b3J5IjpbLTE3ODA0ODAzNTcsNjMxNzM3MjMyLC0zMz
+k0OTk2MDIsLTg4MjAzOTY4MSwtNzAzOTcyNDAzLDE1MzYwMjQy
+NzEsLTExNjQwNDQyMjMsLTUwMTM3NTU2NywtODg0OTcwNjU1LD
+E3MTc4MzI4NTEsLTMxNzQxNzI5MSwtMTQ1MTEwNTYxMywtMTc1
+NTQwNzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNj
+Q0NTBdfQ==
 -->
