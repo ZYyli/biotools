@@ -47,7 +47,7 @@ for i in $sample
 do
 cellranger count 
 --id=SRR101343$i_test_out 
---transcriptome=refdata-cellranger-GRCh38-1.2.0 
+--transcriptome=refdata-gex-GRCh38-2020-A 
 --fastqs=fq
 --sample=SRR101343$i
 --nosecondary
@@ -60,10 +60,10 @@ done
 #nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjAyMjE3MjYsNjMxNzM3MjMyLC0zMz
-k0OTk2MDIsLTg4MjAzOTY4MSwtNzAzOTcyNDAzLDE1MzYwMjQy
-NzEsLTExNjQwNDQyMjMsLTUwMTM3NTU2NywtODg0OTcwNjU1LD
-E3MTc4MzI4NTEsLTMxNzQxNzI5MSwtMTQ1MTEwNTYxMywtMTc1
-NTQwNzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNj
-Q0NTBdfQ==
+eyJoaXN0b3J5IjpbODQ3MDMxMjM0LC0xOTYwMjIxNzI2LDYzMT
+czNzIzMiwtMzM5NDk5NjAyLC04ODIwMzk2ODEsLTcwMzk3MjQw
+MywxNTM2MDI0MjcxLC0xMTY0MDQ0MjIzLC01MDEzNzU1NjcsLT
+g4NDk3MDY1NSwxNzE3ODMyODUxLC0zMTc0MTcyOTEsLTE0NTEx
+MDU2MTMsLTE3NTU0MDcyNDAsLTE3Nzk3OTQyMywtMTYzODQyNz
+k3MCwtOTk3MDY0NDUwXX0=
 -->
