@@ -42,12 +42,13 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 `cat SRR.txt | while read i ;do (mv ${i}_1*.gz ${i}_S1_L001_R1_001.fastq.gz;mv ${i}_2*.gz ${i}_S1_L001_R2_001.fastq.gz);done`
 #### count函数解释
 `
-cellranger count --id=sample \
-                   --transcriptome=/opt/refdata-cellranger-GRCh38-1.2.0 \
-                   --fastqs=/home/scRNA/runs/HAWT7ADXX/outs/fastq_path \
-                   --sample=mysample \
-                   --expect-cells=1000 \
-                   --nosecondary
+cellranger count 
+--id=$i 
+--transcriptome=refdata-cellranger-GRCh38-1.2.0 
+--fastqs=/home/scRNA/runs/HAWT7ADXX/outs/fastq_path
+--sample=mysample
+--expect-cells=1000
+--nosecondary
 #id指定输出文件存放目录名
 #transcriptome指定与CellRanger兼容的参考基因组
 #fastqs指定mkfastq或者自定义的测序文件
@@ -56,9 +57,10 @@ cellranger count --id=sample \
 #nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjMxNzM3MjMyLC0zMzk0OTk2MDIsLTg4Mj
-AzOTY4MSwtNzAzOTcyNDAzLDE1MzYwMjQyNzEsLTExNjQwNDQy
-MjMsLTUwMTM3NTU2NywtODg0OTcwNjU1LDE3MTc4MzI4NTEsLT
-MxNzQxNzI5MSwtMTQ1MTEwNTYxMywtMTc1NTQwNzI0MCwtMTc3
-OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNjQ0NTBdfQ==
+eyJoaXN0b3J5IjpbMTc0NDc0MTAwNiw2MzE3MzcyMzIsLTMzOT
+Q5OTYwMiwtODgyMDM5NjgxLC03MDM5NzI0MDMsMTUzNjAyNDI3
+MSwtMTE2NDA0NDIyMywtNTAxMzc1NTY3LC04ODQ5NzA2NTUsMT
+cxNzgzMjg1MSwtMzE3NDE3MjkxLC0xNDUxMTA1NjEzLC0xNzU1
+NDA3MjQwLC0xNzc5Nzk0MjMsLTE2Mzg0Mjc5NzAsLTk5NzA2ND
+Q1MF19
 -->
