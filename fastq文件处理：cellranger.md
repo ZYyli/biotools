@@ -12,7 +12,7 @@ source ~/.bashrc
 cellranger count --help
 `
 ## 使用
-### 建立参考基因组
+### 建立参考基因组(经过试验，后决定还是使用官方给定参考基因版本)
 10x官方有人和小鼠的参考基因组，但我这里采用最新人类参考基因组
 ![输入图片说明](https://raw.githubusercontent.com/ZYyli/bioinfosoft_pictures/master/imgs/2024-03-12/iV1bwhDfgivcnMFL.png)
 下载参考基因组(fasta)和注释基因(GTF)
@@ -35,7 +35,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 --nthreads=12
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf`
-### cellranger count定量
+## cellranger count定量
 #### fastq文件改名
 `cat SRR.txt | while read i ;do (mv ${i}_1*.gz ${i}_S1_L001_R1_001.fastq.gz;mv ${i}_2*.gz ${i}_S1_L001_R2_001.fastq.gz);done`
 #### count函数解释
@@ -54,9 +54,9 @@ cellranger count --id=sample \
 #nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4MjAzOTY4MSwtNzAzOTcyNDAzLDE1Mz
-YwMjQyNzEsLTExNjQwNDQyMjMsLTUwMTM3NTU2NywtODg0OTcw
-NjU1LDE3MTc4MzI4NTEsLTMxNzQxNzI5MSwtMTQ1MTEwNTYxMy
-wtMTc1NTQwNzI0MCwtMTc3OTc5NDIzLC0xNjM4NDI3OTcwLC05
-OTcwNjQ0NTBdfQ==
+eyJoaXN0b3J5IjpbLTMzOTQ5OTYwMiwtODgyMDM5NjgxLC03MD
+M5NzI0MDMsMTUzNjAyNDI3MSwtMTE2NDA0NDIyMywtNTAxMzc1
+NTY3LC04ODQ5NzA2NTUsMTcxNzgzMjg1MSwtMzE3NDE3MjkxLC
+0xNDUxMTA1NjEzLC0xNzU1NDA3MjQwLC0xNzc5Nzk0MjMsLTE2
+Mzg0Mjc5NzAsLTk5NzA2NDQ1MF19
 -->
