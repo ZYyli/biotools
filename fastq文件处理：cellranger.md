@@ -35,6 +35,8 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 --nthreads=12
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf`
+10X官方参考基因组
+[Download Space Ranger - Official 10x Genomics Support](https://www.10xgenomics.com/support/software/space-ranger/downloads#reference-downloads)
 ## cellranger count定量
 #### fastq文件改名
 `cat SRR.txt | while read i ;do (mv ${i}_1*.gz ${i}_S1_L001_R1_001.fastq.gz;mv ${i}_2*.gz ${i}_S1_L001_R2_001.fastq.gz);done`
@@ -54,9 +56,9 @@ cellranger count --id=sample \
 #nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzOTQ5OTYwMiwtODgyMDM5NjgxLC03MD
-M5NzI0MDMsMTUzNjAyNDI3MSwtMTE2NDA0NDIyMywtNTAxMzc1
-NTY3LC04ODQ5NzA2NTUsMTcxNzgzMjg1MSwtMzE3NDE3MjkxLC
-0xNDUxMTA1NjEzLC0xNzU1NDA3MjQwLC0xNzc5Nzk0MjMsLTE2
-Mzg0Mjc5NzAsLTk5NzA2NDQ1MF19
+eyJoaXN0b3J5IjpbNjMxNzM3MjMyLC0zMzk0OTk2MDIsLTg4Mj
+AzOTY4MSwtNzAzOTcyNDAzLDE1MzYwMjQyNzEsLTExNjQwNDQy
+MjMsLTUwMTM3NTU2NywtODg0OTcwNjU1LDE3MTc4MzI4NTEsLT
+MxNzQxNzI5MSwtMTQ1MTEwNTYxMywtMTc1NTQwNzI0MCwtMTc3
+OTc5NDIzLC0xNjM4NDI3OTcwLC05OTcwNjQ0NTBdfQ==
 -->
