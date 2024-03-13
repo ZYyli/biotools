@@ -47,7 +47,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38
 --fasta：基因组序列
 --genes：基因注释文件（gtf格式）
 `cellranger mkref 
---genome=./ref/
+--genome=hg
 --nthreads=12
 --fasta=GCF_000001405.40_GRCh38.p14_genomic.fna
 --genes=GCF_000001405.40_GRCh38.p14_genomic.gtf`
@@ -70,8 +70,9 @@ cellranger count --id=sample \
 #nosecondary 只获得表达矩阵，不进行后续的降维、聚类和可视化分析(反正后续要走Seurat，为了节省计算资源，建议加上)
 `
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNjAyNDI3MSwtMTE2NDA0NDIyMywtNT
-AxMzc1NTY3LC04ODQ5NzA2NTUsMTcxNzgzMjg1MSwtMzE3NDE3
-MjkxLC0xNDUxMTA1NjEzLC0xNzU1NDA3MjQwLC0xNzc5Nzk0Mj
-MsLTE2Mzg0Mjc5NzAsLTk5NzA2NDQ1MF19
+eyJoaXN0b3J5IjpbLTcwMzk3MjQwMywxNTM2MDI0MjcxLC0xMT
+Y0MDQ0MjIzLC01MDEzNzU1NjcsLTg4NDk3MDY1NSwxNzE3ODMy
+ODUxLC0zMTc0MTcyOTEsLTE0NTExMDU2MTMsLTE3NTU0MDcyND
+AsLTE3Nzk3OTQyMywtMTYzODQyNzk3MCwtOTk3MDY0NDUwXX0=
+
 -->
