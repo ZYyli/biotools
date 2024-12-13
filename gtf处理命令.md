@@ -34,7 +34,7 @@ grep '-' locate_2.bed > locate_11.bed
 #### 合并两个bed文件并排序
 ###### 先按照染色体进行升序排列，然后按照起始位置再进行升序排列
 ```
-cat locate_11.bed locate_11.bed | bedtools sort -i > locate.bed
+cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
 ```
 #### 
 ```
@@ -42,7 +42,7 @@ cat locate_11.bed locate_11.bed | bedtools sort -i > locate.bed
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTExMDc5MDUsMTMwMTgzMDQ2OSwtMT
+eyJoaXN0b3J5IjpbLTE2ODcxMzQ1NjEsMTMwMTgzMDQ2OSwtMT
 k0NTg4ODE5NywzODg2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3
 MzUsMTg1NjgwNTU1NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLT
 ExMjAyOTA3MzEsLTk1MTU0MTE5NV19
