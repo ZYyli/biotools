@@ -29,16 +29,20 @@ seqkit locate --bed -p AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_2.
 #### 筛选+链ATTTTGCTT ，-链AAGCAAAAT
 ```
 grep '+' locate_1.bed > locate_11.bed
-grep '-' locate_2.bed > locate_22.bed
+grep '-' locate_2.bed > locate_11.bed
 
 ```
-#### 合并两个bed文件
+#### 合并两个bed文件并排序
+```
+cat locate_11.bed locate_11.bed | sort > locate.bed
+```
+#### 
 ```
  bedtools intersect -a n2.gtf -b locate_11.bed -wa -wb > merge
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyMzk3OTYwMywtMTk0NTg4ODE5NywzOD
+eyJoaXN0b3J5IjpbMTMwMTgzMDQ2OSwtMTk0NTg4ODE5NywzOD
 g2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3MzUsMTg1NjgwNTU1
 NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLTExMjAyOTA3MzEsLT
 k1MTU0MTE5NV19
