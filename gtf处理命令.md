@@ -38,11 +38,11 @@ cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
 ```
 #### 
 ```
- bedtools intersect -a n2.gtf -b locate_11.bed -wa -wb > merge
+ bedtools intersect -a n2.gtf -b locate.bed -wa -wb > merge
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODcxMzQ1NjEsMTMwMTgzMDQ2OSwtMT
+eyJoaXN0b3J5IjpbLTE4MzgwOTI1MDgsMTMwMTgzMDQ2OSwtMT
 k0NTg4ODE5NywzODg2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3
 MzUsMTg1NjgwNTU1NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLT
 ExMjAyOTA3MzEsLTk1MTU0MTE5NV19
