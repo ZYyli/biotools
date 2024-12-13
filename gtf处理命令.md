@@ -25,10 +25,12 @@ seqkit locate --gtf -p AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_2.
   -P, --only-positive-strand 只搜索正链
   -f, --pattern-file 模式或motif文件（fasta格式）
   -p, --pattern strings 搜索pattern或motif
-#### 筛选+链AAGCAAAAT ，-链AAGCAAAAT
+#### 筛选+链ATTTTGCTT ，-链AAGCAAAAT
 ```
-这里输入代码
+grep '+' locate_1.fa > locate_11.fa
+grep '-' locate_2.fa > locate_22.fa
+
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTU5NTEyNDgsLTk1MTU0MTE5NV19
+eyJoaXN0b3J5IjpbLTExMjAyOTA3MzEsLTk1MTU0MTE5NV19
 -->
