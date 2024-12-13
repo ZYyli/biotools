@@ -33,11 +33,11 @@ grep '-' locate_2.bed > locate_22.bed
 
 ```
 ```
- bedtools intersect -a n2.gtf -b locate_11.bed -wa -wb > 1.gtf
+ bedtools intersect -a n2.gtf -b locate_11.bed -wa -wb > 
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg4NjQ5NDM5LDQ2NzM1MDk5NywxMzU3MD
-g4NzM1LDE4NTY4MDU1NTQsMTI0MjE3MzQ0NiwxMTEwNTE0OTg4
-LC0xMTIwMjkwNzMxLC05NTE1NDExOTVdfQ==
+eyJoaXN0b3J5IjpbNjk1MDMyNDk3LDM4ODY0OTQzOSw0NjczNT
+A5OTcsMTM1NzA4ODczNSwxODU2ODA1NTU0LDEyNDIxNzM0NDYs
+MTExMDUxNDk4OCwtMTEyMDI5MDczMSwtOTUxNTQxMTk1XX0=
 -->
