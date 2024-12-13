@@ -41,10 +41,12 @@ cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
  bedtools intersect -a h38.gtf -b locate.bed -wa -wb > merge
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
+
+包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置和有多少B文件染色体位置与之有overlap.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDkyNjMxODMsMTQzNzczNjI4NywtMT
-gzODA5MjUwOCwxMzAxODMwNDY5LC0xOTQ1ODg4MTk3LDM4ODY0
-OTQzOSw0NjczNTA5OTcsMTM1NzA4ODczNSwxODU2ODA1NTU0LD
-EyNDIxNzM0NDYsMTExMDUxNDk4OCwtMTEyMDI5MDczMSwtOTUx
-NTQxMTk1XX0=
+eyJoaXN0b3J5IjpbNDU0Mjc5NDc4LC0xNTA5MjYzMTgzLDE0Mz
+c3MzYyODcsLTE4MzgwOTI1MDgsMTMwMTgzMDQ2OSwtMTk0NTg4
+ODE5NywzODg2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3MzUsMT
+g1NjgwNTU1NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLTExMjAy
+OTA3MzEsLTk1MTU0MTE5NV19
 -->
