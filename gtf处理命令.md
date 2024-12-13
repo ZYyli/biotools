@@ -32,10 +32,11 @@ grep '-' locate_2.fa > locate_22.fa
 
 ```
 ```
- bedtools intersectBed -a n2.gtf -b locate_11.bed -wa -wb > 1.gtf
+ bedtools intersect -a n2.gtf -b locate_11.bed -wa -wb > 1.gtf
 ```
 export PATH=/public/home/zuoyiyi/software/bedtools2/bin:$PATH
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NjgwNTU1NCwxMjQyMTczNDQ2LDExMT
-A1MTQ5ODgsLTExMjAyOTA3MzEsLTk1MTU0MTE5NV19
+eyJoaXN0b3J5IjpbMTM1NzA4ODczNSwxODU2ODA1NTU0LDEyND
+IxNzM0NDYsMTExMDUxNDk4OCwtMTEyMDI5MDczMSwtOTUxNTQx
+MTk1XX0=
 -->
