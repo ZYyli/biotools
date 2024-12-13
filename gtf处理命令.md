@@ -30,9 +30,9 @@ seqkit locate --bed -p AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_2.
 ```
 grep '+' locate_1.bed > locate_11.bed
 grep '-' locate_2.bed > locate_11.bed
-
 ```
 #### 合并两个bed文件并排序
+###### 先按照染色体进行升序排列，然后按照起始位置再进行升序排列
 ```
 cat locate_11.bed locate_11.bed | bedtools sort -i > locate.bed
 ```
@@ -42,8 +42,8 @@ cat locate_11.bed locate_11.bed | bedtools sort -i > locate.bed
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NjIwNzc3NSwxMzAxODMwNDY5LC0xOT
-Q1ODg4MTk3LDM4ODY0OTQzOSw0NjczNTA5OTcsMTM1NzA4ODcz
-NSwxODU2ODA1NTU0LDEyNDIxNzM0NDYsMTExMDUxNDk4OCwtMT
-EyMDI5MDczMSwtOTUxNTQxMTk1XX0=
+eyJoaXN0b3J5IjpbLTE5OTExMDc5MDUsMTMwMTgzMDQ2OSwtMT
+k0NTg4ODE5NywzODg2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3
+MzUsMTg1NjgwNTU1NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLT
+ExMjAyOTA3MzEsLTk1MTU0MTE5NV19
 -->
