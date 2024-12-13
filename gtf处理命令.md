@@ -34,7 +34,9 @@ grep '-' locate_2.bed > locate_11.bed
 ```
 #### 合并两个bed文件并排序
 ```
-cat locate_11.bed locate_11.bed | sort > locate.bed
+cat locate_11.bed locate_11.bed | ```swift
+bedtools sort
+```sort > locate.bed
 ```
 #### 
 ```
@@ -42,8 +44,8 @@ cat locate_11.bed locate_11.bed | sort > locate.bed
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwMTgzMDQ2OSwtMTk0NTg4ODE5NywzOD
-g2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3MzUsMTg1NjgwNTU1
-NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLTExMjAyOTA3MzEsLT
-k1MTU0MTE5NV19
+eyJoaXN0b3J5IjpbNzQ5MjI0Mjc2LDEzMDE4MzA0NjksLTE5ND
+U4ODgxOTcsMzg4NjQ5NDM5LDQ2NzM1MDk5NywxMzU3MDg4NzM1
+LDE4NTY4MDU1NTQsMTI0MjE3MzQ0NiwxMTEwNTE0OTg4LC0xMT
+IwMjkwNzMxLC05NTE1NDExOTVdfQ==
 -->
