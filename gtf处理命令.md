@@ -31,6 +31,9 @@ grep '+' locate_1.fa > locate_11.fa
 grep '-' locate_2.fa > locate_22.fa
 
 ```
+ bedtools intersectBed -a n2.gtf -b locate_11.bed -wa -wb > 1.gtf
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjAyOTA3MzEsLTk1MTU0MTE5NV19
+eyJoaXN0b3J5IjpbMTU4MjQ0MDEzMiwtMTEyMDI5MDczMSwtOT
+UxNTQxMTk1XX0=
 -->
