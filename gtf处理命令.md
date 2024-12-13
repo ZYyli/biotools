@@ -43,10 +43,21 @@ cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 
 包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置和有多少B文件染色体位置与之有overlap.
+```ruby
+$ cat A.bed 
+chr1 10 20 
+chr1 30 40 
+$ cat B.bed
+chr1 15 20
+chr1 18 25
+$ bedtools intersect -a A.bed -b B.bed -c
+chr1 10 20 2
+chr1 30 40 0
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU0Mjc5NDc4LC0xNTA5MjYzMTgzLDE0Mz
-c3MzYyODcsLTE4MzgwOTI1MDgsMTMwMTgzMDQ2OSwtMTk0NTg4
-ODE5NywzODg2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3MzUsMT
-g1NjgwNTU1NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLTExMjAy
-OTA3MzEsLTk1MTU0MTE5NV19
+eyJoaXN0b3J5IjpbMTY2MjM3NzkzNCwtMTUwOTI2MzE4MywxND
+M3NzM2Mjg3LC0xODM4MDkyNTA4LDEzMDE4MzA0NjksLTE5NDU4
+ODgxOTcsMzg4NjQ5NDM5LDQ2NzM1MDk5NywxMzU3MDg4NzM1LD
+E4NTY4MDU1NTQsMTI0MjE3MzQ0NiwxMTEwNTE0OTg4LC0xMTIw
+MjkwNzMxLC05NTE1NDExOTVdfQ==
 -->
