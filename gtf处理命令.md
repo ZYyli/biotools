@@ -35,16 +35,16 @@ grep '-' locate_2.bed > locate_11.bed
 ```
 cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
 ```
-#### 
+#### 序列在3’UTR中的区域位置
 可以对两个基因组特征进行overlap，找到两者重合的区域。比如求两个peaks的交集，或者看很多位点信息在没在peaks或其他区域中
 ```
  bedtools intersect -a h38.gtf -b locate.bed -wa -wb > merge
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NzI1NTI4MiwxNDM3NzM2Mjg3LC0xOD
-M4MDkyNTA4LDEzMDE4MzA0NjksLTE5NDU4ODgxOTcsMzg4NjQ5
-NDM5LDQ2NzM1MDk5NywxMzU3MDg4NzM1LDE4NTY4MDU1NTQsMT
-I0MjE3MzQ0NiwxMTEwNTE0OTg4LC0xMTIwMjkwNzMxLC05NTE1
-NDExOTVdfQ==
+eyJoaXN0b3J5IjpbLTE1NTYyMDQ0ODgsMTQzNzczNjI4NywtMT
+gzODA5MjUwOCwxMzAxODMwNDY5LC0xOTQ1ODg4MTk3LDM4ODY0
+OTQzOSw0NjczNTA5OTcsMTM1NzA4ODczNSwxODU2ODA1NTU0LD
+EyNDIxNzM0NDYsMTExMDUxNDk4OCwtMTEyMDI5MDczMSwtOTUx
+NTQxMTk1XX0=
 -->
