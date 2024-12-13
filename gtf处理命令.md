@@ -15,7 +15,7 @@ awk -F'\t' '{$2=$6=$8="";print}' xx.gtf > xx.gtf
 ```
 #### 根据某段序列，从基因组fa文件筛选对应的位置
 ```
-seqkit locate --bed -p ATTTTGCTT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_2.bed
+seqkit locate --bed -p ATTTTGCTT | AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_2.bed
 ```
  -d, --degenerate 包含简并碱基模式和motif
   --gtf 输出为GTF格式
@@ -36,6 +36,6 @@ grep '-' locate_2.fa > locate_22.fa
 ```
 export PATH=/public/home/zuoyiyi/software/bedtools2/bin:$PATH
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MjE3MzQ0NiwxMTEwNTE0OTg4LC0xMT
-IwMjkwNzMxLC05NTE1NDExOTVdfQ==
+eyJoaXN0b3J5IjpbMTg1NjgwNTU1NCwxMjQyMTczNDQ2LDExMT
+A1MTQ5ODgsLTExMjAyOTA3MzEsLTk1MTU0MTE5NV19
 -->
