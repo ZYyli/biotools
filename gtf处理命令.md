@@ -32,13 +32,14 @@ grep '+' locate_1.bed > locate_11.bed
 grep '-' locate_2.bed > locate_22.bed
 
 ```
+#### 合并两个bed文件
 ```
  bedtools intersect -a n2.gtf -b locate_11.bed -wa -wb > merge
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDU4ODgxOTcsMzg4NjQ5NDM5LDQ2Nz
-M1MDk5NywxMzU3MDg4NzM1LDE4NTY4MDU1NTQsMTI0MjE3MzQ0
-NiwxMTEwNTE0OTg4LC0xMTIwMjkwNzMxLC05NTE1NDExOTVdfQ
-==
+eyJoaXN0b3J5IjpbLTMyMzk3OTYwMywtMTk0NTg4ODE5NywzOD
+g2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3MzUsMTg1NjgwNTU1
+NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLTExMjAyOTA3MzEsLT
+k1MTU0MTE5NV19
 -->
