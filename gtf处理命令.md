@@ -10,7 +10,7 @@ awk -F'\t' '{$2=$6=$8="";print}' xx.gtf > xx.gtf
 '{$2=$6=$8="";print}' ：删除第2、6、8列
 ###  筛选3‘UTR的基因注释信息
 ```
- grep 'three_prime_utr' n1.gtf > n2.gtf
+ grep 'three_prime_utr' Homo_sapiens.GRCh38.113.gtf > h38.gtf
 ```
 ### 根据某段序列，从基因组fa文件筛选对应的位置
 ```
@@ -37,12 +37,12 @@ cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
 ```
 #### 
 ```
- bedtools intersect -a n2.gtf -b locate.bed -wa -wb > merge
+ bedtools intersect -a h38.gtf -b locate.bed -wa -wb > merge
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTA4ODQ4MDEsLTE4MzgwOTI1MDgsMT
-MwMTgzMDQ2OSwtMTk0NTg4ODE5NywzODg2NDk0MzksNDY3MzUw
-OTk3LDEzNTcwODg3MzUsMTg1NjgwNTU1NCwxMjQyMTczNDQ2LD
-ExMTA1MTQ5ODgsLTExMjAyOTA3MzEsLTk1MTU0MTE5NV19
+eyJoaXN0b3J5IjpbMTQzNzczNjI4NywtMTgzODA5MjUwOCwxMz
+AxODMwNDY5LC0xOTQ1ODg4MTk3LDM4ODY0OTQzOSw0NjczNTA5
+OTcsMTM1NzA4ODczNSwxODU2ODA1NTU0LDEyNDIxNzM0NDYsMT
+ExMDUxNDk4OCwtMTEyMDI5MDczMSwtOTUxNTQxMTk1XX0=
 -->
