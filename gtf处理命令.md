@@ -15,7 +15,8 @@ awk -F'\t' '{$2=$6=$8="";print}' xx.gtf > xx.gtf
 ```
 #### 根据某段序列，从基因组fa文件筛选对应的位置
 ```
-seqkit locate --bed -p ATTTTGCTT | AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_1.bed
+seqkit locate --bed -p ATTTTGCTT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_1.bed
+seqkit locate --bed -p AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_2.bed
 ```
  -d, --degenerate 包含简并碱基模式和motif
   --gtf 输出为GTF格式
@@ -27,8 +28,8 @@ seqkit locate --bed -p ATTTTGCTT | AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa
   -p, --pattern strings 搜索pattern或motif
 #### 筛选+链ATTTTGCTT ，-链AAGCAAAAT
 ```
-grep '+' locate_1.fa > locate_11.fa
-grep '-' locate_2.fa > locate_22.fa
+grep '+' locate_1.bed > locate_11.bed
+grep '-' locate_2.bed > locate_22.bed
 
 ```
 ```
@@ -36,7 +37,7 @@ grep '-' locate_2.fa > locate_22.fa
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY3MzUwOTk3LDEzNTcwODg3MzUsMTg1Nj
-gwNTU1NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLTExMjAyOTA3
-MzEsLTk1MTU0MTE5NV19
+eyJoaXN0b3J5IjpbMzg4NjQ5NDM5LDQ2NzM1MDk5NywxMzU3MD
+g4NzM1LDE4NTY4MDU1NTQsMTI0MjE3MzQ0NiwxMTEwNTE0OTg4
+LC0xMTIwMjkwNzMxLC05NTE1NDExOTVdfQ==
 -->
