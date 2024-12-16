@@ -30,10 +30,10 @@ seqkit locate --bed -p AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_2.
 grep '+' locate_1.bed > locate_11.bed
 grep '-' locate_2.bed > locate_11.bed
 ```
-### 合并两个bed文件并排序
-先按照染色体进行升序排列，然后按照起始位置再进行升序排列
+### 合并两个bed文件
+(排序bedtools sort -i)
 ```
-cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
+cat locate_11.bed locate_22.bed > locate.bed
 ```
 #### 交集——序列在3’UTR中的区域位置及数量
 [【bioinfo】bedtools之intersect命令参数_bedtools intersect-CSDN博客](https://blog.csdn.net/sinat_32872729/article/details/126541494)
@@ -102,11 +102,11 @@ awk -F'\t' -vOFS='\t' '{
 }' merge_c > merge_cc
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5NjM2NTYwOSw5MTI4OTE3NjQsLTE2OT
-k5ODI3ODcsMTI2MTkzMjQyOSw1NjAzMzIwNjksLTExMjUyMjM1
-NzUsMjA4NzEyNjQ0NSwxNDc0NzU4OTU3LC0xNzc3MjA1NzU2LD
-IwMDczNTMxNiwtMTYzMDg2OTIyOCw3OTY3OTMxODIsLTM4NjQ5
-ODQ5MCwtMjE4NTM0NTA0LC0xODEzOTg5OTkyLC0xNTI5MDYzMj
-kwLC0xMjg0OTM5Mzg0LC0xNzQzMDU5MDI3LDE1Mjk0NTgxMTks
-LTE3MDExMjM2MTddfQ==
+eyJoaXN0b3J5IjpbNTU0NzU4NjI4LC04OTYzNjU2MDksOTEyOD
+kxNzY0LC0xNjk5OTgyNzg3LDEyNjE5MzI0MjksNTYwMzMyMDY5
+LC0xMTI1MjIzNTc1LDIwODcxMjY0NDUsMTQ3NDc1ODk1NywtMT
+c3NzIwNTc1NiwyMDA3MzUzMTYsLTE2MzA4NjkyMjgsNzk2Nzkz
+MTgyLC0zODY0OTg0OTAsLTIxODUzNDUwNCwtMTgxMzk4OTk5Mi
+wtMTUyOTA2MzI5MCwtMTI4NDkzOTM4NCwtMTc0MzA1OTAyNywx
+NTI5NDU4MTE5XX0=
 -->
