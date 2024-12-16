@@ -106,11 +106,12 @@ awk -F'\t' -vOFS='\t' '{
 安装csvkit和xlsxwriter
 pip3 install csvkit
 pip3 install xlsxwriter
-csv2xlsx merge_5 .xlsx
+csv2xlsx merge_cc count_c.xlsx
+csv2xlsx merge_nn count_n.xlsx
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjczODQyNDAxLC02NTUzMDU3NDQsLTI3OT
+eyJoaXN0b3J5IjpbODMwOTIxNTU0LC02NTUzMDU3NDQsLTI3OT
 gwMTQsLTg5NjM2NTYwOSw5MTI4OTE3NjQsLTE2OTk5ODI3ODcs
 MTI2MTkzMjQyOSw1NjAzMzIwNjksLTExMjUyMjM1NzUsMjA4Nz
 EyNjQ0NSwxNDc0NzU4OTU3LC0xNzc3MjA1NzU2LDIwMDczNTMx
