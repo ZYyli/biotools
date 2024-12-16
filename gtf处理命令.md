@@ -45,7 +45,7 @@ awk -F '\t' '$7==$15' merge_1 > merge_3
 ##删除多余列和值
 awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_3 > merge_4
 awk -F'\t' -vOFS='\t' '{
-    split($6, attributes, ";");attributes = "";
+    split($, attributes, ";");attributes = "";
     for (i = 1; i <= length(attributes); i++) {
          if (a[i] ~ /^[ \t]+gene_id/ && a[i] ~ /^[ \t]+transcript_id/ && a[i] ~ /^[ \t]+gene_name/ && a[i] ~ /^[ \t]+transcript_name/) {
             new_attributes = new_attributes (i > 1 ? "; " : "") attributes[i];
@@ -87,11 +87,11 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTk5ODI3ODcsMTI2MTkzMjQyOSw1Nj
-AzMzIwNjksLTExMjUyMjM1NzUsMjA4NzEyNjQ0NSwxNDc0NzU4
-OTU3LC0xNzc3MjA1NzU2LDIwMDczNTMxNiwtMTYzMDg2OTIyOC
-w3OTY3OTMxODIsLTM4NjQ5ODQ5MCwtMjE4NTM0NTA0LC0xODEz
-OTg5OTkyLC0xNTI5MDYzMjkwLC0xMjg0OTM5Mzg0LC0xNzQzMD
-U5MDI3LDE1Mjk0NTgxMTksLTE3MDExMjM2MTcsLTEzMzcwNTEy
-MDEsMTk0NjkwOTg2OF19
+eyJoaXN0b3J5IjpbLTE0NzUxNTM2NTMsLTE2OTk5ODI3ODcsMT
+I2MTkzMjQyOSw1NjAzMzIwNjksLTExMjUyMjM1NzUsMjA4NzEy
+NjQ0NSwxNDc0NzU4OTU3LC0xNzc3MjA1NzU2LDIwMDczNTMxNi
+wtMTYzMDg2OTIyOCw3OTY3OTMxODIsLTM4NjQ5ODQ5MCwtMjE4
+NTM0NTA0LC0xODEzOTg5OTkyLC0xNTI5MDYzMjkwLC0xMjg0OT
+M5Mzg0LC0xNzQzMDU5MDI3LDE1Mjk0NTgxMTksLTE3MDExMjM2
+MTcsLTEzMzcwNTEyMDFdfQ==
 -->
