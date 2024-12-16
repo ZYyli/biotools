@@ -45,31 +45,23 @@ awk -F '\t' '$7==$15' merge_1 > merge_3
 ##删除多余列和值
 awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_3 > merge_4
 awk -F'\t' -vOFS='\t' '{
-    split($9, attributes, ";");attributes = "";
-    for (i = 1; i <= length(attributes); i++) {
-         if (a[i] ~ /^[ \t]+gene_id/ && a[i] ~ /^[ \t]+transcript_id/ && a[i] ~ /^[ \t]+gene_name/ && a[i] ~ /^[ \t]+transcript_name/) {
-            new_attributes = new_attributes (i > 1 ? "; " : "") attributes[i];
-         } 
-    } $9 = new_attributes ; print
-}' merge_4 > merge_5
-
-awk -F'\t' -vOFS='\t' '{
-    split($6, a, ";"); has_gene_id = 0; has_transcript_id = 0; has_gene_name = 0; has_transcript_name = 0;
-    for (i in a) { 
-         if (a[i] ~ /^[ \t]+gene_id/) {
-            has_gene_id = 1;
-         } else if (a[i] ~ /^[ \t]+transcript_id/) {
-                    has_transcript_id = 1;
-         } else if (a[i] ~ /^[ \t]+gene_name/) {
-                    has_gene_name = 1;
-         } else if (a[i] ~ /^[ \t]+transcript_name/) {
-                    has_transcript_name = 1;
-         }
-    } 
-    if (has_gene_id && has_transcript_id && has_gene_name && has_transcript_name) { print;
+    # 初始化一个新的第九列字符串
+    new_col9 = "";
+    # 分割第九列的键值对
+    n = split($9, attributes, ";");
+    for (i = 1; i <= n; i++) {
+        # 去除前后空格
+        gsub(/^[ \t]+|[ \t]+$/, "", attributes[i]);
+        # 检查键值对是否以特定字符串开头
+        if (attributes[i] ~ /^gene_id/ || attributes[i] ~ /^transcript_id/ || attributes[i] ~ /^gene_name/ || attributes[i] ~ /^transcript_name/) {
+            # 如果是，则将其添加到新的第九列字符串中
+            new_col9 = new_col9 (new_col9 ? "; " : "") attributes[i];
+        }
     }
-}' merge_4 > merge_5
- 
+    # 替换原来的第九列
+    $9 = new_col9;
+    print;
+}' merge_4 > output.bed
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 ###### 分别获得正负链的原件出现次数
@@ -87,7 +79,7 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNTYzMzgyNywtMTY5OTk4Mjc4NywxMj
+eyJoaXN0b3J5IjpbMTYyNzU2MTExNCwtMTY5OTk4Mjc4NywxMj
 YxOTMyNDI5LDU2MDMzMjA2OSwtMTEyNTIyMzU3NSwyMDg3MTI2
 NDQ1LDE0NzQ3NTg5NTcsLTE3NzcyMDU3NTYsMjAwNzM1MzE2LC
 0xNjMwODY5MjI4LDc5Njc5MzE4MiwtMzg2NDk4NDkwLC0yMTg1
