@@ -80,8 +80,8 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 ###### 删除多余列和值
 ```
-
-awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_3 > merge_4
+##正负链操作一致
+awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_211 > merge
 awk -F'\t' -vOFS='\t' '{
     # 初始化一个新的第九列字符串
     new_col9 = "";
@@ -99,14 +99,14 @@ awk -F'\t' -vOFS='\t' '{
     # 替换原来的第九列
     $9 = new_col9;
     print;
-}' merge_4 > merge_5
+}' merge_2111 > merge_
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzY2NzQ2MzQsOTEyODkxNzY0LC0xNj
-k5OTgyNzg3LDEyNjE5MzI0MjksNTYwMzMyMDY5LC0xMTI1MjIz
-NTc1LDIwODcxMjY0NDUsMTQ3NDc1ODk1NywtMTc3NzIwNTc1Ni
-wyMDA3MzUzMTYsLTE2MzA4NjkyMjgsNzk2NzkzMTgyLC0zODY0
-OTg0OTAsLTIxODUzNDUwNCwtMTgxMzk4OTk5MiwtMTUyOTA2Mz
-I5MCwtMTI4NDkzOTM4NCwtMTc0MzA1OTAyNywxNTI5NDU4MTE5
-LC0xNzAxMTIzNjE3XX0=
+eyJoaXN0b3J5IjpbMTQ1NDUyODY1Myw5MTI4OTE3NjQsLTE2OT
+k5ODI3ODcsMTI2MTkzMjQyOSw1NjAzMzIwNjksLTExMjUyMjM1
+NzUsMjA4NzEyNjQ0NSwxNDc0NzU4OTU3LC0xNzc3MjA1NzU2LD
+IwMDczNTMxNiwtMTYzMDg2OTIyOCw3OTY3OTMxODIsLTM4NjQ5
+ODQ5MCwtMjE4NTM0NTA0LC0xODEzOTg5OTkyLC0xNTI5MDYzMj
+kwLC0xMjg0OTM5Mzg0LC0xNzQzMDU5MDI3LDE1Mjk0NTgxMTks
+LTE3MDExMjM2MTddfQ==
 -->
