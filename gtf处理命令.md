@@ -67,15 +67,15 @@ awk -F'\t' -vOFS='\t' '{
 ###### 分别获得正负链的原件出现次数
 ```
 #正链
-awk -F '\t' '$7=="+"' h38.gtf > h38_1.gtf
+awk -F'\t' -vOFS='\t' '$7=="+"' h38.gtf > h38_1.gtf
 bedtools intersect -a h38_1.gtf -b locate_11.bed -c > merge_21
 ##筛选出现次数大于0的（经过试验最多3次）
-awk -F'\t' '$10 > 0  {print}' merge_21 > merge_211
+awk -F'\t' -vOFS='\t' '$10 > 0  {print}' merge_21 > merge_211
 #负链
-awk -F '\t' '$7=="-"' h38.gtf > h38_2.gtf
+awk -F '\t' -vOFS='\t' '$7=="-"' h38.gtf > h38_2.gtf
 bedtools intersect -a h38_2.gtf -b locate_22.bed -c > merge_22
 ##筛选出现次数大于0的（经过试验最多3次）
-awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
+awk -F'\t' -vOFS='\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 ###### 删除多余列和值
@@ -102,11 +102,11 @@ awk -F'\t' -vOFS='\t' '{
 }' merge_c > merge_cc
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MzE0MDI0MCwtODk2MzY1NjA5LDkxMj
-g5MTc2NCwtMTY5OTk4Mjc4NywxMjYxOTMyNDI5LDU2MDMzMjA2
-OSwtMTEyNTIyMzU3NSwyMDg3MTI2NDQ1LDE0NzQ3NTg5NTcsLT
-E3NzcyMDU3NTYsMjAwNzM1MzE2LC0xNjMwODY5MjI4LDc5Njc5
-MzE4MiwtMzg2NDk4NDkwLC0yMTg1MzQ1MDQsLTE4MTM5ODk5OT
-IsLTE1MjkwNjMyOTAsLTEyODQ5MzkzODQsLTE3NDMwNTkwMjcs
-MTUyOTQ1ODExOV19
+eyJoaXN0b3J5IjpbLTI3OTgwMTQsLTg5NjM2NTYwOSw5MTI4OT
+E3NjQsLTE2OTk5ODI3ODcsMTI2MTkzMjQyOSw1NjAzMzIwNjks
+LTExMjUyMjM1NzUsMjA4NzEyNjQ0NSwxNDc0NzU4OTU3LC0xNz
+c3MjA1NzU2LDIwMDczNTMxNiwtMTYzMDg2OTIyOCw3OTY3OTMx
+ODIsLTM4NjQ5ODQ5MCwtMjE4NTM0NTA0LC0xODEzOTg5OTkyLC
+0xNTI5MDYzMjkwLC0xMjg0OTM5Mzg0LC0xNzQzMDU5MDI3LDE1
+Mjk0NTgxMTldfQ==
 -->
