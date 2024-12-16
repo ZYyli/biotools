@@ -78,12 +78,35 @@ bedtools intersect -a h38_2.gtf -b locate_22.bed -c > merge_22
 awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
+###### 删除多余列和值
+```
+
+awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_3 > merge_4
+awk -F'\t' -vOFS='\t' '{
+    # 初始化一个新的第九列字符串
+    new_col9 = "";
+    # 分割第九列的键值对
+    n = split($9, attributes, ";");
+    for (i = 1; i <= n; i++) {
+        # 去除前后空格
+        gsub(/^[ \t]+|[ \t]+$/, "", attributes[i]);
+        # 检查键值对是否以特定字符串开头
+        if (attributes[i] ~ /^gene_id/ || attributes[i] ~ /^transcript_id/ || attributes[i] ~ /^gene_name/ || attributes[i] ~ /^transcript_name/) {
+            # 如果是，则将其添加到新的第九列字符串中
+            new_col9 = new_col9 (new_col9 ? "; " : "") attributes[i];
+        }
+    }
+    # 替换原来的第九列
+    $9 = new_col9;
+    print;
+}' merge_4 > merge_5
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTEyODkxNzY0LC0xNjk5OTgyNzg3LDEyNj
-E5MzI0MjksNTYwMzMyMDY5LC0xMTI1MjIzNTc1LDIwODcxMjY0
-NDUsMTQ3NDc1ODk1NywtMTc3NzIwNTc1NiwyMDA3MzUzMTYsLT
-E2MzA4NjkyMjgsNzk2NzkzMTgyLC0zODY0OTg0OTAsLTIxODUz
-NDUwNCwtMTgxMzk4OTk5MiwtMTUyOTA2MzI5MCwtMTI4NDkzOT
-M4NCwtMTc0MzA1OTAyNywxNTI5NDU4MTE5LC0xNzAxMTIzNjE3
-LC0xMzM3MDUxMjAxXX0=
+eyJoaXN0b3J5IjpbLTE4NzY2NzQ2MzQsOTEyODkxNzY0LC0xNj
+k5OTgyNzg3LDEyNjE5MzI0MjksNTYwMzMyMDY5LC0xMTI1MjIz
+NTc1LDIwODcxMjY0NDUsMTQ3NDc1ODk1NywtMTc3NzIwNTc1Ni
+wyMDA3MzUzMTYsLTE2MzA4NjkyMjgsNzk2NzkzMTgyLC0zODY0
+OTg0OTAsLTIxODUzNDUwNCwtMTgxMzk4OTk5MiwtMTUyOTA2Mz
+I5MCwtMTI4NDkzOTM4NCwtMTc0MzA1OTAyNywxNTI5NDU4MTE5
+LC0xNzAxMTIzNjE3XX0=
 -->
