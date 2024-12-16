@@ -45,15 +45,15 @@ awk -F '\t' '$7==$15' merge_1 > merge_3
 ##删除多余列和值
 awk -F'\t' '{$2=$6=$8=$14="";print}' merge_3 > merge_4
 awk -F'\t' -vOFS='\t' '{
-    split($4, a, ";");
+    split($9, a, ";");
     for (i in a) {
          if (a[i] ~ /^gene_id/) {
              printf "%s;", a[i];
          } 
     }
     sub(/;$/, ""); 
-    print "\t" $(NF-1) "\t"$NF     
-             input.bed > output.bed
+    print "\t"$(NF-1)"\t"$NF
+}' merge_4 > merge_41
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 ###### 分别获得正负链的原件出现次数
@@ -71,7 +71,7 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2ODI2NTg5NSwtMzg2NDk4NDkwLC0yMT
+eyJoaXN0b3J5IjpbLTcyODU3OTQwNiwtMzg2NDk4NDkwLC0yMT
 g1MzQ1MDQsLTE4MTM5ODk5OTIsLTE1MjkwNjMyOTAsLTEyODQ5
 MzkzODQsLTE3NDMwNTkwMjcsMTUyOTQ1ODExOSwtMTcwMTEyMz
 YxNywtMTMzNzA1MTIwMSwxOTQ2OTA5ODY4LDk1OTc0MTM0OCwx
