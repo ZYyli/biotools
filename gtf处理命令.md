@@ -68,7 +68,7 @@ awk -F'\t' -vOFS='\t' '{
     } 
     if (has_gene_id && has_transcript_id && has_gene_name && has_transcript_name) { print;
     }
-}' input.bed > output.bed
+}' merge_4 > merge_5
  
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
@@ -87,7 +87,7 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNDIzNDcyMiwtMTEyNTIyMzU3NSwyMD
+eyJoaXN0b3J5IjpbMTA1NTg2MTYyMCwtMTEyNTIyMzU3NSwyMD
 g3MTI2NDQ1LDE0NzQ3NTg5NTcsLTE3NzcyMDU3NTYsMjAwNzM1
 MzE2LC0xNjMwODY5MjI4LDc5Njc5MzE4MiwtMzg2NDk4NDkwLC
 0yMTg1MzQ1MDQsLTE4MTM5ODk5OTIsLTE1MjkwNjMyOTAsLTEy
