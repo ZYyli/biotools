@@ -49,7 +49,7 @@ awk -F '\t' '$7==$15' merge_1 > merge_3
 awk -F '\t' '$7=="+"' h38.gtf > h38_1.gtf
 bedtools intersect -a h38_1.gtf -b locate_11.bed -c > merge_21
 ##筛选出现次数大于0的（经过试验最多3次）
-awk -F'\t' '$10 > 0  {print}' merge_21
+awk -F'\t' '$10 > 0  {print}' merge_21 > merge_211
 #负链
 awk -F '\t' '$7=="-"' h38.gtf > h38_2.gtf
 bedtools intersect -a h38_2.gtf -b locate_22.bed -c > merge_22
@@ -69,7 +69,7 @@ chr1 10 20 2
 chr1 30 40 0
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjQ5MjE0NzMsLTE3NDMwNTkwMjcsMT
+eyJoaXN0b3J5IjpbLTEyODQ5MzkzODQsLTE3NDMwNTkwMjcsMT
 UyOTQ1ODExOSwtMTcwMTEyMzYxNywtMTMzNzA1MTIwMSwxOTQ2
 OTA5ODY4LDk1OTc0MTM0OCwxNjYyMzc3OTM0LC0xNTA5MjYzMT
 gzLDE0Mzc3MzYyODcsLTE4MzgwOTI1MDgsMTMwMTgzMDQ2OSwt
