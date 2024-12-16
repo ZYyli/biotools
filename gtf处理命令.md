@@ -81,7 +81,7 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ###### 删除多余列和值
 ```
 ##正负链操作一致
-awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_211 > merge
+awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_211 > merge_c
 awk -F'\t' -vOFS='\t' '{
     # 初始化一个新的第九列字符串
     new_col9 = "";
@@ -99,10 +99,10 @@ awk -F'\t' -vOFS='\t' '{
     # 替换原来的第九列
     $9 = new_col9;
     print;
-}' merge_2111 > merge_
+}' merge_c > merge_cc
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1NDUyODY1Myw5MTI4OTE3NjQsLTE2OT
+eyJoaXN0b3J5IjpbLTg5NjM2NTYwOSw5MTI4OTE3NjQsLTE2OT
 k5ODI3ODcsMTI2MTkzMjQyOSw1NjAzMzIwNjksLTExMjUyMjM1
 NzUsMjA4NzEyNjQ0NSwxNDc0NzU4OTU3LC0xNzc3MjA1NzU2LD
 IwMDczNTMxNiwtMTYzMDg2OTIyOCw3OTY3OTMxODIsLTM4NjQ5
