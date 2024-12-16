@@ -39,6 +39,7 @@ cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
 ###### 可以对两个基因组特征进行overlap，找到两者重合的区域。比如求两个peaks的交集，或者看很多位点信息在没在peaks或其他区域中
 ```
 bedtools intersect -a h38.gtf -b locate.bed -wa -wb   > merge_1
+##所处链相同说明该原件存在mRNA上
 awk -F '\t' '$7==$15' merge_1 > merge_3
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
@@ -58,10 +59,10 @@ chr1 10 20 2
 chr1 30 40 0
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTEwOTgxMywxOTQ2OTA5ODY4LDk1OT
-c0MTM0OCwxNjYyMzc3OTM0LC0xNTA5MjYzMTgzLDE0Mzc3MzYy
-ODcsLTE4MzgwOTI1MDgsMTMwMTgzMDQ2OSwtMTk0NTg4ODE5Ny
-wzODg2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3MzUsMTg1Njgw
-NTU1NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgsLTExMjAyOTA3Mz
-EsLTk1MTU0MTE5NV19
+eyJoaXN0b3J5IjpbLTE0MDUyNDIwOTksMTk0NjkwOTg2OCw5NT
+k3NDEzNDgsMTY2MjM3NzkzNCwtMTUwOTI2MzE4MywxNDM3NzM2
+Mjg3LC0xODM4MDkyNTA4LDEzMDE4MzA0NjksLTE5NDU4ODgxOT
+csMzg4NjQ5NDM5LDQ2NzM1MDk5NywxMzU3MDg4NzM1LDE4NTY4
+MDU1NTQsMTI0MjE3MzQ0NiwxMTEwNTE0OTg4LC0xMTIwMjkwNz
+MxLC05NTE1NDExOTVdfQ==
 -->
