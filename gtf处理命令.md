@@ -48,7 +48,7 @@ awk -F'\t' -vOFS='\t' '{
     split($6, a, ";");$6 = "";
     for (i in a) {
          if (a[i] == "gene_id" && a[i] == "transcript_id" && a[i] == "gene_name" && a[i] == "transcript_name") {
-            $4 =$4(length($4) > 0 ? ";" : "") a[i]
+            $4 =$4(length($6) > 0 ? ";" : "") a[i]
          } 
     } print
 }' merge_4 > merge_5
@@ -70,7 +70,7 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0NTQwMzgxOSwtMTc3NzIwNTc1NiwyMD
+eyJoaXN0b3J5IjpbMTQ3NDc1ODk1NywtMTc3NzIwNTc1NiwyMD
 A3MzUzMTYsLTE2MzA4NjkyMjgsNzk2NzkzMTgyLC0zODY0OTg0
 OTAsLTIxODUzNDUwNCwtMTgxMzk4OTk5MiwtMTUyOTA2MzI5MC
 wtMTI4NDkzOTM4NCwtMTc0MzA1OTAyNywxNTI5NDU4MTE5LC0x
