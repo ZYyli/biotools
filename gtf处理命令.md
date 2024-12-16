@@ -51,9 +51,8 @@ awk -F'\t' -vOFS='\t' '{
              printf "%s;", a[i];
          } 
     }
-    sub(/;$/, ""); 
-    print "\t"$(NF-1)"\t"$NF
 }' merge_4 > merge_5
+ sub(/;$/, ""); 
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 ###### 分别获得正负链的原件出现次数
@@ -71,11 +70,11 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzk2NzkzMTgyLC0zODY0OTg0OTAsLTIxOD
-UzNDUwNCwtMTgxMzk4OTk5MiwtMTUyOTA2MzI5MCwtMTI4NDkz
-OTM4NCwtMTc0MzA1OTAyNywxNTI5NDU4MTE5LC0xNzAxMTIzNj
-E3LC0xMzM3MDUxMjAxLDE5NDY5MDk4NjgsOTU5NzQxMzQ4LDE2
-NjIzNzc5MzQsLTE1MDkyNjMxODMsMTQzNzczNjI4NywtMTgzOD
-A5MjUwOCwxMzAxODMwNDY5LC0xOTQ1ODg4MTk3LDM4ODY0OTQz
-OSw0NjczNTA5OTddfQ==
+eyJoaXN0b3J5IjpbMTk2MTk5MDQ1Niw3OTY3OTMxODIsLTM4Nj
+Q5ODQ5MCwtMjE4NTM0NTA0LC0xODEzOTg5OTkyLC0xNTI5MDYz
+MjkwLC0xMjg0OTM5Mzg0LC0xNzQzMDU5MDI3LDE1Mjk0NTgxMT
+ksLTE3MDExMjM2MTcsLTEzMzcwNTEyMDEsMTk0NjkwOTg2OCw5
+NTk3NDEzNDgsMTY2MjM3NzkzNCwtMTUwOTI2MzE4MywxNDM3Nz
+M2Mjg3LC0xODM4MDkyNTA4LDEzMDE4MzA0NjksLTE5NDU4ODgx
+OTcsMzg4NjQ5NDM5XX0=
 -->
