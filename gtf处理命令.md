@@ -36,6 +36,7 @@ grep '-' locate_2.bed > locate_11.bed
 cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
 ```
 #### 交集——序列在3’UTR中的区域位置及数量
+[【bioinfo】bedtools之intersect命令参数_bedtools intersect-CSDN博客](https://blog.csdn.net/sinat_32872729/article/details/126541494)
 ###### 可以对两个基因组特征进行overlap，找到两者重合的区域。比如求两个peaks的交集，或者看很多位点信息在没在peaks或其他区域中
 ```
 bedtools intersect -a h38.gtf -b locate.bed -wa -wb   > merge_1
@@ -58,11 +59,11 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjkwNjMyOTAsLTEyODQ5MzkzODQsLT
-E3NDMwNTkwMjcsMTUyOTQ1ODExOSwtMTcwMTEyMzYxNywtMTMz
-NzA1MTIwMSwxOTQ2OTA5ODY4LDk1OTc0MTM0OCwxNjYyMzc3OT
-M0LC0xNTA5MjYzMTgzLDE0Mzc3MzYyODcsLTE4MzgwOTI1MDgs
-MTMwMTgzMDQ2OSwtMTk0NTg4ODE5NywzODg2NDk0MzksNDY3Mz
-UwOTk3LDEzNTcwODg3MzUsMTg1NjgwNTU1NCwxMjQyMTczNDQ2
-LDExMTA1MTQ5ODhdfQ==
+eyJoaXN0b3J5IjpbLTE4MTM5ODk5OTIsLTE1MjkwNjMyOTAsLT
+EyODQ5MzkzODQsLTE3NDMwNTkwMjcsMTUyOTQ1ODExOSwtMTcw
+MTEyMzYxNywtMTMzNzA1MTIwMSwxOTQ2OTA5ODY4LDk1OTc0MT
+M0OCwxNjYyMzc3OTM0LC0xNTA5MjYzMTgzLDE0Mzc3MzYyODcs
+LTE4MzgwOTI1MDgsMTMwMTgzMDQ2OSwtMTk0NTg4ODE5NywzOD
+g2NDk0MzksNDY3MzUwOTk3LDEzNTcwODg3MzUsMTg1NjgwNTU1
+NCwxMjQyMTczNDQ2XX0=
 -->
