@@ -45,13 +45,16 @@ awk -F '\t' '$7==$15' merge_1 > merge_3
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 ###### 分别获得正负链的原件出现次数
 ```
+#正链
 awk -F '\t' '$7=="+"' h38.gtf > h38_1.gtf
 bedtools intersect -a h38_1.gtf -b locate_11.bed -c > merge_21
-##筛选出现次数大于0的（ 
+##筛选出现次数大于0的（经过试验最多3次）
 awk -F'\t' '$10 > 0  {print}' merge_21
-
+#负链
 awk -F '\t' '$7=="-"' h38.gtf > h38_2.gtf
 bedtools intersect -a h38_2.gtf -b locate_22.bed -c > merge_22
+##筛选出现次数大于0的（经过试验最多3次）
+awk -F'\t' '$10 > 0  {print}' merge_21
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap.
 ```ruby
@@ -66,11 +69,11 @@ chr1 10 20 2
 chr1 30 40 0
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzOTY5NzM5NywtMTc0MzA1OTAyNywxNT
-I5NDU4MTE5LC0xNzAxMTIzNjE3LC0xMzM3MDUxMjAxLDE5NDY5
-MDk4NjgsOTU5NzQxMzQ4LDE2NjIzNzc5MzQsLTE1MDkyNjMxOD
-MsMTQzNzczNjI4NywtMTgzODA5MjUwOCwxMzAxODMwNDY5LC0x
-OTQ1ODg4MTk3LDM4ODY0OTQzOSw0NjczNTA5OTcsMTM1NzA4OD
-czNSwxODU2ODA1NTU0LDEyNDIxNzM0NDYsMTExMDUxNDk4OCwt
-MTEyMDI5MDczMV19
+eyJoaXN0b3J5IjpbLTEyMjQ5MjE0NzMsLTE3NDMwNTkwMjcsMT
+UyOTQ1ODExOSwtMTcwMTEyMzYxNywtMTMzNzA1MTIwMSwxOTQ2
+OTA5ODY4LDk1OTc0MTM0OCwxNjYyMzc3OTM0LC0xNTA5MjYzMT
+gzLDE0Mzc3MzYyODcsLTE4MzgwOTI1MDgsMTMwMTgzMDQ2OSwt
+MTk0NTg4ODE5NywzODg2NDk0MzksNDY3MzUwOTk3LDEzNTcwOD
+g3MzUsMTg1NjgwNTU1NCwxMjQyMTczNDQ2LDExMTA1MTQ5ODgs
+LTExMjAyOTA3MzFdfQ==
 -->
