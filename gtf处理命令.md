@@ -101,22 +101,27 @@ awk -F'\t' -vOFS='\t' '{
     print;
 }' merge_c > merge_cc
 ```
-##### 转化文件格式
+##### 转化文件格式（Rstudio)
 ```
-安装csvkit和xlsxwriter
-pip3 install csvkit
-pip3 install xlsxwriter
-csv2xlsx merge_5 merge.xlsx
-csv2xlsx merge_cc count_c.xlsx
-csv2xlsx merge_nn count_n.xlsx
+install.packages("openxlsx")
+library("openxlsx")
+merge <- read.table("D:/新桌面/merge_5", header = FALSE, sep = "\t")
+merge1 <- merge[-c(2,6,8,14)]
+write.xlsx(merge1, "D:/新桌面/merge.xlsx")
+count_c <- read.table("D:/新桌面/merge_cc", header = FALSE, sep = "\t")
+count_c <- count_c[-c(2,6,8)]
+write.xlsx(count_c, "D:/新桌面/count_c.xlsx")
+count_n <- read.table("D:/新桌面/merge_nn", header = FALSE, sep = "\t")
+count_n <- count_n[-c(2,6,8)]
+write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjkxMDUxNDYsODMwOTIxNTU0LC02NT
-UzMDU3NDQsLTI3OTgwMTQsLTg5NjM2NTYwOSw5MTI4OTE3NjQs
-LTE2OTk5ODI3ODcsMTI2MTkzMjQyOSw1NjAzMzIwNjksLTExMj
-UyMjM1NzUsMjA4NzEyNjQ0NSwxNDc0NzU4OTU3LC0xNzc3MjA1
-NzU2LDIwMDczNTMxNiwtMTYzMDg2OTIyOCw3OTY3OTMxODIsLT
-M4NjQ5ODQ5MCwtMjE4NTM0NTA0LC0xODEzOTg5OTkyLC0xNTI5
-MDYzMjkwXX0=
+eyJoaXN0b3J5IjpbNTE0NTEwMTM5LC0xOTI5MTA1MTQ2LDgzMD
+kyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0LC04OTYzNjU2MDks
+OTEyODkxNzY0LC0xNjk5OTgyNzg3LDEyNjE5MzI0MjksNTYwMz
+MyMDY5LC0xMTI1MjIzNTc1LDIwODcxMjY0NDUsMTQ3NDc1ODk1
+NywtMTc3NzIwNTc1NiwyMDA3MzUzMTYsLTE2MzA4NjkyMjgsNz
+k2NzkzMTgyLC0zODY0OTg0OTAsLTIxODUzNDUwNCwtMTgxMzk4
+OTk5Ml19
 -->
