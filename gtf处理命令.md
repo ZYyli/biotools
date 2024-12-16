@@ -41,7 +41,7 @@ cat locate_11.bed locate_22.bed > locate.bed
 ```
 bedtools intersect -a h38.gtf -b locate.bed -wa -wb   > merge_1
 ##所处链相同说明该原件存在mRNA上
-awk -F '\t' '$7==$15' merge_1 > merge_3
+awk -F'\t' -vOFS='\t' '$7==$15' merge_1 > merge_3
 ##删除多余列和值
 awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_3 > merge_4
 awk -F'\t' -vOFS='\t' '{
@@ -102,11 +102,11 @@ awk -F'\t' -vOFS='\t' '{
 }' merge_c > merge_cc
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU0NzU4NjI4LC04OTYzNjU2MDksOTEyOD
-kxNzY0LC0xNjk5OTgyNzg3LDEyNjE5MzI0MjksNTYwMzMyMDY5
-LC0xMTI1MjIzNTc1LDIwODcxMjY0NDUsMTQ3NDc1ODk1NywtMT
-c3NzIwNTc1NiwyMDA3MzUzMTYsLTE2MzA4NjkyMjgsNzk2Nzkz
-MTgyLC0zODY0OTg0OTAsLTIxODUzNDUwNCwtMTgxMzk4OTk5Mi
-wtMTUyOTA2MzI5MCwtMTI4NDkzOTM4NCwtMTc0MzA1OTAyNywx
-NTI5NDU4MTE5XX0=
+eyJoaXN0b3J5IjpbMTY5MzE0MDI0MCwtODk2MzY1NjA5LDkxMj
+g5MTc2NCwtMTY5OTk4Mjc4NywxMjYxOTMyNDI5LDU2MDMzMjA2
+OSwtMTEyNTIyMzU3NSwyMDg3MTI2NDQ1LDE0NzQ3NTg5NTcsLT
+E3NzcyMDU3NTYsMjAwNzM1MzE2LC0xNjMwODY5MjI4LDc5Njc5
+MzE4MiwtMzg2NDk4NDkwLC0yMTg1MzQ1MDQsLTE4MTM5ODk5OT
+IsLTE1MjkwNjMyOTAsLTEyODQ5MzkzODQsLTE3NDMwNTkwMjcs
+MTUyOTQ1ODExOV19
 -->
