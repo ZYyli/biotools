@@ -56,13 +56,13 @@ awk -F'\t' -vOFS='\t' '{
 awk -F'\t' -vOFS='\t' '{
     split($6, a, ";"); has_gene_id = 0; has_transcript_id = 0; has_gene_name = 0; has_transcript_name = 0;
     for (i in a) { 
-         if (a[i] ~ /^gene_id/) {
+         if (a[i] ~ /^[ \t]+gene_id/) {
             has_gene_id = 1;
-         } else if (a[i] ~ /^transcript_id/) {
+         } else if (a[i] ~ /^[ \t]+transcript_id/) {
                     has_transcript_id = 1;
-         } else if (a[i] ~ /^gene_name/) {
+         } else if (a[i] ~ /^[ \t]+gene_name/) {
                     has_gene_name = 1;
-         } else if (a[i] ~ /^transcript_name/) {
+         } else if (a[i] ~ /^[ \t]+transcript_name/) {
                     has_transcript_name = 1;
          }
     } 
@@ -87,7 +87,7 @@ awk -F'\t' '$10 > 0  {print}' merge_22 > merge_222
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1NTg2MTYyMCw1NjAzMzIwNjksLTExMj
+eyJoaXN0b3J5IjpbLTIxMDAwMzQwOCw1NjAzMzIwNjksLTExMj
 UyMjM1NzUsMjA4NzEyNjQ0NSwxNDc0NzU4OTU3LC0xNzc3MjA1
 NzU2LDIwMDczNTMxNiwtMTYzMDg2OTIyOCw3OTY3OTMxODIsLT
 M4NjQ5ODQ5MCwtMjE4NTM0NTA0LC0xODEzOTg5OTkyLC0xNTI5
