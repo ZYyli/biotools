@@ -38,11 +38,11 @@ cat locate_11.bed locate_22.bed | bedtools sort -i > locate.bed
 #### 交集——序列在3’UTR中的区域位置
 可以对两个基因组特征进行overlap，找到两者重合的区域。比如求两个peaks的交集，或者看很多位点信息在没在peaks或其他区域中
 ```
- bedtools intersect -a h38.gtf -b locate.bed -wa -wb  -c > merge
+ bedtools intersect -a h38.gtf -b locate.bed -wa -wb   > merge_1
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 
-包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置和有多少B文件染色体位置与之有overlap.
+包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap.
 ```ruby
 $ cat A.bed 
 chr1 10 20 
@@ -55,9 +55,10 @@ chr1 10 20 2
 chr1 30 40 0
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU5NzQxMzQ4LDE2NjIzNzc5MzQsLTE1MD
-kyNjMxODMsMTQzNzczNjI4NywtMTgzODA5MjUwOCwxMzAxODMw
-NDY5LC0xOTQ1ODg4MTk3LDM4ODY0OTQzOSw0NjczNTA5OTcsMT
-M1NzA4ODczNSwxODU2ODA1NTU0LDEyNDIxNzM0NDYsMTExMDUx
-NDk4OCwtMTEyMDI5MDczMSwtOTUxNTQxMTk1XX0=
+eyJoaXN0b3J5IjpbLTI2NjYyNzU4NSw5NTk3NDEzNDgsMTY2Mj
+M3NzkzNCwtMTUwOTI2MzE4MywxNDM3NzM2Mjg3LC0xODM4MDky
+NTA4LDEzMDE4MzA0NjksLTE5NDU4ODgxOTcsMzg4NjQ5NDM5LD
+Q2NzM1MDk5NywxMzU3MDg4NzM1LDE4NTY4MDU1NTQsMTI0MjE3
+MzQ0NiwxMTEwNTE0OTg4LC0xMTIwMjkwNzMxLC05NTE1NDExOT
+VdfQ==
 -->
