@@ -1,5 +1,6 @@
 ### 选择基因组和对应gtf文件
 [RNAseq分析如何选择 参考基因组 和 gtf - 简书](https://www.jianshu.com/p/b6dd73e4264c)
+选择primary_assemble
 ### 提出单列
 ```
 awk -F'\t' '{print $2}' xx.gtf > xx.gtf
@@ -119,11 +120,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NT
-EwMTM5LC0xOTI5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0
-LC0yNzk4MDE0LC04OTYzNjU2MDksOTEyODkxNzY0LC0xNjk5OT
-gyNzg3LDEyNjE5MzI0MjksNTYwMzMyMDY5LC0xMTI1MjIzNTc1
-LDIwODcxMjY0NDUsMTQ3NDc1ODk1NywtMTc3NzIwNTc1NiwyMD
-A3MzUzMTYsLTE2MzA4NjkyMjgsNzk2NzkzMTgyLC0zODY0OTg0
-OTBdfQ==
+eyJoaXN0b3J5IjpbNzg1MDA0MzcyLDczNTI5OTUzOSwxODg1Nj
+QwOTg3LDUxNDUxMDEzOSwtMTkyOTEwNTE0Niw4MzA5MjE1NTQs
+LTY1NTMwNTc0NCwtMjc5ODAxNCwtODk2MzY1NjA5LDkxMjg5MT
+c2NCwtMTY5OTk4Mjc4NywxMjYxOTMyNDI5LDU2MDMzMjA2OSwt
+MTEyNTIyMzU3NSwyMDg3MTI2NDQ1LDE0NzQ3NTg5NTcsLTE3Nz
+cyMDU3NTYsMjAwNzM1MzE2LC0xNjMwODY5MjI4LDc5Njc5MzE4
+Ml19
 -->
