@@ -13,7 +13,7 @@ awk -F'\t' '{$2=$6=$8="";print}' xx.gtf > xx.gtf
 '{$2=$6=$8="";print}' ：删除第2、6、8列
 ###  筛选3‘UTR的基因注释信息
 ```
- grep 'three_prime_utr' Homo_sapiens.GRCh38.113.gtf > h38.gtf
+grep 'three_prime_utr' Homo_sapiens.GRCh38.113.gtf > h38.gtf
 ```
 ### 根据某段序列，从基因组fa文件筛选对应的位置
 ```
@@ -120,11 +120,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzg1MDA0MzcyLDczNTI5OTUzOSwxODg1Nj
-QwOTg3LDUxNDUxMDEzOSwtMTkyOTEwNTE0Niw4MzA5MjE1NTQs
-LTY1NTMwNTc0NCwtMjc5ODAxNCwtODk2MzY1NjA5LDkxMjg5MT
-c2NCwtMTY5OTk4Mjc4NywxMjYxOTMyNDI5LDU2MDMzMjA2OSwt
-MTEyNTIyMzU3NSwyMDg3MTI2NDQ1LDE0NzQ3NTg5NTcsLTE3Nz
-cyMDU3NTYsMjAwNzM1MzE2LC0xNjMwODY5MjI4LDc5Njc5MzE4
-Ml19
+eyJoaXN0b3J5IjpbLTk3NjQ4MzQ3Niw3ODUwMDQzNzIsNzM1Mj
+k5NTM5LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOTI5MTA1MTQ2
+LDgzMDkyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0LC04OTYzNj
+U2MDksOTEyODkxNzY0LC0xNjk5OTgyNzg3LDEyNjE5MzI0Mjks
+NTYwMzMyMDY5LC0xMTI1MjIzNTc1LDIwODcxMjY0NDUsMTQ3ND
+c1ODk1NywtMTc3NzIwNTc1NiwyMDA3MzUzMTYsLTE2MzA4Njky
+MjhdfQ==
 -->
