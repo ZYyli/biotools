@@ -32,10 +32,7 @@ seqkit locate --bed -p ATTTTGCTT Homo_sapiens.GRCh38.dna.primary_assembly.fa > l
 grep '+' locate_1.bed > locate_2.bed
 grep '-' locate_1.bed > locate_3.bed
 ```
-### 合并两个bed文件
-(排序bedtools sort -i)
-```
-cat locate_2.bed locate_3.bed > locate.bed
+
 ```
 #### 交集——序列在3’UTR中的区域位置及数量
 [【bioinfo】bedtools之intersect命令参数_bedtools intersect-CSDN博客](https://blog.csdn.net/sinat_32872729/article/details/126541494)
@@ -119,11 +116,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgwOTA3NjUzLC04NjczMTg1NDgsLTIzNT
-k4NDc5NiwtODY3MzE4NTQ4LC05NzY0ODM0NzYsNzg1MDA0Mzcy
-LDczNTI5OTUzOSwxODg1NjQwOTg3LDUxNDUxMDEzOSwtMTkyOT
-EwNTE0Niw4MzA5MjE1NTQsLTY1NTMwNTc0NCwtMjc5ODAxNCwt
-ODk2MzY1NjA5LDkxMjg5MTc2NCwtMTY5OTk4Mjc4NywxMjYxOT
-MyNDI5LDU2MDMzMjA2OSwtMTEyNTIyMzU3NSwyMDg3MTI2NDQ1
-XX0=
+eyJoaXN0b3J5IjpbODA0MTAzMjUwLDQ4MDkwNzY1MywtODY3Mz
+E4NTQ4LC0yMzU5ODQ3OTYsLTg2NzMxODU0OCwtOTc2NDgzNDc2
+LDc4NTAwNDM3Miw3MzUyOTk1MzksMTg4NTY0MDk4Nyw1MTQ1MT
+AxMzksLTE5MjkxMDUxNDYsODMwOTIxNTU0LC02NTUzMDU3NDQs
+LTI3OTgwMTQsLTg5NjM2NTYwOSw5MTI4OTE3NjQsLTE2OTk5OD
+I3ODcsMTI2MTkzMjQyOSw1NjAzMzIwNjksLTExMjUyMjM1NzVd
+fQ==
 -->
