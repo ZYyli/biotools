@@ -64,8 +64,8 @@ awk -F'\t' -vOFS='\t' '{
 ###### 分别获得正负链的原件出现次数
 ```
 #正链
-awk -F'\t' -vOFS='\t' '$7=="+"' h38.gtf > h38_1.gtf
-bedtools intersect -a h38_1.gtf -b locate_11.bed -c > merge_21
+awk -F'\t' -vOFS='\t' '$7=="+"' h38.gtf > h38_c.gtf
+bedtools intersect -a h38_1.gtf -b locate_11.bed -c > count_c
 ##筛选出现次数大于0的（经过试验最多3次）
 awk -F'\t' -vOFS='\t' '$10 > 0  {print}' merge_21 > merge_211
 #负链
@@ -114,11 +114,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4NjEwNTY1OSw0ODA5MDc2NTMsLTg2Nz
-MxODU0OCwtMjM1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3
-Niw3ODUwMDQzNzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NT
-EwMTM5LC0xOTI5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0
-LC0yNzk4MDE0LC04OTYzNjU2MDksOTEyODkxNzY0LC0xNjk5OT
-gyNzg3LDEyNjE5MzI0MjksNTYwMzMyMDY5LC0xMTI1MjIzNTc1
-XX0=
+eyJoaXN0b3J5IjpbLTIwOTE5NDA2NDIsNDgwOTA3NjUzLC04Nj
+czMTg1NDgsLTIzNTk4NDc5NiwtODY3MzE4NTQ4LC05NzY0ODM0
+NzYsNzg1MDA0MzcyLDczNTI5OTUzOSwxODg1NjQwOTg3LDUxND
+UxMDEzOSwtMTkyOTEwNTE0Niw4MzA5MjE1NTQsLTY1NTMwNTc0
+NCwtMjc5ODAxNCwtODk2MzY1NjA5LDkxMjg5MTc2NCwtMTY5OT
+k4Mjc4NywxMjYxOTMyNDI5LDU2MDMzMjA2OSwtMTEyNTIyMzU3
+NV19
 -->
