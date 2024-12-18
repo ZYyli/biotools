@@ -28,7 +28,7 @@ seqkit locate --bed -p AAGCAAAAT Homo_sapiens.GRCh38.dna.toplevel.fa > locate_2.
 ### 筛选+链ATTTTGCTT ，-链AAGCAAAAT
 ```
 grep '+' locate_1.bed > locate_11.bed
-grep '-' locate_2.bed > locate_11.bed
+grep '-' locate_2.bed > locate_22.bed
 ```
 ### 合并两个bed文件
 (排序bedtools sort -i)
@@ -117,11 +117,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE0NTEwMTM5LC0xOTI5MTA1MTQ2LDgzMD
-kyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0LC04OTYzNjU2MDks
-OTEyODkxNzY0LC0xNjk5OTgyNzg3LDEyNjE5MzI0MjksNTYwMz
-MyMDY5LC0xMTI1MjIzNTc1LDIwODcxMjY0NDUsMTQ3NDc1ODk1
-NywtMTc3NzIwNTc1NiwyMDA3MzUzMTYsLTE2MzA4NjkyMjgsNz
-k2NzkzMTgyLC0zODY0OTg0OTAsLTIxODUzNDUwNCwtMTgxMzk4
-OTk5Ml19
+eyJoaXN0b3J5IjpbMTg4NTY0MDk4Nyw1MTQ1MTAxMzksLTE5Mj
+kxMDUxNDYsODMwOTIxNTU0LC02NTUzMDU3NDQsLTI3OTgwMTQs
+LTg5NjM2NTYwOSw5MTI4OTE3NjQsLTE2OTk5ODI3ODcsMTI2MT
+kzMjQyOSw1NjAzMzIwNjksLTExMjUyMjM1NzUsMjA4NzEyNjQ0
+NSwxNDc0NzU4OTU3LC0xNzc3MjA1NzU2LDIwMDczNTMxNiwtMT
+YzMDg2OTIyOCw3OTY3OTMxODIsLTM4NjQ5ODQ5MCwtMjE4NTM0
+NTA0XX0=
 -->
