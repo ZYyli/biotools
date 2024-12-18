@@ -18,7 +18,6 @@ grep 'three_prime_utr' Homo_sapiens.GRCh38.113.gtf > h38.gtf
 ### 根据某段序列，从基因组fa文件筛选对应的位置
 ```
 seqkit locate --bed -p ATTTTGCTT Homo_sapiens.GRCh38.dna.primary_assembly.fa > locate_1.bed
-seqkit locate --bed -p AAGCAAAAT Homo_sapiens.GRCh38.dna.primary_assembly.fa > locate_2.bed
 ```
  -d, --degenerate 包含简并碱基模式和motif
   --gtf 输出为GTF格式
@@ -31,7 +30,7 @@ seqkit locate --bed -p AAGCAAAAT Homo_sapiens.GRCh38.dna.primary_assembly.fa > l
 ### 筛选+链ATTTTGCTT ，-链AAGCAAAAT
 ```
 grep '+' locate_1.bed > locate_11.bed
-grep '-' locate_2.bed > locate_22.bed
+grep '-' locate_1.bed > locate_22.bed
 ```
 ### 合并两个bed文件
 (排序bedtools sort -i)
@@ -120,11 +119,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NzMxODU0OCwtMjM1OTg0Nzk2LC04Nj
-czMTg1NDgsLTk3NjQ4MzQ3Niw3ODUwMDQzNzIsNzM1Mjk5NTM5
-LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOTI5MTA1MTQ2LDgzMD
-kyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0LC04OTYzNjU2MDks
-OTEyODkxNzY0LC0xNjk5OTgyNzg3LDEyNjE5MzI0MjksNTYwMz
-MyMDY5LC0xMTI1MjIzNTc1LDIwODcxMjY0NDUsMTQ3NDc1ODk1
-N119
+eyJoaXN0b3J5IjpbLTE2ODY0ODQxNzksLTg2NzMxODU0OCwtMj
+M1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3Niw3ODUwMDQz
+NzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOT
+I5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0
+LC04OTYzNjU2MDksOTEyODkxNzY0LC0xNjk5OTgyNzg3LDEyNj
+E5MzI0MjksNTYwMzMyMDY5LC0xMTI1MjIzNTc1LDIwODcxMjY0
+NDVdfQ==
 -->
