@@ -29,19 +29,19 @@ seqkit locate --bed -p ATTTTGCTT Homo_sapiens.GRCh38.dna.primary_assembly.fa > l
   -p, --pattern strings 搜索pattern或motif
 ### 筛选+链ATTTTGCTT ，-链AAGCAAAAT
 ```
-grep '+' locate_1.bed > locate_11.bed
-grep '-' locate_1.bed > locate_22.bed
+grep '+' locate_1.bed > locate_2.bed
+grep '-' locate_1.bed > locate_3.bed
 ```
 ### 合并两个bed文件
 (排序bedtools sort -i)
 ```
-cat locate_11.bed locate_22.bed > locate.bed
+cat locate_2.bed locate_3.bed > locate.bed
 ```
 #### 交集——序列在3’UTR中的区域位置及数量
 [【bioinfo】bedtools之intersect命令参数_bedtools intersect-CSDN博客](https://blog.csdn.net/sinat_32872729/article/details/126541494)
 ###### 可以对两个基因组特征进行overlap，找到两者重合的区域。比如求两个peaks的交集，或者看很多位点信息在没在peaks或其他区域中
 ```
-bedtools intersect -a h38.gtf -b locate.bed -wa -wb   > merge_1
+bedtools intersect -a h38.gtf -b locate_1.bed -wa -wb   > merge_1
 ##所处链相同说明该原件存在mRNA上
 awk -F'\t' -vOFS='\t' '$7==$15' merge_1 > merge_3
 ##删除多余列和值
@@ -119,11 +119,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODY0ODQxNzksLTg2NzMxODU0OCwtMj
-M1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3Niw3ODUwMDQz
-NzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOT
-I5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0
-LC04OTYzNjU2MDksOTEyODkxNzY0LC0xNjk5OTgyNzg3LDEyNj
-E5MzI0MjksNTYwMzMyMDY5LC0xMTI1MjIzNTc1LDIwODcxMjY0
-NDVdfQ==
+eyJoaXN0b3J5IjpbNDgwOTA3NjUzLC04NjczMTg1NDgsLTIzNT
+k4NDc5NiwtODY3MzE4NTQ4LC05NzY0ODM0NzYsNzg1MDA0Mzcy
+LDczNTI5OTUzOSwxODg1NjQwOTg3LDUxNDUxMDEzOSwtMTkyOT
+EwNTE0Niw4MzA5MjE1NTQsLTY1NTMwNTc0NCwtMjc5ODAxNCwt
+ODk2MzY1NjA5LDkxMjg5MTc2NCwtMTY5OTk4Mjc4NywxMjYxOT
+MyNDI5LDU2MDMzMjA2OSwtMTEyNTIyMzU3NSwyMDg3MTI2NDQ1
+XX0=
 -->
