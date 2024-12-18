@@ -65,9 +65,9 @@ awk -F'\t' -vOFS='\t' '{
 ```
 #正链
 awk -F'\t' -vOFS='\t' '$7=="+"' h38.gtf > h38_c.gtf
-bedtools intersect -a h38_1.gtf -b locate_c.bed -c > count_c
+bedtools intersect -a h38_c.gtf -b locate_c.bed -c > count_c
 ##筛选出现次数大于0的（经过试验最多3次）
-awk -F'\t' -vOFS='\t' '$10 > 0  {print}' merge_21 > merge_211
+awk -F'\t' -vOFS='\t' '$10 > 0  {print}' count_c > count_cc
 #负链
 awk -F '\t' -vOFS='\t' '$7=="-"' h38.gtf > h38_2.gtf
 bedtools intersect -a h38_2.gtf -b locate_22.bed -c > merge_22
@@ -114,7 +114,7 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4ODczODQ5OSw0ODA5MDc2NTMsLTg2Nz
+eyJoaXN0b3J5IjpbMTI4Nzc1NDE3Nyw0ODA5MDc2NTMsLTg2Nz
 MxODU0OCwtMjM1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3
 Niw3ODUwMDQzNzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NT
 EwMTM5LC0xOTI5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0
