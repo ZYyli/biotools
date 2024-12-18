@@ -69,10 +69,10 @@ bedtools intersect -a h38_c.gtf -b locate_c.bed -c > count_c
 ##筛选出现次数大于0的（经过试验最多3次）
 awk -F'\t' -vOFS='\t' '$10 > 0  {print}' count_c > count_c1
 #负链
-awk -F '\t' -vOFS='\t' '$7=="-"' h38_n.gtf > h38_2.gtf
-bedtools intersect -a h38_2.gtf -b locate_22.bed -c > merge_22
+awk -F '\t' -vOFS='\t' '$7=="-"' h38.gtf > h38_n.gtf
+bedtools intersect -a h38_n.gtf -b locate_n.bed -c > count_n
 ##筛选出现次数大于0的（经过试验最多3次）
-awk -F'\t' -vOFS='\t' '$10 > 0  {print}' merge_22 > merge_222
+awk -F'\t' -vOFS='\t' '$10 > 0  {print}' count_n > count_n1
 ```
 -c：包含着染色体位置的两个文件，分别记为A文件和B文件。对于A文件中染色体位置，输出在A文件中染色体位置中有多少B文件染色体位置与之有overlap。
 ###### 删除多余列和值
@@ -114,7 +114,7 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1Njk0NjQwMiw0ODA5MDc2NTMsLTg2Nz
+eyJoaXN0b3J5IjpbLTMwNjYzMDYwMSw0ODA5MDc2NTMsLTg2Nz
 MxODU0OCwtMjM1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3
 Niw3ODUwMDQzNzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NT
 EwMTM5LC0xOTI5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0
