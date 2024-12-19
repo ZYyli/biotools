@@ -50,7 +50,7 @@ awk -F'\t' -vOFS='\t' '{
         # 去除前后空格
         gsub(/^[ \t]+|[ \t]+$/, "", attributes[i]);
         # 检查键值对是否以特定字符串开头
-        if (attributes[i] !~ /^gene_version/ || attributes[i] !~ /^transcript_version/ || attributes[i] !~ /^gene_source/ || attributes[i] !~ /^gene_biotype/ || attributes[i] !~ /^transcript_source/ || attributes[i] !~ /^) {
+        if (attributes[i] !~ /^gene_version/ || attributes[i] !~ /^transcript_version/ || attributes[i] !~ /^gene_source/ || attributes[i] !~ /^gene_biotype/ || attributes[i] !~ /^transcript_source/ || attributes[i] !~ /^transcript_biotype/ || attributes[i] !~ /^transcript_support_level/) {
             # 如果是，则将其添加到新的第九列字符串中
             new_col9 = new_col9 (new_col9 ? "; " : "") attributes[i];
         }
@@ -114,7 +114,7 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTU1NDI2ODIsLTUwNzA5MDE1MSwtMz
+eyJoaXN0b3J5IjpbLTE1NDYwNzY1MTIsLTUwNzA5MDE1MSwtMz
 A2NjMwNjAxLDQ4MDkwNzY1MywtODY3MzE4NTQ4LC0yMzU5ODQ3
 OTYsLTg2NzMxODU0OCwtOTc2NDgzNDc2LDc4NTAwNDM3Miw3Mz
 UyOTk1MzksMTg4NTY0MDk4Nyw1MTQ1MTAxMzksLTE5MjkxMDUx
