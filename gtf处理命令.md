@@ -90,7 +90,7 @@ awk -F'\t' -vOFS='\t' '{
         # 去除前后空格
         gsub(/^[ \t]+|[ \t]+$/, "", attributes[i]);
         # 检查键值对是否以特定字符串开头
-        if (attributes[i] ~ /^gene_id/ || attributes[i] ~ /^transcript_id/ || attributes[i] ~ /^gene_name/ || attributes[i] ~ /^transcript_name/) {
+        if (attributes[i] !~ /^gene_version/ && attributes[i] !~ /^transcript_version/ && attributes[i] !~ /^gene_source/ && attributes[i] !~ /^gene_biotype/ && attributes[i] !~ /^transcript_source/ && attributes[i] !~ /^transcript_biotype/ && attributes[i] !~ /^transcript_support_level/) {
             # 如果是，则将其添加到新的第九列字符串中
             new_col9 = new_col9 (new_col9 ? "; " : "") attributes[i];
         }
@@ -98,7 +98,7 @@ awk -F'\t' -vOFS='\t' '{
     # 替换原来的第九列
     $9 = new_col9;
     print;
-}' merge_c > merge_cc
+}' count_c2 > count_3
 ```
 ##### 转化文件格式（Rstudio)
 ```
@@ -116,11 +116,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4MTczMjE5NiwxMzI4ODc0ODU0LDE0Nz
-IyMjQ2MDksLTY3NzI4OTI0NywtNTA3MDkwMTUxLC0zMDY2MzA2
-MDEsNDgwOTA3NjUzLC04NjczMTg1NDgsLTIzNTk4NDc5NiwtOD
-Y3MzE4NTQ4LC05NzY0ODM0NzYsNzg1MDA0MzcyLDczNTI5OTUz
-OSwxODg1NjQwOTg3LDUxNDUxMDEzOSwtMTkyOTEwNTE0Niw4Mz
-A5MjE1NTQsLTY1NTMwNTc0NCwtMjc5ODAxNCwtODk2MzY1NjA5
-XX0=
+eyJoaXN0b3J5IjpbMTc0NDE3ODQwLDEzMjg4NzQ4NTQsMTQ3Mj
+IyNDYwOSwtNjc3Mjg5MjQ3LC01MDcwOTAxNTEsLTMwNjYzMDYw
+MSw0ODA5MDc2NTMsLTg2NzMxODU0OCwtMjM1OTg0Nzk2LC04Nj
+czMTg1NDgsLTk3NjQ4MzQ3Niw3ODUwMDQzNzIsNzM1Mjk5NTM5
+LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOTI5MTA1MTQ2LDgzMD
+kyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0LC04OTYzNjU2MDld
+fQ==
 -->
