@@ -106,9 +106,9 @@ grep 'tag "MANE_Select"' count_c3 > count_cms
 ```
 install.packages("openxlsx")
 library("openxlsx")
-merge <- read.table("D:/新桌面/merge_5", header = FALSE, sep = "\t")
-merge1 <- merge[-c(2,6,8,14)]
-write.xlsx(merge1, "D:/新桌面/merge.xlsx")
+merge_ms <- read.table("D:/新桌面/merge_5", header = FALSE, sep = "\t")
+merge_ms <- merge_ms[-c(2,6,8,14)]
+write.xlsx(merge_ms, "D:/新桌面/merge_ms.xlsx")
 count_c <- read.table("D:/新桌面/merge_cc", header = FALSE, sep = "\t")
 count_c <- count_c[-c(2,6,8)]
 write.xlsx(count_c, "D:/新桌面/count_c.xlsx")
@@ -118,11 +118,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjU2NjkyOTIsMTc0NDE3ODQwLDEzMj
-g4NzQ4NTQsMTQ3MjIyNDYwOSwtNjc3Mjg5MjQ3LC01MDcwOTAx
-NTEsLTMwNjYzMDYwMSw0ODA5MDc2NTMsLTg2NzMxODU0OCwtMj
-M1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3Niw3ODUwMDQz
-NzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOT
-I5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0
-XX0=
+eyJoaXN0b3J5IjpbLTM0NzcyOTA3NywtMTc2NTY2OTI5MiwxNz
+Q0MTc4NDAsMTMyODg3NDg1NCwxNDcyMjI0NjA5LC02NzcyODky
+NDcsLTUwNzA5MDE1MSwtMzA2NjMwNjAxLDQ4MDkwNzY1MywtOD
+Y3MzE4NTQ4LC0yMzU5ODQ3OTYsLTg2NzMxODU0OCwtOTc2NDgz
+NDc2LDc4NTAwNDM3Miw3MzUyOTk1MzksMTg4NTY0MDk4Nyw1MT
+Q1MTAxMzksLTE5MjkxMDUxNDYsODMwOTIxNTU0LC02NTUzMDU3
+NDRdfQ==
 -->
