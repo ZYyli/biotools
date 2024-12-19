@@ -59,6 +59,8 @@ awk -F'\t' -vOFS='\t' '{
     $9 = new_col9;
     print;
 }' merge_4 > merge_6
+## 筛选出
+grep 'tag "MANE_Select"' merge_6 > merge_5
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 ###### 分别获得正负链的原件出现次数
@@ -114,11 +116,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3MjIyNDYwOSwtNjc3Mjg5MjQ3LC01MD
-cwOTAxNTEsLTMwNjYzMDYwMSw0ODA5MDc2NTMsLTg2NzMxODU0
-OCwtMjM1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3Niw3OD
-UwMDQzNzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NTEwMTM5
-LC0xOTI5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0LC0yNz
-k4MDE0LC04OTYzNjU2MDksOTEyODkxNzY0LC0xNjk5OTgyNzg3
-XX0=
+eyJoaXN0b3J5IjpbMTMyODg3NDg1NCwxNDcyMjI0NjA5LC02Nz
+cyODkyNDcsLTUwNzA5MDE1MSwtMzA2NjMwNjAxLDQ4MDkwNzY1
+MywtODY3MzE4NTQ4LC0yMzU5ODQ3OTYsLTg2NzMxODU0OCwtOT
+c2NDgzNDc2LDc4NTAwNDM3Miw3MzUyOTk1MzksMTg4NTY0MDk4
+Nyw1MTQ1MTAxMzksLTE5MjkxMDUxNDYsODMwOTIxNTU0LC02NT
+UzMDU3NDQsLTI3OTgwMTQsLTg5NjM2NTYwOSw5MTI4OTE3NjRd
+fQ==
 -->
