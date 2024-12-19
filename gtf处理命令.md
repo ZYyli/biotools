@@ -58,7 +58,7 @@ awk -F'\t' -vOFS='\t' '{
     # 替换原来的第九列
     $9 = new_col9;
     print;
-}' merge_4 > merge_5
+}' merge_4 > merge_6
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 ###### 分别获得正负链的原件出现次数
@@ -114,11 +114,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDYwNzY1MTIsLTUwNzA5MDE1MSwtMz
-A2NjMwNjAxLDQ4MDkwNzY1MywtODY3MzE4NTQ4LC0yMzU5ODQ3
-OTYsLTg2NzMxODU0OCwtOTc2NDgzNDc2LDc4NTAwNDM3Miw3Mz
-UyOTk1MzksMTg4NTY0MDk4Nyw1MTQ1MTAxMzksLTE5MjkxMDUx
-NDYsODMwOTIxNTU0LC02NTUzMDU3NDQsLTI3OTgwMTQsLTg5Nj
-M2NTYwOSw5MTI4OTE3NjQsLTE2OTk5ODI3ODcsMTI2MTkzMjQy
-OV19
+eyJoaXN0b3J5IjpbLTY3NzI4OTI0NywtNTA3MDkwMTUxLC0zMD
+Y2MzA2MDEsNDgwOTA3NjUzLC04NjczMTg1NDgsLTIzNTk4NDc5
+NiwtODY3MzE4NTQ4LC05NzY0ODM0NzYsNzg1MDA0MzcyLDczNT
+I5OTUzOSwxODg1NjQwOTg3LDUxNDUxMDEzOSwtMTkyOTEwNTE0
+Niw4MzA5MjE1NTQsLTY1NTMwNTc0NCwtMjc5ODAxNCwtODk2Mz
+Y1NjA5LDkxMjg5MTc2NCwtMTY5OTk4Mjc4NywxMjYxOTMyNDI5
+XX0=
 -->
