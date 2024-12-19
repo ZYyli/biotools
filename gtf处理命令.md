@@ -78,7 +78,7 @@ awk -F'\t' -vOFS='\t' '$10 > 0  {print}' count_n > count_n1
 ###### 删除多余列和值
 ```
 ##正负链操作一致
-awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_211 > merge_c
+awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' count_c1 > count_c2
 awk -F'\t' -vOFS='\t' '{
     # 初始化一个新的第九列字符串
     new_col9 = "";
@@ -114,11 +114,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNjYzMDYwMSw0ODA5MDc2NTMsLTg2Nz
-MxODU0OCwtMjM1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3
-Niw3ODUwMDQzNzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NT
-EwMTM5LC0xOTI5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0
-LC0yNzk4MDE0LC04OTYzNjU2MDksOTEyODkxNzY0LC0xNjk5OT
-gyNzg3LDEyNjE5MzI0MjksNTYwMzMyMDY5LC0xMTI1MjIzNTc1
-XX0=
+eyJoaXN0b3J5IjpbLTUwNzA5MDE1MSwtMzA2NjMwNjAxLDQ4MD
+kwNzY1MywtODY3MzE4NTQ4LC0yMzU5ODQ3OTYsLTg2NzMxODU0
+OCwtOTc2NDgzNDc2LDc4NTAwNDM3Miw3MzUyOTk1MzksMTg4NT
+Y0MDk4Nyw1MTQ1MTAxMzksLTE5MjkxMDUxNDYsODMwOTIxNTU0
+LC02NTUzMDU3NDQsLTI3OTgwMTQsLTg5NjM2NTYwOSw5MTI4OT
+E3NjQsLTE2OTk5ODI3ODcsMTI2MTkzMjQyOSw1NjAzMzIwNjld
+fQ==
 -->
