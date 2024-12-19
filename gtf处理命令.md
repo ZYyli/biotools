@@ -59,7 +59,7 @@ awk -F'\t' -vOFS='\t' '{
     $9 = new_col9;
     print;
 }' merge_4 > merge_6
-## 筛选出
+## 筛选出tag "MANE_Select"的行
 grep 'tag "MANE_Select"' merge_6 > merge_5
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
@@ -80,7 +80,7 @@ awk -F'\t' -vOFS='\t' '$10 > 0  {print}' count_n > count_n1
 ###### 删除多余列和值
 ```
 ##正负链操作一致
-awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' count_c1 > count_c2
+awk -F'\t' -vOFS='\t' '{$2=$6=$8="";print}' count_c1 > count_c2
 awk -F'\t' -vOFS='\t' '{
     # 初始化一个新的第九列字符串
     new_col9 = "";
@@ -116,11 +116,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyODg3NDg1NCwxNDcyMjI0NjA5LC02Nz
-cyODkyNDcsLTUwNzA5MDE1MSwtMzA2NjMwNjAxLDQ4MDkwNzY1
-MywtODY3MzE4NTQ4LC0yMzU5ODQ3OTYsLTg2NzMxODU0OCwtOT
-c2NDgzNDc2LDc4NTAwNDM3Miw3MzUyOTk1MzksMTg4NTY0MDk4
-Nyw1MTQ1MTAxMzksLTE5MjkxMDUxNDYsODMwOTIxNTU0LC02NT
-UzMDU3NDQsLTI3OTgwMTQsLTg5NjM2NTYwOSw5MTI4OTE3NjRd
-fQ==
+eyJoaXN0b3J5IjpbMjA4MTczMjE5NiwxMzI4ODc0ODU0LDE0Nz
+IyMjQ2MDksLTY3NzI4OTI0NywtNTA3MDkwMTUxLC0zMDY2MzA2
+MDEsNDgwOTA3NjUzLC04NjczMTg1NDgsLTIzNTk4NDc5NiwtOD
+Y3MzE4NTQ4LC05NzY0ODM0NzYsNzg1MDA0MzcyLDczNTI5OTUz
+OSwxODg1NjQwOTg3LDUxNDUxMDEzOSwtMTkyOTEwNTE0Niw4Mz
+A5MjE1NTQsLTY1NTMwNTc0NCwtMjc5ODAxNCwtODk2MzY1NjA5
+XX0=
 -->
