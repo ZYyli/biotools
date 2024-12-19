@@ -109,20 +109,24 @@ library("openxlsx")
 merge_ms <- read.table("D:/新桌面/merge_5", header = FALSE, sep = "\t")
 merge_ms <- merge_ms[-c(2,6,8,14)]
 write.xlsx(merge_ms, "D:/新桌面/merge_ms.xlsx")
-count_c <- read.table("D:/新桌面/merge_cc", header = FALSE, sep = "\t")
-count_c <- count_c[-c(2,6,8)]
-write.xlsx(count_c, "D:/新桌面/count_c.xlsx")
-count_n <- read.table("D:/新桌面/merge_nn", header = FALSE, sep = "\t")
-count_n <- count_n[-c(2,6,8)]
-write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
+merge <- read.table("D:/新桌面/merge_6", header = FALSE, sep = "\t")
+merge <- merge[-c(2,6,8,14)]
+### 读取已有的xlsx文件
+merge_file <- "D:/新桌面/merge_ms.xlsx"
+### 假设你有一个名为my_table的data.frame，需要插入到Sheet2
+wb <- loadWorkbook(merge_file)
+# 将my_table写入到Sheet2，如果Sheet2已存在内容，这将覆盖原有内容
+writeData(wb, sheet = "Sheet2", x = merge, rowNames = FALSE)
+# 保存工作簿
+saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0NzcyOTA3NywtMTc2NTY2OTI5MiwxNz
-Q0MTc4NDAsMTMyODg3NDg1NCwxNDcyMjI0NjA5LC02NzcyODky
-NDcsLTUwNzA5MDE1MSwtMzA2NjMwNjAxLDQ4MDkwNzY1MywtOD
-Y3MzE4NTQ4LC0yMzU5ODQ3OTYsLTg2NzMxODU0OCwtOTc2NDgz
-NDc2LDc4NTAwNDM3Miw3MzUyOTk1MzksMTg4NTY0MDk4Nyw1MT
-Q1MTAxMzksLTE5MjkxMDUxNDYsODMwOTIxNTU0LC02NTUzMDU3
-NDRdfQ==
+eyJoaXN0b3J5IjpbMTM1NDY2NTE2NywtMzQ3NzI5MDc3LC0xNz
+Y1NjY5MjkyLDE3NDQxNzg0MCwxMzI4ODc0ODU0LDE0NzIyMjQ2
+MDksLTY3NzI4OTI0NywtNTA3MDkwMTUxLC0zMDY2MzA2MDEsND
+gwOTA3NjUzLC04NjczMTg1NDgsLTIzNTk4NDc5NiwtODY3MzE4
+NTQ4LC05NzY0ODM0NzYsNzg1MDA0MzcyLDczNTI5OTUzOSwxOD
+g1NjQwOTg3LDUxNDUxMDEzOSwtMTkyOTEwNTE0Niw4MzA5MjE1
+NTRdfQ==
 -->
