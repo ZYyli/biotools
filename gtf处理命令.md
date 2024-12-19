@@ -98,7 +98,9 @@ awk -F'\t' -vOFS='\t' '{
     # 替换原来的第九列
     $9 = new_col9;
     print;
-}' count_c2 > count_3
+}' count_c2 > count_c3
+## 筛选出tag "MANE_Select"的行
+grep 'tag "MANE_Select"' count_c3 > count_cms
 ```
 ##### 转化文件格式（Rstudio)
 ```
@@ -116,11 +118,11 @@ write.xlsx(count_n, "D:/新桌面/count_n.xlsx")
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0NDE3ODQwLDEzMjg4NzQ4NTQsMTQ3Mj
-IyNDYwOSwtNjc3Mjg5MjQ3LC01MDcwOTAxNTEsLTMwNjYzMDYw
-MSw0ODA5MDc2NTMsLTg2NzMxODU0OCwtMjM1OTg0Nzk2LC04Nj
-czMTg1NDgsLTk3NjQ4MzQ3Niw3ODUwMDQzNzIsNzM1Mjk5NTM5
-LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOTI5MTA1MTQ2LDgzMD
-kyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0LC04OTYzNjU2MDld
-fQ==
+eyJoaXN0b3J5IjpbLTE3NjU2NjkyOTIsMTc0NDE3ODQwLDEzMj
+g4NzQ4NTQsMTQ3MjIyNDYwOSwtNjc3Mjg5MjQ3LC01MDcwOTAx
+NTEsLTMwNjYzMDYwMSw0ODA5MDc2NTMsLTg2NzMxODU0OCwtMj
+M1OTg0Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3Niw3ODUwMDQz
+NzIsNzM1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOT
+I5MTA1MTQ2LDgzMDkyMTU1NCwtNjU1MzA1NzQ0LC0yNzk4MDE0
+XX0=
 -->
