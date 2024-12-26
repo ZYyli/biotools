@@ -120,13 +120,16 @@ writeData(wb, sheet = "Sheet2", x = merge, rowNames = FALSE)
 # 保存工作簿
 saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 ```
-
+## seqkit序列处理
+[seqkit序列处理神器的常用命令 - 组学大讲堂问答社区](https://www.omicsclass.com/article/1903)
+[seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
+[使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1NDY2NTE2NywtMzQ3NzI5MDc3LC0xNz
-Y1NjY5MjkyLDE3NDQxNzg0MCwxMzI4ODc0ODU0LDE0NzIyMjQ2
-MDksLTY3NzI4OTI0NywtNTA3MDkwMTUxLC0zMDY2MzA2MDEsND
-gwOTA3NjUzLC04NjczMTg1NDgsLTIzNTk4NDc5NiwtODY3MzE4
-NTQ4LC05NzY0ODM0NzYsNzg1MDA0MzcyLDczNTI5OTUzOSwxOD
-g1NjQwOTg3LDUxNDUxMDEzOSwtMTkyOTEwNTE0Niw4MzA5MjE1
-NTRdfQ==
+eyJoaXN0b3J5IjpbLTU3OTkyOTk5NiwxMzU0NjY1MTY3LC0zND
+c3MjkwNzcsLTE3NjU2NjkyOTIsMTc0NDE3ODQwLDEzMjg4NzQ4
+NTQsMTQ3MjIyNDYwOSwtNjc3Mjg5MjQ3LC01MDcwOTAxNTEsLT
+MwNjYzMDYwMSw0ODA5MDc2NTMsLTg2NzMxODU0OCwtMjM1OTg0
+Nzk2LC04NjczMTg1NDgsLTk3NjQ4MzQ3Niw3ODUwMDQzNzIsNz
+M1Mjk5NTM5LDE4ODU2NDA5ODcsNTE0NTEwMTM5LC0xOTI5MTA1
+MTQ2XX0=
 -->
