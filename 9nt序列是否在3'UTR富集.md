@@ -2,6 +2,7 @@
 ##### 3'UTR基因组位置文件
 h38.gtf是已经筛选过3'UTR的基因注释文件
 ``` 
+grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ###Rstudio
 ##读取文件
@@ -15,5 +16,5 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjA0NjQ4NTddfQ==
+eyJoaXN0b3J5IjpbODUyNTAzNjUyLC0xNDYwNDY0ODU3XX0=
 -->
