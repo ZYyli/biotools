@@ -12,9 +12,12 @@ grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 library(Biostrings) 
 #读取FASTA文件中的基因组序列
 genome <- readDNAStringSet("genome.fasta") 
+#筛选出主要的常染色体和性染色体
+main_chromosomes <- grep("^(\\d+|X|Y)", names(genome), value = TRUE)
+genome_main <- genome[main_chromosomes]
 #获取每个染色体的长度 
-chromosome_lengths <- width(genome) 
-#查看染色体信息（例如，chromosome名和长度
+chromosome_lengths <- width(genome_main) 
+#查看染色体信息（例如，chromosome名和长度）
 chromosome_lengths
 
 ###Rstudio
@@ -29,6 +32,7 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MDA3MzE5Niw4Njg4MDY0MzUsMjA3OD
-I5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYwNDY0ODU3XX0=
+eyJoaXN0b3J5IjpbMTg1MDUwNjEyMywtNjYwMDczMTk2LDg2OD
+gwNjQzNSwyMDc4MjkwNDgwLC00NDUzNjkzNDksLTE0NjA0NjQ4
+NTddfQ==
 -->
