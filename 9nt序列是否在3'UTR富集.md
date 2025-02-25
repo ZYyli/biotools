@@ -17,6 +17,8 @@ main_chromosomes <- grep("^(\\d+|X|Y)", names(genome), value = TRUE)
 genome_main <- genome[main_chromosomes]
 #获取每个染色体的长度 
 chromosome_lengths <- width(genome_main) 
+names(chromosome_lengths) <- c("chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16","chr17","chr18","chr19",
+"chr2","chr20","chr21","chr22","chr3","chr4","chr5","chr6","chr7","chr8","chr9","chrX","chrY")
 #查看染色体信息（例如，chromosome名和长度）
 chromosome_lengths
 
@@ -32,7 +34,7 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1MDUwNjEyMywtNjYwMDczMTk2LDg2OD
-gwNjQzNSwyMDc4MjkwNDgwLC00NDUzNjkzNDksLTE0NjA0NjQ4
-NTddfQ==
+eyJoaXN0b3J5IjpbLTE4NjY1NjEzNywxODUwNTA2MTIzLC02Nj
+AwNzMxOTYsODY4ODA2NDM1LDIwNzgyOTA0ODAsLTQ0NTM2OTM0
+OSwtMTQ2MDQ2NDg1N119
 -->
