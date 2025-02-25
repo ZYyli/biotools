@@ -17,8 +17,8 @@ main_chromosomes <- grep("^(\\d+|X|Y)", names(genome), value = TRUE)
 genome_main <- genome[main_chromosomes]
 #获取每个染色体的长度 
 chromosome_lengths <- width(genome_main) 
-names(chromosome_lengths) <- c("chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16","chr17","chr18","chr19",
-"chr2","chr20","chr21","chr22","chr3","chr4","chr5","chr6","chr7","chr8","chr9","chrX","chrY")
+names(chromosome_lengths) <- c("1","10","11","12","13","14","15","16","17","18","19",
+                               "2","20","21","22","3","4","5","6","7","8","9","X","Y")
 #查看染色体信息（例如，chromosome名和长度）
 chromosome_lengths
 save(chromosome_lengths,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/chromosome_lengths.RData")
@@ -35,7 +35,8 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODgwODcxMzEsLTE4NjY1NjEzNywxOD
-UwNTA2MTIzLC02NjAwNzMxOTYsODY4ODA2NDM1LDIwNzgyOTA0
-ODAsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N119
+eyJoaXN0b3J5IjpbLTE5NzA4OTE5ODUsLTE2ODgwODcxMzEsLT
+E4NjY1NjEzNywxODUwNTA2MTIzLC02NjAwNzMxOTYsODY4ODA2
+NDM1LDIwNzgyOTA0ODAsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N1
+19
 -->
