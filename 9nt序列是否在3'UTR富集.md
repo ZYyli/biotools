@@ -7,6 +7,10 @@ grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf
 bedtools intersect -a h38_man.gtf -b locate_1.bed -wa -wb > sum
 wc -l sum #39669次
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
+
+##获取染色体长度
+
+
 ###Rstudio
 ##读取文件
 utr_3_prime_regions <- read.table("D:/新桌面/h38_man_3utr.gtf", header = FALSE,sep = "\t")
@@ -19,6 +23,6 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY4ODA2NDM1LDIwNzgyOTA0ODAsLTQ0NT
-M2OTM0OSwtMTQ2MDQ2NDg1N119
+eyJoaXN0b3J5IjpbOTY3MDc4MTIxLDg2ODgwNjQzNSwyMDc4Mj
+kwNDgwLC00NDUzNjkzNDksLTE0NjA0NjQ4NTddfQ==
 -->
