@@ -21,6 +21,7 @@ names(chromosome_lengths) <- c("chr1","chr10","chr11","chr12","chr13","chr14","c
 "chr2","chr20","chr21","chr22","chr3","chr4","chr5","chr6","chr7","chr8","chr9","chrX","chrY")
 #查看染色体信息（例如，chromosome名和长度）
 chromosome_lengths
+save(chromosome_lengths,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/chromosome_lengths.RData")
 
 ###Rstudio
 ##读取文件
@@ -34,7 +35,7 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjY1NjEzNywxODUwNTA2MTIzLC02Nj
-AwNzMxOTYsODY4ODA2NDM1LDIwNzgyOTA0ODAsLTQ0NTM2OTM0
-OSwtMTQ2MDQ2NDg1N119
+eyJoaXN0b3J5IjpbLTE2ODgwODcxMzEsLTE4NjY1NjEzNywxOD
+UwNTA2MTIzLC02NjAwNzMxOTYsODY4ODA2NDM1LDIwNzgyOTA0
+ODAsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N119
 -->
