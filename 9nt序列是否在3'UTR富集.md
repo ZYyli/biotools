@@ -9,7 +9,13 @@ wc -l sum #39669次
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 
 ##获取染色体长度
-
+library(Biostrings) 
+#读取FASTA文件中的基因组序列
+genome <- readDNAStringSet("genome.fasta") 
+#获取每个染色体的长度 
+chromosome_lengths <- width(genome) 
+#查看染色体信息（例如，chromosome名和长度
+chromosome_lengths
 
 ###Rstudio
 ##读取文件
@@ -23,6 +29,6 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY3MDc4MTIxLDg2ODgwNjQzNSwyMDc4Mj
-kwNDgwLC00NDUzNjkzNDksLTE0NjA0NjQ4NTddfQ==
+eyJoaXN0b3J5IjpbLTY2MDA3MzE5Niw4Njg4MDY0MzUsMjA3OD
+I5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYwNDY0ODU3XX0=
 -->
