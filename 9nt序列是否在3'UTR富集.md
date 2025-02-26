@@ -8,7 +8,7 @@ bedtools intersect -a h38_man.gtf -b locate_1.bed -wa -wb > sum
 wc -l sum #39669次
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 
-##获取染色体长度
+##获取染色体长度（公共）
 library(Biostrings) 
 #读取FASTA文件中的基因组序列
 genome <- readDNAStringSet("genome.fasta") 
@@ -35,8 +35,8 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzA4OTE5ODUsLTE2ODgwODcxMzEsLT
-E4NjY1NjEzNywxODUwNTA2MTIzLC02NjAwNzMxOTYsODY4ODA2
-NDM1LDIwNzgyOTA0ODAsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N1
-19
+eyJoaXN0b3J5IjpbLTEwOTUyMTg0MTMsLTE5NzA4OTE5ODUsLT
+E2ODgwODcxMzEsLTE4NjY1NjEzNywxODUwNTA2MTIzLC02NjAw
+NzMxOTYsODY4ODA2NDM1LDIwNzgyOTA0ODAsLTQ0NTM2OTM0OS
+wtMTQ2MDQ2NDg1N119
 -->
