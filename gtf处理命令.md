@@ -110,7 +110,7 @@ library("openxlsx")
 merge_ms <- read.table("D:/新桌面/merge_5", header = FALSE, sep = "\t")
 merge_ms <- merge_ms[-c(2,6,8,14)]
 write.xlsx(merge_ms, "D:/新桌面/merge_ms.xlsx")
-merge <- read.table("D:/新桌面/merge_6", header = FALSE, sep = "\t")
+merge <- read.table("D:/新桌面/merge_4", header = FALSE, sep = "\t")
 merge <- merge[-c(2,6,8,14)]
 ### 读取已有的xlsx文件
 merge_file <- "D:/新桌面/merge_ms.xlsx"
@@ -126,11 +126,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNjI5NTEwMywtMTEyMDUyNDA2NiwxNT
-UzMjU5NDkwLC01Nzk5Mjk5OTYsMTM1NDY2NTE2NywtMzQ3NzI5
-MDc3LC0xNzY1NjY5MjkyLDE3NDQxNzg0MCwxMzI4ODc0ODU0LD
-E0NzIyMjQ2MDksLTY3NzI4OTI0NywtNTA3MDkwMTUxLC0zMDY2
-MzA2MDEsNDgwOTA3NjUzLC04NjczMTg1NDgsLTIzNTk4NDc5Ni
-wtODY3MzE4NTQ4LC05NzY0ODM0NzYsNzg1MDA0MzcyLDczNTI5
-OTUzOV19
+eyJoaXN0b3J5IjpbLTE5NDk2NzA3ODMsMTEzNjI5NTEwMywtMT
+EyMDUyNDA2NiwxNTUzMjU5NDkwLC01Nzk5Mjk5OTYsMTM1NDY2
+NTE2NywtMzQ3NzI5MDc3LC0xNzY1NjY5MjkyLDE3NDQxNzg0MC
+wxMzI4ODc0ODU0LDE0NzIyMjQ2MDksLTY3NzI4OTI0NywtNTA3
+MDkwMTUxLC0zMDY2MzA2MDEsNDgwOTA3NjUzLC04NjczMTg1ND
+gsLTIzNTk4NDc5NiwtODY3MzE4NTQ4LC05NzY0ODM0NzYsNzg1
+MDA0MzcyXX0=
 -->
