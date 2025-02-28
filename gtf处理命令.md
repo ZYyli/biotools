@@ -17,7 +17,7 @@ grep 'three_prime_utr' Homo_sapiens.GRCh38.113.gtf > h38.gtf
 ```
 ### 根据某段序列，从基因组fa文件筛选对应的位置
 ```
-seqkit locate --bed -p ATTTTGCTT Homo_sapiens.GRCh38.dna.primary_assembly.fa > locate_1.bed
+seqkit locate --bed -p ATATTGCTT Homo_sapiens.GRCh38.dna.primary_assembly.fa > locate_1.bed
 ```
  -d, --degenerate 包含简并碱基模式和motif
   --gtf 输出为GTF格式
@@ -126,11 +126,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDk2NzA3ODMsMTEzNjI5NTEwMywtMT
-EyMDUyNDA2NiwxNTUzMjU5NDkwLC01Nzk5Mjk5OTYsMTM1NDY2
-NTE2NywtMzQ3NzI5MDc3LC0xNzY1NjY5MjkyLDE3NDQxNzg0MC
-wxMzI4ODc0ODU0LDE0NzIyMjQ2MDksLTY3NzI4OTI0NywtNTA3
-MDkwMTUxLC0zMDY2MzA2MDEsNDgwOTA3NjUzLC04NjczMTg1ND
-gsLTIzNTk4NDc5NiwtODY3MzE4NTQ4LC05NzY0ODM0NzYsNzg1
-MDA0MzcyXX0=
+eyJoaXN0b3J5IjpbMjEyODk0NjEwMCwtMTk0OTY3MDc4MywxMT
+M2Mjk1MTAzLC0xMTIwNTI0MDY2LDE1NTMyNTk0OTAsLTU3OTky
+OTk5NiwxMzU0NjY1MTY3LC0zNDc3MjkwNzcsLTE3NjU2NjkyOT
+IsMTc0NDE3ODQwLDEzMjg4NzQ4NTQsMTQ3MjIyNDYwOSwtNjc3
+Mjg5MjQ3LC01MDcwOTAxNTEsLTMwNjYzMDYwMSw0ODA5MDc2NT
+MsLTg2NzMxODU0OCwtMjM1OTg0Nzk2LC04NjczMTg1NDgsLTk3
+NjQ4MzQ3Nl19
 -->
