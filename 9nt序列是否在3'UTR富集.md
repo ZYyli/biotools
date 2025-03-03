@@ -1,5 +1,5 @@
 ## 准备文件
-#####  
+##### 全基因组长度并统计次数
 h38.gtf是已经筛选过3'UTR的基因注释文件
 ``` 
 ##统计该序列在基因组(man_slect)中出现的次数
@@ -39,8 +39,8 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODc0NDk1MzksLTEwOTUyMTg0MTMsLT
-E5NzA4OTE5ODUsLTE2ODgwODcxMzEsLTE4NjY1NjEzNywxODUw
-NTA2MTIzLC02NjAwNzMxOTYsODY4ODA2NDM1LDIwNzgyOTA0OD
-AsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N119
+eyJoaXN0b3J5IjpbLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMT
+k3MDg5MTk4NSwtMTY4ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1
+MDYxMjMsLTY2MDA3MzE5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MC
+wtNDQ1MzY5MzQ5LC0xNDYwNDY0ODU3XX0=
 -->
