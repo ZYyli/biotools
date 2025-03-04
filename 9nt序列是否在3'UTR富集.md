@@ -10,7 +10,7 @@ wc -l sum #39669次
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
 ```
-#
+##
 awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf
 ```
 
@@ -95,7 +95,7 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4MzI5MjQwNSwtMTAyMjA5MzE3MSwxMz
+eyJoaXN0b3J5IjpbMTMxMTE1Mjk5MiwtMTAyMjA5MzE3MSwxMz
 U2MDk5MTY3LDc2Nzg4MjQxNCwtOTI3MTUyMzMzLC0xMDk1MjE4
 NDEzLC0xOTcwODkxOTg1LC0xNjg4MDg3MTMxLC0xODY2NTYxMz
 csMTg1MDUwNjEyMywtNjYwMDczMTk2LDg2ODgwNjQzNSwyMDc4
