@@ -44,13 +44,12 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 ##模拟9nt序列的抽取并统计匹配
 set.seed(123)  #设置随机种子
-
 n_simulations <- 10000  #模拟次数
-sequences_per_simulation <- 39669 #每次模拟抽取的序列数
+sequences_per_simulation <- 39669 #每次模拟抽取的序列数(可变)
 sequence_length <- 9  #序列长度是9nt
 genome_length <- sum(chromosome_lengths)  #假设基因组的长度
 
-# 记录每次模拟中位于3' UTR的位点数量
+# 记录每次模拟中位于3'UTR的位点数量
 utr_sense_count <- numeric(n_simulations)
 
 # 创建一个数据框，保存每个染色体的长度
@@ -92,9 +91,9 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTg5NzI1MTEsNzY3ODgyNDE0LC05Mj
-cxNTIzMzMsLTEwOTUyMTg0MTMsLTE5NzA4OTE5ODUsLTE2ODgw
-ODcxMzEsLTE4NjY1NjEzNywxODUwNTA2MTIzLC02NjAwNzMxOT
-YsODY4ODA2NDM1LDIwNzgyOTA0ODAsLTQ0NTM2OTM0OSwtMTQ2
-MDQ2NDg1N119
+eyJoaXN0b3J5IjpbMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNz
+E1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4
+NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Ni
+w4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYw
+NDY0ODU3XX0=
 -->
