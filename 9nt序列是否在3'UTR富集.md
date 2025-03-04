@@ -9,7 +9,10 @@ wc -l sum #39669次
 ##筛选3utr mane_select标签的基因gtf文件（公共）
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
-
+```
+#
+awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf
+```
 
 ```
 ##Rstudio  获取染色体长度（公共）
@@ -92,9 +95,9 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Nj
-c4ODI0MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5
-MTk4NSwtMTY4ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMj
-MsLTY2MDA3MzE5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1
-MzY5MzQ5LC0xNDYwNDY0ODU3XX0=
+eyJoaXN0b3J5IjpbMTI4MzI5MjQwNSwtMTAyMjA5MzE3MSwxMz
+U2MDk5MTY3LDc2Nzg4MjQxNCwtOTI3MTUyMzMzLC0xMDk1MjE4
+NDEzLC0xOTcwODkxOTg1LC0xNjg4MDg3MTMxLC0xODY2NTYxMz
+csMTg1MDUwNjEyMywtNjYwMDczMTk2LDg2ODgwNjQzNSwyMDc4
+MjkwNDgwLC00NDUzNjkzNDksLTE0NjA0NjQ4NTddfQ==
 -->
