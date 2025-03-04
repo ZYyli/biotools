@@ -10,6 +10,7 @@ wc -l sum #39669次
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
 
+
 ```
 ##Rstudio  获取染色体长度（公共）
 #安装包
@@ -91,9 +92,9 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNz
-E1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4
-NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Ni
-w4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYw
-NDY0ODU3XX0=
+eyJoaXN0b3J5IjpbLTEwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Nj
+c4ODI0MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5
+MTk4NSwtMTY4ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMj
+MsLTY2MDA3MzE5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1
+MzY5MzQ5LC0xNDYwNDY0ODU3XX0=
 -->
