@@ -6,6 +6,7 @@ h38.gtf是已经筛选过3'UTR的基因注释文件
 grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf
 bedtools intersect -a h38_man.gtf -b locate_1.bed -wa -wb > sum
 wc -l sum #39669次
+##获取3utr mane_select标签的 
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
 
@@ -55,7 +56,7 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MDU3NjYzMCw3Njc4ODI0MTQsLTkyNz
+eyJoaXN0b3J5IjpbMTAxNzA2NTk5NCw3Njc4ODI0MTQsLTkyNz
 E1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4
 NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Ni
 w4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYw
