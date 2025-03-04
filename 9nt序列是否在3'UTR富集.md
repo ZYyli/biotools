@@ -12,11 +12,12 @@ grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 Rstudio
 ```
 ##获取染色体长度
+#安装包
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
-
 BiocManager::install("Biostrings")
 library(Biostrings) 
+
 #读取FASTA文件中的基因组序列
 genome <- readDNAStringSet("D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/Homo_sapiens.GRCh38.dna.primary_assembly.fa") 
 #筛选出主要的常染色体和性染色体
@@ -54,8 +55,9 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY3ODgyNDE0LC05MjcxNTIzMzMsLTEwOT
-UyMTg0MTMsLTE5NzA4OTE5ODUsLTE2ODgwODcxMzEsLTE4NjY1
-NjEzNywxODUwNTA2MTIzLC02NjAwNzMxOTYsODY4ODA2NDM1LD
-IwNzgyOTA0ODAsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N119
+eyJoaXN0b3J5IjpbMTI3MDU3NjYzMCw3Njc4ODI0MTQsLTkyNz
+E1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4
+NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Ni
+w4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYw
+NDY0ODU3XX0=
 -->
