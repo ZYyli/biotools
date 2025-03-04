@@ -3,10 +3,10 @@
 h38.gtf是已经筛选过3'UTR的基因注释文件
 ``` 
 ##统计该序列在基因组(man_slect)中出现的次数
-grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf
+grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf （公共）
 bedtools intersect -a h38_man.gtf -b locate_1.bed -wa -wb > sum
 wc -l sum #39669次
-##筛选3utr mane_select标签的基因gtf文件
+##筛选3utr mane_select标签的基因gtf文件（公共）
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
 
@@ -30,7 +30,8 @@ names(chromosome_lengths) <- c("1","10","11","12","13","14","15","16","17","18",
 #查看染色体信息（例如，chromosome名和长度） 
 chromosome_lengths
 save(chromosome_lengths,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/chromosome_lengths.RData")
-
+```
+ #### 3'UTR基因组位置文件
 ##获取3utr 标签mane_select的位置信息（公共）
 utr_3_prime_regions <- read.table("D:/新桌面/h38_man_3utr.gtf", header = FALSE,sep = "\t")
 library(dplyr)
@@ -55,9 +56,9 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzEwNjU5NjAyLDc2Nzg4MjQxNCwtOTI3MT
-UyMzMzLC0xMDk1MjE4NDEzLC0xOTcwODkxOTg1LC0xNjg4MDg3
-MTMxLC0xODY2NTYxMzcsMTg1MDUwNjEyMywtNjYwMDczMTk2LD
-g2ODgwNjQzNSwyMDc4MjkwNDgwLC00NDUzNjkzNDksLTE0NjA0
-NjQ4NTddfQ==
+eyJoaXN0b3J5IjpbMTU5MDUxMTU2NSw3Njc4ODI0MTQsLTkyNz
+E1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4
+NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Ni
+w4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYw
+NDY0ODU3XX0=
 -->
