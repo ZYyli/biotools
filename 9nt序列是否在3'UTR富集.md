@@ -5,7 +5,8 @@ h38.gtf是已经筛选过3'UTR的基因注释文件
 ##统计该序列在基因组(man_slect)中出现的次数
 grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf （公共）
 bedtools intersect -a h38_man.gtf -b locate_1.bed -wa -wb > sum
-wc -l sum #39669次
+awk -F'\t' -vOFS='\t' '$7==$15' sum > sum_trans
+wc -l sum_trans #39669次
 ##筛选3utr mane_select标签的基因gtf文件（公共）
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
@@ -95,9 +96,9 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxMTE1Mjk5MiwtMTAyMjA5MzE3MSwxMz
-U2MDk5MTY3LDc2Nzg4MjQxNCwtOTI3MTUyMzMzLC0xMDk1MjE4
-NDEzLC0xOTcwODkxOTg1LC0xNjg4MDg3MTMxLC0xODY2NTYxMz
-csMTg1MDUwNjEyMywtNjYwMDczMTk2LDg2ODgwNjQzNSwyMDc4
-MjkwNDgwLC00NDUzNjkzNDksLTE0NjA0NjQ4NTddfQ==
+eyJoaXN0b3J5IjpbMzY3MzE1MjQ3LC0xMDIyMDkzMTcxLDEzNT
+YwOTkxNjcsNzY3ODgyNDE0LC05MjcxNTIzMzMsLTEwOTUyMTg0
+MTMsLTE5NzA4OTE5ODUsLTE2ODgwODcxMzEsLTE4NjY1NjEzNy
+wxODUwNTA2MTIzLC02NjAwNzMxOTYsODY4ODA2NDM1LDIwNzgy
+OTA0ODAsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N119
 -->
