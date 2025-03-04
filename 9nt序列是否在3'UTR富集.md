@@ -13,6 +13,10 @@ grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
 ##
 awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf
+bedtools intersect -a h38_man.gtf -b locate_1.bed -wa -wb > sum
+awk -F'\t' -vOFS='\t' '$7==$15' sum1 > sum_trans
+wc -l sum_trans
+21034 sum_trans
 ```
 
 ```
@@ -96,9 +100,10 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY3MzE1MjQ3LC0xMDIyMDkzMTcxLDEzNT
-YwOTkxNjcsNzY3ODgyNDE0LC05MjcxNTIzMzMsLTEwOTUyMTg0
-MTMsLTE5NzA4OTE5ODUsLTE2ODgwODcxMzEsLTE4NjY1NjEzNy
-wxODUwNTA2MTIzLC02NjAwNzMxOTYsODY4ODA2NDM1LDIwNzgy
-OTA0ODAsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N119
+eyJoaXN0b3J5IjpbMTgwNjY4NTUzMSwzNjczMTUyNDcsLTEwMj
+IwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNzE1MjMz
+MywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4NzEzMS
+wtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Niw4Njg4
+MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYwNDY0OD
+U3XX0=
 -->
