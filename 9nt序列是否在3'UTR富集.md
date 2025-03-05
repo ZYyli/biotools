@@ -46,6 +46,8 @@ utr_3_prime_regions <- utr_3_prime_regions %>%
 utr_3_prime_regions <- utr_3_prime_regions %>% select(chromosome, start, end, strand)
 save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/utr_3_prime_regions.RData")
 ```
+
+### 3'UTR正义链或反义链基因组位置
 ### 随机模拟进行富集分析（Rstudio）
 ```
 ##模拟9nt序列的抽取并统计匹配
@@ -97,11 +99,11 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2ODMzMzQ2MywxNjE1NzQwMzU0LDE0MT
-cyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUyNDcsLTEwMjIwOTMx
-NzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNzE1MjMzMywtMT
-A5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4NzEzMSwtMTg2
-NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Niw4Njg4MDY0Mz
-UsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYwNDY0ODU3XX0=
-
+eyJoaXN0b3J5IjpbLTU5Mzc3NzU2MCwtODY4MzMzNDYzLDE2MT
+U3NDAzNTQsMTQxNzIxODk5NSwxODA2Njg1NTMxLDM2NzMxNTI0
+NywtMTAyMjA5MzE3MSwxMzU2MDk5MTY3LDc2Nzg4MjQxNCwtOT
+I3MTUyMzMzLC0xMDk1MjE4NDEzLC0xOTcwODkxOTg1LC0xNjg4
+MDg3MTMxLC0xODY2NTYxMzcsMTg1MDUwNjEyMywtNjYwMDczMT
+k2LDg2ODgwNjQzNSwyMDc4MjkwNDgwLC00NDUzNjkzNDksLTE0
+NjA0NjQ4NTddfQ==
 -->
