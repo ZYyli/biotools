@@ -2,20 +2,17 @@
 ### 全基因组长度并统计次数
 h38.gtf是已经筛选过3'UTR的基因注释文件
 ``` 
-##统计该序列在基因组(man_slect)中出现的次数
+##统计该序列在基因组(man_slect、transcript)中出现的次数
 grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf （公共）
+awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf （公用）
 bedtools intersect -a h38_man.gtf -b locate_1.bed -wa -wb > sum
-awk -F'\t' -vOFS='\t' '$7==$15' sum > sum_trans
-wc -l sum_trans #39669次
+awk -F'\t' -vOFS='\t' '$7==$15' sum1 > sum_trans
+wc -l sum_trans
 ##筛选3utr mane_select标签的基因gtf文件（公共）
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
 ```
-##
-awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf
-bedtools intersect -a h38_man.gtf -b locate_1.bed -wa -wb > sum
-awk -F'\t' -vOFS='\t' '$7==$15' sum1 > sum_trans
-wc -l sum_trans
+
 21034 sum_trans
 ```
 
@@ -100,10 +97,10 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwNjY4NTUzMSwzNjczMTUyNDcsLTEwMj
-IwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNzE1MjMz
-MywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4NzEzMS
-wtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Niw4Njg4
-MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0xNDYwNDY0OD
-U3XX0=
+eyJoaXN0b3J5IjpbLTEwOTkwOTg1MDksMTgwNjY4NTUzMSwzNj
+czMTUyNDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0
+MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NS
+wtMTY4ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2
+MDA3MzE5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5Mz
+Q5LC0xNDYwNDY0ODU3XX0=
 -->
