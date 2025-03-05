@@ -48,6 +48,12 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ```
 
 ### 3'UTR正义链或反义链基因组位置
+```
+##反义链
+utr_3_prime_regions_n <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
+save(utr_3_prime_regions,file = "utr_3_prime_regions_n.RData")
+
+```
 ### 随机模拟进行富集分析（Rstudio）
 ```
 ##模拟9nt序列的抽取并统计匹配
@@ -99,11 +105,11 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5Mzc3NzU2MCwtODY4MzMzNDYzLDE2MT
-U3NDAzNTQsMTQxNzIxODk5NSwxODA2Njg1NTMxLDM2NzMxNTI0
-NywtMTAyMjA5MzE3MSwxMzU2MDk5MTY3LDc2Nzg4MjQxNCwtOT
-I3MTUyMzMzLC0xMDk1MjE4NDEzLC0xOTcwODkxOTg1LC0xNjg4
-MDg3MTMxLC0xODY2NTYxMzcsMTg1MDUwNjEyMywtNjYwMDczMT
-k2LDg2ODgwNjQzNSwyMDc4MjkwNDgwLC00NDUzNjkzNDksLTE0
-NjA0NjQ4NTddfQ==
+eyJoaXN0b3J5IjpbLTIxMzkxNzg5MzYsLTg2ODMzMzQ2MywxNj
+E1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUy
+NDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLT
+kyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4
+ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3Mz
+E5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0x
+NDYwNDY0ODU3XX0=
 -->
