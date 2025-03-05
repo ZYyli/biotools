@@ -49,7 +49,7 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ##模拟9nt序列的抽取并统计匹配
 set.seed(123)  #设置随机种子
 n_simulations <- 10000  #模拟次数
-sequences_per_simulation <- 39669 #每次模拟抽取的序列数(可变)
+sequences_per_simulation <- 21034 #每次模拟抽取的序列数(可变)
 sequence_length <- 9  #序列长度是9nt
 genome_length <- sum(chromosome_lengths)  #假设基因组的长度
 
@@ -95,10 +95,10 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NDkxNzExLDE0MTcyMTg5OTUsMTgwNj
-Y4NTUzMSwzNjczMTUyNDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2
-Nyw3Njc4ODI0MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMT
-k3MDg5MTk4NSwtMTY4ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1
-MDYxMjMsLTY2MDA3MzE5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MC
-wtNDQ1MzY5MzQ5LC0xNDYwNDY0ODU3XX0=
+eyJoaXN0b3J5IjpbMTYxNTc0MDM1NCwxNDE3MjE4OTk1LDE4MD
+Y2ODU1MzEsMzY3MzE1MjQ3LC0xMDIyMDkzMTcxLDEzNTYwOTkx
+NjcsNzY3ODgyNDE0LC05MjcxNTIzMzMsLTEwOTUyMTg0MTMsLT
+E5NzA4OTE5ODUsLTE2ODgwODcxMzEsLTE4NjY1NjEzNywxODUw
+NTA2MTIzLC02NjAwNzMxOTYsODY4ODA2NDM1LDIwNzgyOTA0OD
+AsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N119
 -->
