@@ -9,7 +9,7 @@ bedtools intersect -a h38_man_transcript.gtf -b locate_1.bed -wa -wb > sum
 #所处链相同说明该原件存在mRNA上
 awk -F'\t' -vOFS='\t' '$7==$15' sum > sum_trans
 wc -l sum_trans #21034次
-#
+#改名
 mv sum_trans sum_trans_21034
 
 ##筛选3utr mane_select标签的基因gtf文件（公共）
@@ -97,7 +97,7 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MTg2MTQ2OSwxNjE1NzQwMzU0LDE0MT
+eyJoaXN0b3J5IjpbLTg2ODMzMzQ2MywxNjE1NzQwMzU0LDE0MT
 cyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUyNDcsLTEwMjIwOTMx
 NzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNzE1MjMzMywtMT
 A5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4NzEzMSwtMTg2
