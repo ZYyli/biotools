@@ -52,6 +52,9 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ##反义链
 utr_3_prime_regions_n <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
 save(utr_3_prime_regions,file = "utr_3_prime_regions_n.RData")
+```
+### 基因组正义链或反义链位置范围（Rstudio）
+```
 
 ```
 ### 随机模拟进行富集分析（Rstudio）
@@ -105,7 +108,7 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTA1ODE0NTEsLTIxMTUyNzk0NDYsLT
+eyJoaXN0b3J5IjpbLTIxNDYxMDQ1NDMsLTIxMTUyNzk0NDYsLT
 g2ODMzMzQ2MywxNjE1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4
 NTUzMSwzNjczMTUyNDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Ny
 w3Njc4ODI0MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3
