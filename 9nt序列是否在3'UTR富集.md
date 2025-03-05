@@ -55,8 +55,9 @@ save(utr_3_prime_regions,file = "utr_3_prime_regions_n.RData")
 ```
 ### 基因组正义链或反义链位置范围（Rstudio）
 ```
-##建立基因组 
+#建立基因组位置信息数据框
 h38_man_transcript <- read.table("h38_man_transcript.gtf",header = FALSE, sep="\t")
+#改列名，筛选特定列
 library(dplyr)
 h38_man_transcript <- h38_man_transcript %>%
      rename(chromosome =V1,start =V4,end=V5,strand =V7) %>%
@@ -114,7 +115,7 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODQxNzA4NDYsLTIxMTUyNzk0NDYsLT
+eyJoaXN0b3J5IjpbLTEyMTU4MDc3NzgsLTIxMTUyNzk0NDYsLT
 g2ODMzMzQ2MywxNjE1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4
 NTUzMSwzNjczMTUyNDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Ny
 w3Njc4ODI0MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3
