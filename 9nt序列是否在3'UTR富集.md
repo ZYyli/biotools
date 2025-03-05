@@ -62,7 +62,9 @@ library(dplyr)
 h38_man_transcript <- h38_man_transcript %>%
      rename(chromosome =V1,start =V4,end=V5,strand =V7) %>%
      select(chromosome, start, end, strand)
-
+#筛选正/反义链
+h38_man_transcript_n <- h38_man_transcript[h38_man_transcript$strand =="-",]
+save(h38_man_transcript_n,file="h38_man_transcript_n.RData")
 ```
 ### 随机模拟进行富集分析（Rstudio）
 ```
@@ -115,11 +117,11 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTU4MDc3NzgsLTIxMTUyNzk0NDYsLT
-g2ODMzMzQ2MywxNjE1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4
-NTUzMSwzNjczMTUyNDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Ny
-w3Njc4ODI0MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3
-MDg5MTk4NSwtMTY4ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1MD
-YxMjMsLTY2MDA3MzE5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MCwt
-NDQ1MzY5MzQ5XX0=
+eyJoaXN0b3J5IjpbLTI3ODU0MTY5MCwtMTIxNTgwNzc3OCwtMj
+ExNTI3OTQ0NiwtODY4MzMzNDYzLDE2MTU3NDAzNTQsMTQxNzIx
+ODk5NSwxODA2Njg1NTMxLDM2NzMxNTI0NywtMTAyMjA5MzE3MS
+wxMzU2MDk5MTY3LDc2Nzg4MjQxNCwtOTI3MTUyMzMzLC0xMDk1
+MjE4NDEzLC0xOTcwODkxOTg1LC0xNjg4MDg3MTMxLC0xODY2NT
+YxMzcsMTg1MDUwNjEyMywtNjYwMDczMTk2LDg2ODgwNjQzNSwy
+MDc4MjkwNDgwXX0=
 -->
