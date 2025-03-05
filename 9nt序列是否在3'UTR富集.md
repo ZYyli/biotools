@@ -42,8 +42,8 @@ save(chromosome_lengths,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/A
 utr_3_prime_regions <- read.table("D:/新桌面/h38_man_3utr.gtf", header = FALSE,sep = "\t")
 library(dplyr)
 utr_3_prime_regions <- utr_3_prime_regions %>% 
-  rename(chromosome = V1, start = V4, end = V5, strand = V7)
-utr_3_prime_regions <- utr_3_prime_regions %>% select(chromosome, start, end, strand)
+  rename(chromosome = V1, start = V4, end = V5, strand = V7) %>% 
+  select(chromosome, start, end, strand)
 save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/utr_3_prime_regions.RData")
 ```
 
@@ -105,11 +105,11 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNj
-E1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUy
-NDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLT
-kyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4
-ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3Mz
-E5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MCwtNDQ1MzY5MzQ5LC0x
-NDYwNDY0ODU3XX0=
+eyJoaXN0b3J5IjpbLTE1OTA1ODE0NTEsLTIxMTUyNzk0NDYsLT
+g2ODMzMzQ2MywxNjE1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4
+NTUzMSwzNjczMTUyNDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Ny
+w3Njc4ODI0MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3
+MDg5MTk4NSwtMTY4ODA4NzEzMSwtMTg2NjU2MTM3LDE4NTA1MD
+YxMjMsLTY2MDA3MzE5Niw4Njg4MDY0MzUsMjA3ODI5MDQ4MCwt
+NDQ1MzY5MzQ5XX0=
 -->
