@@ -8,7 +8,7 @@ awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf （
 bedtools intersect -a h38_man_transcript.gtf -b locate_1.bed -wa -wb > sum
 #所处链相同说明该原件存在mRNA上
 awk -F'\t' -vOFS='\t' '$7==$15' sum > sum_trans
-wc -l sum_trans #
+wc -l sum_trans #21034次
 ##筛选3utr mane_select标签的基因gtf文件（公共）
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
 ```
@@ -98,10 +98,10 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNzIxODk5NSwxODA2Njg1NTMxLDM2Nz
-MxNTI0NywtMTAyMjA5MzE3MSwxMzU2MDk5MTY3LDc2Nzg4MjQx
-NCwtOTI3MTUyMzMzLC0xMDk1MjE4NDEzLC0xOTcwODkxOTg1LC
-0xNjg4MDg3MTMxLC0xODY2NTYxMzcsMTg1MDUwNjEyMywtNjYw
-MDczMTk2LDg2ODgwNjQzNSwyMDc4MjkwNDgwLC00NDUzNjkzND
-ksLTE0NjA0NjQ4NTddfQ==
+eyJoaXN0b3J5IjpbLTg2MTcyNTcyNiwxNDE3MjE4OTk1LDE4MD
+Y2ODU1MzEsMzY3MzE1MjQ3LC0xMDIyMDkzMTcxLDEzNTYwOTkx
+NjcsNzY3ODgyNDE0LC05MjcxNTIzMzMsLTEwOTUyMTg0MTMsLT
+E5NzA4OTE5ODUsLTE2ODgwODcxMzEsLTE4NjY1NjEzNywxODUw
+NTA2MTIzLC02NjAwNzMxOTYsODY4ODA2NDM1LDIwNzgyOTA0OD
+AsLTQ0NTM2OTM0OSwtMTQ2MDQ2NDg1N119
 -->
