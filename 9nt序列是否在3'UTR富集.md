@@ -36,9 +36,9 @@ names(chromosome_lengths) <- c("1","10","11","12","13","14","15","16","17","18",
 chromosome_lengths
 save(chromosome_lengths,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/chromosome_lengths.RData")
 ```
- ### 3'UTR基因组位置文件
+### 3'UTR基因组位置文件（Rstudio ）
  ```
-##Rstudio 获取3utr 标签mane_select的位置信息（公共）
+##获取3utr 标签mane_select的位置信息（公共）
 utr_3_prime_regions <- read.table("D:/新桌面/h38_man_3utr.gtf", header = FALSE,sep = "\t")
 library(dplyr)
 utr_3_prime_regions <- utr_3_prime_regions %>% 
@@ -47,7 +47,7 @@ utr_3_prime_regions <- utr_3_prime_regions %>% select(chromosome, start, end, st
 save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/utr_3_prime_regions.RData")
 ```
 
-### 3'UTR正义链或反义链基因组位置
+### 3'UTR正义链或反义链基因组位置（Rstudio）
 ```
 ##反义链
 utr_3_prime_regions_n <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
@@ -105,7 +105,7 @@ count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzkxNzg5MzYsLTg2ODMzMzQ2MywxNj
+eyJoaXN0b3J5IjpbLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNj
 E1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUy
 NDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLT
 kyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4
