@@ -131,14 +131,17 @@ ks.test(utr_sense_count, "pnorm", mean = mean(utr_sense_count), sd = sd(utr_sens
 ```
 #### Shapiro-Wilk 正态性检验
 ```
-
+shapiro.test(utr_sense_count)
+##如果p-value > 0.05，则数据近似服从正态分布。
+如果p-value ≤ 0.05，拒绝原假设，说明数据不服从正态分布。
+注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAwMzUzMzE0LC0yNzg1NDE2OTAsLTEyMT
-U4MDc3NzgsLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNjE1NzQw
-MzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUyNDcsLT
-EwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNzE1
-MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4Nz
-EzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Niw4
-Njg4MDY0MzVdfQ==
+eyJoaXN0b3J5IjpbMTA0OTc0Mjc0MiwtMjc4NTQxNjkwLC0xMj
+E1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0NjMsMTYxNTc0
+MDM1NCwxNDE3MjE4OTk1LDE4MDY2ODU1MzEsMzY3MzE1MjQ3LC
+0xMDIyMDkzMTcxLDEzNTYwOTkxNjcsNzY3ODgyNDE0LC05Mjcx
+NTIzMzMsLTEwOTUyMTg0MTMsLTE5NzA4OTE5ODUsLTE2ODgwOD
+cxMzEsLTE4NjY1NjEzNywxODUwNTA2MTIzLC02NjAwNzMxOTYs
+ODY4ODA2NDM1XX0=
 -->
