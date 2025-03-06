@@ -125,9 +125,16 @@ library("nortest")
 ad.test(utr_sense_count)
 ##p-value > 0.05，数据服从正态分布；p-value ≤ 0.05，数据不服从正态分布。
 ```
-#### 
+#### Kolmogorov-Smirnov (K-S) 检验
+```
+ks.test(utr_sense_count, "pnorm", mean = mean(utr_sense_count), sd = sd(utr_sense_count))
+```
+#### Shapiro-Wilk 正态性检验
+```
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg0NjU4NDMyLC0yNzg1NDE2OTAsLTEyMT
+eyJoaXN0b3J5IjpbODAwMzUzMzE0LC0yNzg1NDE2OTAsLTEyMT
 U4MDc3NzgsLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNjE1NzQw
 MzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUyNDcsLT
 EwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNzE1
