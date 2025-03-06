@@ -119,14 +119,19 @@ names(count) <- c("3_utr","Frequency")
 ### 检验数据是否符合正态分布
 ##### Anderson-Darling 检验（适用于大样本）
 ```
-
+##R
+install.packages("nortest")
+library("nortest")
+ad.test(utr_sense_count)
+##p-value > 0.05，数据服从正态分布；p-value ≤ 0.05，数据不服从正态分布。
 ```
+#### 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3ODg2NTYxNywtMjc4NTQxNjkwLC0xMj
-E1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0NjMsMTYxNTc0
-MDM1NCwxNDE3MjE4OTk1LDE4MDY2ODU1MzEsMzY3MzE1MjQ3LC
-0xMDIyMDkzMTcxLDEzNTYwOTkxNjcsNzY3ODgyNDE0LC05Mjcx
-NTIzMzMsLTEwOTUyMTg0MTMsLTE5NzA4OTE5ODUsLTE2ODgwOD
-cxMzEsLTE4NjY1NjEzNywxODUwNTA2MTIzLC02NjAwNzMxOTYs
-ODY4ODA2NDM1XX0=
+eyJoaXN0b3J5IjpbNjg0NjU4NDMyLC0yNzg1NDE2OTAsLTEyMT
+U4MDc3NzgsLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNjE1NzQw
+MzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUyNDcsLT
+EwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNzE1
+MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4ODA4Nz
+EzMSwtMTg2NjU2MTM3LDE4NTA1MDYxMjMsLTY2MDA3MzE5Niw4
+Njg4MDY0MzVdfQ==
 -->
