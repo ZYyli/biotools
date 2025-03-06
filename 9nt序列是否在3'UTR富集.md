@@ -1,5 +1,5 @@
 # 准备文件
-### 全基因组长度并统计次数
+## 全基因组长度并统计次数
 h38.gtf是已经筛选过3'UTR的基因注释文件
 ``` 
 ##统计该序列在基因组(man_slect、transcript)中出现的次数
@@ -36,7 +36,7 @@ names(chromosome_lengths) <- c("1","10","11","12","13","14","15","16","17","18",
 chromosome_lengths
 save(chromosome_lengths,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/chromosome_lengths.RData")
 ```
-### 3'UTR基因组位置文件（Rstudio ）
+## 3'UTR基因组位置文件（Rstudio ）
  ```
 ##获取3utr 标签mane_select的位置信息（公共）
 utr_3_prime_regions <- read.table("D:/新桌面/h38_man_3utr.gtf", header = FALSE,sep = "\t")
@@ -47,13 +47,13 @@ utr_3_prime_regions <- utr_3_prime_regions %>%
 save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/utr_3_prime_regions.RData")
 ```
 
-### 3'UTR正义链或反义链基因组位置（Rstudio）
+## 3'UTR正义链或反义链基因组位置（Rstudio）
 ```
 ##反义链
 utr_3_prime_regions_n <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
 save(utr_3_prime_regions,file = "utr_3_prime_regions_n.RData")
 ```
-### 基因组正义链或反义链位置范围（Rstudio）
+## 基因组正义链或反义链位置范围（Rstudio）
 ```
 #建立基因组位置信息数据框
 h38_man_transcript <- read.table("h38_man_transcript.gtf",header = FALSE, sep="\t")
@@ -66,7 +66,7 @@ h38_man_transcript <- h38_man_transcript %>%
 h38_man_transcript_n <- h38_man_transcript[h38_man_transcript$strand =="-",]
 save(h38_man_transcript_n,file="h38_man_transcript_n.RData")
 ```
-### 随机模拟进行富集分析（Rstudio）
+## 随机模拟进行富集分析（Rstudio）
 ```
 ##模拟9nt序列的抽取并统计匹配
 set.seed(123)  #设置随机种子
@@ -116,7 +116,7 @@ count <- utr_sense_count %>%
 count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
-### 检验数据是否符合正态分布
+## 检验数据是否符合正态分布
 ##### Anderson-Darling 检验（适用于大样本）
 ```
 ##R
@@ -137,7 +137,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0OTc0Mjc0MiwtMjc4NTQxNjkwLC0xMj
+eyJoaXN0b3J5IjpbMTA1MTY2MjEzMCwtMjc4NTQxNjkwLC0xMj
 E1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0NjMsMTYxNTc0
 MDM1NCwxNDE3MjE4OTk1LDE4MDY2ODU1MzEsMzY3MzE1MjQ3LC
 0xMDIyMDkzMTcxLDEzNTYwOTkxNjcsNzY3ODgyNDE0LC05Mjcx
