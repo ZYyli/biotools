@@ -93,6 +93,7 @@ is_in_utr <- function(position, utr_regions) {
 for (i in 1:n_simulations) {
   # 随机生成39669个9nt序列的染色体和起始位置
   random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE)
+  # 计算每个染色体的长度并生成随机起始位置
   chrom_lengths <- chromosome_data$length[match(random_chromosomes, chromosome_data$chromosome)]
   effective_lengths <- chrom_lengths - sequence_length +1 
   random_positions <- sapply(effective_lengths,function(len) sample(1:len,1))
@@ -101,9 +102,6 @@ for (i in 1:n_simulations) {
     chrom <- random_chromosomes[j]
     chrom <- as.character(chrom)
     chrom_length <- chromosome_data$length[chromosome_data$chromosome == chrom]
-    
-    # 在指定染色体范围内随机选择9nt序列的起始位置
-    random_positions[j] <- sample(1:(chrom_length - sequence_length + 1), 1)
   }
   # 统计有多少个9nt序列位于任意3' UTR区域
   utr_count <- sum(sapply(random_positions, is_in_utr,  utr_regions = utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,]))
@@ -139,11 +137,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxOTQyODQyLDEwNTE2NjIxMzAsLTI3OD
-U0MTY5MCwtMTIxNTgwNzc3OCwtMjExNTI3OTQ0NiwtODY4MzMz
-NDYzLDE2MTU3NDAzNTQsMTQxNzIxODk5NSwxODA2Njg1NTMxLD
-M2NzMxNTI0NywtMTAyMjA5MzE3MSwxMzU2MDk5MTY3LDc2Nzg4
-MjQxNCwtOTI3MTUyMzMzLC0xMDk1MjE4NDEzLC0xOTcwODkxOT
-g1LC0xNjg4MDg3MTMxLC0xODY2NTYxMzcsMTg1MDUwNjEyMywt
-NjYwMDczMTk2XX0=
+eyJoaXN0b3J5IjpbNzExNTE4ODAxLDE5MTk0Mjg0MiwxMDUxNj
+YyMTMwLC0yNzg1NDE2OTAsLTEyMTU4MDc3NzgsLTIxMTUyNzk0
+NDYsLTg2ODMzMzQ2MywxNjE1NzQwMzU0LDE0MTcyMTg5OTUsMT
+gwNjY4NTUzMSwzNjczMTUyNDcsLTEwMjIwOTMxNzEsMTM1NjA5
+OTE2Nyw3Njc4ODI0MTQsLTkyNzE1MjMzMywtMTA5NTIxODQxMy
+wtMTk3MDg5MTk4NSwtMTY4ODA4NzEzMSwtMTg2NjU2MTM3LDE4
+NTA1MDYxMjNdfQ==
 -->
