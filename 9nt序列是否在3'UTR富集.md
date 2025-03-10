@@ -91,9 +91,8 @@ is_in_utr <- function(position, utr_regions) {
 
 # 模拟过程
 for (i in 1:n_simulations) {
-  # 生成随机染色体
+  # 生成随机染色体和随机位置
   random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE)
-  # 计算每个染色体的长度并生成随机起始位置
   effective_lengths <- chrom_lengths - sequence_length +1 
   random_positions <- sapply(effective_lengths,function(len) sample(1:len,1))
   # 统计有多少个9nt序列位于任意3' UTR区域
@@ -130,7 +129,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY3NDU2NTc3LDE2NTE2OTc4MjYsMzc2Nj
+eyJoaXN0b3J5IjpbNDE1MDM1OTU1LDE2NTE2OTc4MjYsMzc2Nj
 gxMjIyLDcxMTUxODgwMSwxOTE5NDI4NDIsMTA1MTY2MjEzMCwt
 Mjc4NTQxNjkwLC0xMjE1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04Nj
 gzMzM0NjMsMTYxNTc0MDM1NCwxNDE3MjE4OTk1LDE4MDY2ODU1
