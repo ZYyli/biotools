@@ -85,12 +85,6 @@ chromosome_data <- data.frame(
   chromosome = names(chromosome_lengths),
   length = chromosome_lengths)
 
-##is_in_utr函数检查位点
-# 检查一个位置是否在任意3' UTR区域内
-is_in_utr <- function(position, utr_regions) {
-  any(position >= utr_regions$start & position <= utr_regions$end)
-}
-
 # 模拟过程
 for (i in 1:n_simulations) {
   # 生成随机染色体和随机位置
@@ -102,7 +96,8 @@ for (i in 1:n_simulations) {
      chrom <- random_chromosomes[j] 
      pos <- random_positions[j] 
      utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] 
-     if (any(pos >= utr_regions$start & pos <= utr_regions$end)) {       utrcount <- utrcount + 1 } }
+     if (any(pos >= utr_regions$start & pos <= utr_regions$end)) {
+       utr_count <- utr_count + 1 } }
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
 }
@@ -135,11 +130,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE3MzA5MjczLDEzMzkwODA0NjgsNDE1MD
-M1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIyLDcxMTUxODgwMSwx
-OTE5NDI4NDIsMTA1MTY2MjEzMCwtMjc4NTQxNjkwLC0xMjE1OD
-A3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0NjMsMTYxNTc0MDM1
-NCwxNDE3MjE4OTk1LDE4MDY2ODU1MzEsMzY3MzE1MjQ3LC0xMD
-IyMDkzMTcxLDEzNTYwOTkxNjcsNzY3ODgyNDE0LC05MjcxNTIz
-MzNdfQ==
+eyJoaXN0b3J5IjpbMTA3ODQ4ODY3NCwxMzM5MDgwNDY4LDQxNT
+AzNTk1NSwxNjUxNjk3ODI2LDM3NjY4MTIyMiw3MTE1MTg4MDEs
+MTkxOTQyODQyLDEwNTE2NjIxMzAsLTI3ODU0MTY5MCwtMTIxNT
+gwNzc3OCwtMjExNTI3OTQ0NiwtODY4MzMzNDYzLDE2MTU3NDAz
+NTQsMTQxNzIxODk5NSwxODA2Njg1NTMxLDM2NzMxNTI0NywtMT
+AyMjA5MzE3MSwxMzU2MDk5MTY3LDc2Nzg4MjQxNCwtOTI3MTUy
+MzMzXX0=
 -->
