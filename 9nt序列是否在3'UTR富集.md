@@ -115,7 +115,10 @@ utr_sense_count <- foreach(i = 1:nsimulations, .combine = c) %dopar% {
    for (j in 1:sequences_per_simulation) { 
         chrom <- random_chromosomes[j] 
         pos <- randompositions[j] 
-        utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] if (any(pos > utrregions$start & pos < utrregions$end)) { utrcount <- utrcount + 1 } } utrcount }
+        utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] 
+        if (any(pos > utr_regions$start & pos < utr_regions$end)) { 
+            utr_count <- utr_count + 1 } } 
+   return(utr_count) }
 
 
 #转换文件内容格式
@@ -146,11 +149,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMzODI1NjksMTA5NjU3ODU0MCwxMzM5MD
-gwNDY4LDQxNTAzNTk1NSwxNjUxNjk3ODI2LDM3NjY4MTIyMiw3
-MTE1MTg4MDEsMTkxOTQyODQyLDEwNTE2NjIxMzAsLTI3ODU0MT
-Y5MCwtMTIxNTgwNzc3OCwtMjExNTI3OTQ0NiwtODY4MzMzNDYz
-LDE2MTU3NDAzNTQsMTQxNzIxODk5NSwxODA2Njg1NTMxLDM2Nz
-MxNTI0NywtMTAyMjA5MzE3MSwxMzU2MDk5MTY3LDc2Nzg4MjQx
-NF19
+eyJoaXN0b3J5IjpbODI4MTAxMywxMDk2NTc4NTQwLDEzMzkwOD
+A0NjgsNDE1MDM1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIyLDcx
+MTUxODgwMSwxOTE5NDI4NDIsMTA1MTY2MjEzMCwtMjc4NTQxNj
+kwLC0xMjE1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0NjMs
+MTYxNTc0MDM1NCwxNDE3MjE4OTk1LDE4MDY2ODU1MzEsMzY3Mz
+E1MjQ3LC0xMDIyMDkzMTcxLDEzNTYwOTkxNjcsNzY3ODgyNDE0
+XX0=
 -->
