@@ -108,8 +108,8 @@ library(doParallel)
 # 注册并行后端 
 registerDoParallel(cores = detectCores() - 1) 
 # 使用foreach循环进行并行模拟 
-utr_sense_count <- foreach(i = 1:nsimulations, .combine = c) %dopar% { 
-   randomchromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE) 
+utr_sense_count <- foreach(i = 1:n_simulations, .combine = c) %dopar% { 
+   random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE) 
    randompositions <-sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequences_per_simulation, replace = TRUE) 
    utr_count <- 0 
    for (j in 1:sequences_per_simulation) { 
@@ -149,11 +149,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI4MTAxMywxMDk2NTc4NTQwLDEzMzkwOD
-A0NjgsNDE1MDM1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIyLDcx
-MTUxODgwMSwxOTE5NDI4NDIsMTA1MTY2MjEzMCwtMjc4NTQxNj
-kwLC0xMjE1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0NjMs
-MTYxNTc0MDM1NCwxNDE3MjE4OTk1LDE4MDY2ODU1MzEsMzY3Mz
-E1MjQ3LC0xMDIyMDkzMTcxLDEzNTYwOTkxNjcsNzY3ODgyNDE0
+eyJoaXN0b3J5IjpbOTg0MjQ2Mjc3LDgyODEwMTMsMTA5NjU3OD
+U0MCwxMzM5MDgwNDY4LDQxNTAzNTk1NSwxNjUxNjk3ODI2LDM3
+NjY4MTIyMiw3MTE1MTg4MDEsMTkxOTQyODQyLDEwNTE2NjIxMz
+AsLTI3ODU0MTY5MCwtMTIxNTgwNzc3OCwtMjExNTI3OTQ0Niwt
+ODY4MzMzNDYzLDE2MTU3NDAzNTQsMTQxNzIxODk5NSwxODA2Nj
+g1NTMxLDM2NzMxNTI0NywtMTAyMjA5MzE3MSwxMzU2MDk5MTY3
 XX0=
 -->
