@@ -108,12 +108,14 @@ library(doParallel)
 # 注册并行后端 
 registerDoParallel(cores = detectCores() - 1) 
 # 使用foreach循环进行并行模拟 
-utrsensecount <- foreach(i = 1:nsimulations, .combine = c) %dopar% { 
-   randomchromosomes <- sample(chromosomedata$chromosome, sequencespersimulation, replace = TRUE) 
+utr_sense_count <- foreach(i = 1:nsimulations, .combine = c) %dopar% { 
+   randomchromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE) 
    randompositions <-sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequences_per_simulation, replace = TRUE) 
    utr_count <- 0 
-   for (j in 1:sequencespersimulation) { 
-        chrom <- randomchromosomes[j] pos <- randompositions[j] utrregions <- utr3primeregions[utr3primeregions$chromosome == chrom,] if (any(pos > utrregions$start & pos < utrregions$end)) { utrcount <- utrcount + 1 } } utrcount }
+   for (j in 1:sequences_per_simulation) { 
+        chrom <- random_chromosomes[j] 
+        pos <- randompositions[j] 
+        utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] if (any(pos > utrregions$start & pos < utrregions$end)) { utrcount <- utrcount + 1 } } utrcount }
 
 
 #转换文件内容格式
@@ -144,11 +146,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwNDI4NzMzNiwxMDk2NTc4NTQwLDEzMz
-kwODA0NjgsNDE1MDM1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIy
-LDcxMTUxODgwMSwxOTE5NDI4NDIsMTA1MTY2MjEzMCwtMjc4NT
-QxNjkwLC0xMjE1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0
-NjMsMTYxNTc0MDM1NCwxNDE3MjE4OTk1LDE4MDY2ODU1MzEsMz
-Y3MzE1MjQ3LC0xMDIyMDkzMTcxLDEzNTYwOTkxNjcsNzY3ODgy
-NDE0XX0=
+eyJoaXN0b3J5IjpbOTMzODI1NjksMTA5NjU3ODU0MCwxMzM5MD
+gwNDY4LDQxNTAzNTk1NSwxNjUxNjk3ODI2LDM3NjY4MTIyMiw3
+MTE1MTg4MDEsMTkxOTQyODQyLDEwNTE2NjIxMzAsLTI3ODU0MT
+Y5MCwtMTIxNTgwNzc3OCwtMjExNTI3OTQ0NiwtODY4MzMzNDYz
+LDE2MTU3NDAzNTQsMTQxNzIxODk5NSwxODA2Njg1NTMxLDM2Nz
+MxNTI0NywtMTAyMjA5MzE3MSwxMzU2MDk5MTY3LDc2Nzg4MjQx
+NF19
 -->
