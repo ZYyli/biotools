@@ -99,9 +99,10 @@ for (i in 1:n_simulations) {
   # 统计有多少个9nt序列位于任意3' UTR区域
   utr_count <- 0
   for (j in 1:sequences_per_simulation) { 
-       chrom <- random_chromosomes[j] 
-       pos <- random_positions[j] 
-       utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] if (any(pos > utrregions$start & pos < utrregions$end)) { utrcount <- utrcount + 1 } }
+     chrom <- random_chromosomes[j] 
+     pos <- random_positions[j] 
+     utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] 
+     if (any(pos >= utr_regions$start & pos <= utr_regions$end)) {       utrcount <- utrcount + 1 } }
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
 }
@@ -134,11 +135,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Nzk1ODIwMDcsMTMzOTA4MDQ2OCw0MT
-UwMzU5NTUsMTY1MTY5NzgyNiwzNzY2ODEyMjIsNzExNTE4ODAx
-LDE5MTk0Mjg0MiwxMDUxNjYyMTMwLC0yNzg1NDE2OTAsLTEyMT
-U4MDc3NzgsLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNjE1NzQw
-MzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUyNDcsLT
-EwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLTkyNzE1
-MjMzM119
+eyJoaXN0b3J5IjpbMzE3MzA5MjczLDEzMzkwODA0NjgsNDE1MD
+M1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIyLDcxMTUxODgwMSwx
+OTE5NDI4NDIsMTA1MTY2MjEzMCwtMjc4NTQxNjkwLC0xMjE1OD
+A3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0NjMsMTYxNTc0MDM1
+NCwxNDE3MjE4OTk1LDE4MDY2ODU1MzEsMzY3MzE1MjQ3LC0xMD
+IyMDkzMTcxLDEzNTYwOTkxNjcsNzY3ODgyNDE0LC05MjcxNTIz
+MzNdfQ==
 -->
