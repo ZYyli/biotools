@@ -16,6 +16,7 @@ awk -F'\t' '{$2=$6=$8="";print}' xx.gtf > xx.gtf
 grep 'three_prime_utr' Homo_sapiens.GRCh38.113.gtf > h38.gtf
 ```
 ### 根据某段序列，从基因组fa文件筛选对应的位置
+[seqkit的使用说明 - 简书](https://www.jianshu.com/p/f28bdc9a3b54)
 ```
 seqkit locate --bed -p ATTATGCTT Homo_sapiens.GRCh38.dna.primary_assembly.fa > locate_1.bed
 ```
@@ -126,11 +127,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE0Mjk2ODE0LDIxMjg5NDYxMDAsLTE5ND
-k2NzA3ODMsMTEzNjI5NTEwMywtMTEyMDUyNDA2NiwxNTUzMjU5
-NDkwLC01Nzk5Mjk5OTYsMTM1NDY2NTE2NywtMzQ3NzI5MDc3LC
-0xNzY1NjY5MjkyLDE3NDQxNzg0MCwxMzI4ODc0ODU0LDE0NzIy
-MjQ2MDksLTY3NzI4OTI0NywtNTA3MDkwMTUxLC0zMDY2MzA2MD
-EsNDgwOTA3NjUzLC04NjczMTg1NDgsLTIzNTk4NDc5NiwtODY3
-MzE4NTQ4XX0=
+eyJoaXN0b3J5IjpbLTI2NDEwMDY3MCw4MTQyOTY4MTQsMjEyOD
+k0NjEwMCwtMTk0OTY3MDc4MywxMTM2Mjk1MTAzLC0xMTIwNTI0
+MDY2LDE1NTMyNTk0OTAsLTU3OTkyOTk5NiwxMzU0NjY1MTY3LC
+0zNDc3MjkwNzcsLTE3NjU2NjkyOTIsMTc0NDE3ODQwLDEzMjg4
+NzQ4NTQsMTQ3MjIyNDYwOSwtNjc3Mjg5MjQ3LC01MDcwOTAxNT
+EsLTMwNjYzMDYwMSw0ODA5MDc2NTMsLTg2NzMxODU0OCwtMjM1
+OTg0Nzk2XX0=
 -->
