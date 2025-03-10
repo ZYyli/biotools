@@ -94,7 +94,6 @@ for (i in 1:n_simulations) {
   # 生成随机染色体
   random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE)
   # 计算每个染色体的长度并生成随机起始位置
-  chrom_lengths <- chromosome_data$length[match(random_chromosomes, chromosome_data$chromosome)]
   effective_lengths <- chrom_lengths - sequence_length +1 
   random_positions <- sapply(effective_lengths,function(len) sample(1:len,1))
   # 统计有多少个9nt序列位于任意3' UTR区域
@@ -131,11 +130,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1MTY5NzgyNiwzNzY2ODEyMjIsNzExNT
-E4ODAxLDE5MTk0Mjg0MiwxMDUxNjYyMTMwLC0yNzg1NDE2OTAs
-LTEyMTU4MDc3NzgsLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNj
-E1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUy
-NDcsLTEwMjIwOTMxNzEsMTM1NjA5OTE2Nyw3Njc4ODI0MTQsLT
-kyNzE1MjMzMywtMTA5NTIxODQxMywtMTk3MDg5MTk4NSwtMTY4
-ODA4NzEzMV19
+eyJoaXN0b3J5IjpbOTY3NDU2NTc3LDE2NTE2OTc4MjYsMzc2Nj
+gxMjIyLDcxMTUxODgwMSwxOTE5NDI4NDIsMTA1MTY2MjEzMCwt
+Mjc4NTQxNjkwLC0xMjE1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04Nj
+gzMzM0NjMsMTYxNTc0MDM1NCwxNDE3MjE4OTk1LDE4MDY2ODU1
+MzEsMzY3MzE1MjQ3LC0xMDIyMDkzMTcxLDEzNTYwOTkxNjcsNz
+Y3ODgyNDE0LC05MjcxNTIzMzMsLTEwOTUyMTg0MTMsLTE5NzA4
+OTE5ODVdfQ==
 -->
