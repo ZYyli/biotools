@@ -87,9 +87,10 @@ chromosome_data <- data.frame(
 
 # 模拟过程
 for (i in 1:n_simulations) {
+  set.seed(123)
   # 生成随机染色体和随机位置
   random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE)
-  random_positions <- sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequencespersimulation, replace = TRUE)
+  random_positions <- sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequences_per_simulation, replace = TRUE)
   # 统计有多少个9nt序列位于任意3' UTR区域
   utr_count <- 0
   for (j in 1:sequences_per_simulation) { 
@@ -130,7 +131,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3ODQ4ODY3NCwxMzM5MDgwNDY4LDQxNT
+eyJoaXN0b3J5IjpbMTA5NjU3ODU0MCwxMzM5MDgwNDY4LDQxNT
 AzNTk1NSwxNjUxNjk3ODI2LDM3NjY4MTIyMiw3MTE1MTg4MDEs
 MTkxOTQyODQyLDEwNTE2NjIxMzAsLTI3ODU0MTY5MCwtMTIxNT
 gwNzc3OCwtMjExNTI3OTQ0NiwtODY4MzMzNDYzLDE2MTU3NDAz
