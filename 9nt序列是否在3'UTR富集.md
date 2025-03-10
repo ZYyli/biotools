@@ -101,7 +101,7 @@ for (i in 1:n_simulations) {
   for (j in 1:sequences_per_simulation) { 
        chrom <- random_chromosomes[j] 
        pos <- random_positions[j] 
-       utrregions <- utr3primeregions[utr3primeregions$chromosome == chrom,] if (any(pos > utrregions$start & pos < utrregions$end)) { utrcount <- utrcount + 1 } }
+       utr_regions <- utr3primeregions[utr3primeregions$chromosome == chrom,] if (any(pos > utrregions$start & pos < utrregions$end)) { utrcount <- utrcount + 1 } }
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
 }
@@ -134,7 +134,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1MjU1ODM5NCwxMzM5MDgwNDY4LDQxNT
+eyJoaXN0b3J5IjpbMTU0MDA1MjA5NywxMzM5MDgwNDY4LDQxNT
 AzNTk1NSwxNjUxNjk3ODI2LDM3NjY4MTIyMiw3MTE1MTg4MDEs
 MTkxOTQyODQyLDEwNTE2NjIxMzAsLTI3ODU0MTY5MCwtMTIxNT
 gwNzc3OCwtMjExNTI3OTQ0NiwtODY4MzMzNDYzLDE2MTU3NDAz
