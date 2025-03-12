@@ -89,7 +89,6 @@ chromosome_data <- data.frame(
 
 # 模拟过程
 for (i in 1:n_simulations) {
-  set.seed(123)
   # 生成随机染色体和随机起始位置
   random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE)
   random_positions <- sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequences_per_simulation, replace = TRUE)
@@ -151,11 +150,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NDA5MDEwLC0zNDk1NDM0ODYsLTExMj
-kxMTU2MDQsLTE4MTQzNzYxNjcsMTA0OTUzMjI0NSwtMTgxNDM3
-NjE2Nyw4MjgxMDEzLDEwOTY1Nzg1NDAsMTMzOTA4MDQ2OCw0MT
-UwMzU5NTUsMTY1MTY5NzgyNiwzNzY2ODEyMjIsNzExNTE4ODAx
-LDE5MTk0Mjg0MiwxMDUxNjYyMTMwLC0yNzg1NDE2OTAsLTEyMT
-U4MDc3NzgsLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNjE1NzQw
-MzU0XX0=
+eyJoaXN0b3J5IjpbMjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NT
+QzNDg2LC0xMTI5MTE1NjA0LC0xODE0Mzc2MTY3LDEwNDk1MzIy
+NDUsLTE4MTQzNzYxNjcsODI4MTAxMywxMDk2NTc4NTQwLDEzMz
+kwODA0NjgsNDE1MDM1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIy
+LDcxMTUxODgwMSwxOTE5NDI4NDIsMTA1MTY2MjEzMCwtMjc4NT
+QxNjkwLC0xMjE1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0
+NjNdfQ==
 -->
