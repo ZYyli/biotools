@@ -6,6 +6,7 @@ h38.gtf是已经筛选过3'UTR的基因注释文件
 grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf （公共）
 awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf （公共）
 bedtools intersect -a h38_man_transcript.gtf -b locate_1.bed -wa -wb > sum
+#统计
 #所处链相同说明该原件存在mRNA上
 awk -F'\t' -vOFS='\t' '$7==$15' sum > sum_trans
 wc -l sum_trans #21034次
@@ -149,11 +150,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTQzNzYxNjcsMTA0OTUzMjI0NSwtMT
-gxNDM3NjE2Nyw4MjgxMDEzLDEwOTY1Nzg1NDAsMTMzOTA4MDQ2
-OCw0MTUwMzU5NTUsMTY1MTY5NzgyNiwzNzY2ODEyMjIsNzExNT
-E4ODAxLDE5MTk0Mjg0MiwxMDUxNjYyMTMwLC0yNzg1NDE2OTAs
-LTEyMTU4MDc3NzgsLTIxMTUyNzk0NDYsLTg2ODMzMzQ2MywxNj
-E1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4NTUzMSwzNjczMTUy
-NDddfQ==
+eyJoaXN0b3J5IjpbLTExMjkxMTU2MDQsLTE4MTQzNzYxNjcsMT
+A0OTUzMjI0NSwtMTgxNDM3NjE2Nyw4MjgxMDEzLDEwOTY1Nzg1
+NDAsMTMzOTA4MDQ2OCw0MTUwMzU5NTUsMTY1MTY5NzgyNiwzNz
+Y2ODEyMjIsNzExNTE4ODAxLDE5MTk0Mjg0MiwxMDUxNjYyMTMw
+LC0yNzg1NDE2OTAsLTEyMTU4MDc3NzgsLTIxMTUyNzk0NDYsLT
+g2ODMzMzQ2MywxNjE1NzQwMzU0LDE0MTcyMTg5OTUsMTgwNjY4
+NTUzMV19
 -->
