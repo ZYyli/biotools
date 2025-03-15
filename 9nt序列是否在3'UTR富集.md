@@ -95,6 +95,7 @@ for (i in 1:n_simulations) {
   # 生成随机染色体和随机起始位置、随机正反链
   random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE)
   random_positions <- sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequences_per_simulation, replace = TRUE)
+  
   # 统计有多少个9nt序列位于任意3' UTR区域
   utr_count <- 0
   for (j in 1:sequences_per_simulation) { 
@@ -153,11 +154,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDY2MTgyNDIsMTM2MzYyMDk2Niw1Nz
-E1MTE4MjMsNTc2NDEwOTkyLDk1OTIwMTQ4NiwyODE2ODY4NTgs
-LTQ1NDA5MDEwLC0zNDk1NDM0ODYsLTExMjkxMTU2MDQsLTE4MT
-QzNzYxNjcsMTA0OTUzMjI0NSwtMTgxNDM3NjE2Nyw4MjgxMDEz
-LDEwOTY1Nzg1NDAsMTMzOTA4MDQ2OCw0MTUwMzU5NTUsMTY1MT
-Y5NzgyNiwzNzY2ODEyMjIsNzExNTE4ODAxLDE5MTk0Mjg0Ml19
+eyJoaXN0b3J5IjpbMTk2MDAwMjIyMCwxMzYzNjIwOTY2LDU3MT
+UxMTgyMyw1NzY0MTA5OTIsOTU5MjAxNDg2LDI4MTY4Njg1OCwt
+NDU0MDkwMTAsLTM0OTU0MzQ4NiwtMTEyOTExNTYwNCwtMTgxND
+M3NjE2NywxMDQ5NTMyMjQ1LC0xODE0Mzc2MTY3LDgyODEwMTMs
+MTA5NjU3ODU0MCwxMzM5MDgwNDY4LDQxNTAzNTk1NSwxNjUxNj
+k3ODI2LDM3NjY4MTIyMiw3MTE1MTg4MDEsMTkxOTQyODQyXX0=
 
 -->
