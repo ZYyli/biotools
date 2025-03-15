@@ -79,7 +79,7 @@ sequence_length <- 9  #序列长度是9nt
 # 预先计算每个染色体的有效长度
 effective_lengths <- chromosome_lengths - sequence_length +1
 #计算3utr的有效end
-utr_3_prime_regions <- 
+utr_3_prime_regions <- mutate(
 
 # 记录每次模拟中位于3'UTR的位点数量
 utr_sense_count <- numeric(n_simulations)
@@ -152,11 +152,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTcxNTExODIzLDU3NjQxMDk5Miw5NTkyMD
-E0ODYsMjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NTQzNDg2LC0x
-MTI5MTE1NjA0LC0xODE0Mzc2MTY3LDEwNDk1MzIyNDUsLTE4MT
-QzNzYxNjcsODI4MTAxMywxMDk2NTc4NTQwLDEzMzkwODA0Njgs
-NDE1MDM1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIyLDcxMTUxOD
-gwMSwxOTE5NDI4NDIsMTA1MTY2MjEzMCwtMjc4NTQxNjkwXX0=
+eyJoaXN0b3J5IjpbMzU0NTg0MTM5LDU3MTUxMTgyMyw1NzY0MT
+A5OTIsOTU5MjAxNDg2LDI4MTY4Njg1OCwtNDU0MDkwMTAsLTM0
+OTU0MzQ4NiwtMTEyOTExNTYwNCwtMTgxNDM3NjE2NywxMDQ5NT
+MyMjQ1LC0xODE0Mzc2MTY3LDgyODEwMTMsMTA5NjU3ODU0MCwx
+MzM5MDgwNDY4LDQxNTAzNTk1NSwxNjUxNjk3ODI2LDM3NjY4MT
+IyMiw3MTE1MTg4MDEsMTkxOTQyODQyLDEwNTE2NjIxMzBdfQ==
 
 -->
