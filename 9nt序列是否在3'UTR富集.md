@@ -76,8 +76,9 @@ n_simulations <- 10000  #模拟次数
 sequences_per_simulation <- 36205 #每次模拟抽取的序列数(可变)
 sequence_length <- 9  #序列长度是9nt
 #### genome_length <- sum(chromosome_lengths)  #基因组的长度 ####
-# 预先计算每个染色体的有效长度
+# 预先计算每个染色体和3'utr的有效长度
 effective_lengths <- chromosome_lengths - sequence_length +1
+3utr_
 
 # 记录每次模拟中位于3'UTR的位点数量
 utr_sense_count <- numeric(n_simulations)
@@ -150,11 +151,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NT
-QzNDg2LC0xMTI5MTE1NjA0LC0xODE0Mzc2MTY3LDEwNDk1MzIy
-NDUsLTE4MTQzNzYxNjcsODI4MTAxMywxMDk2NTc4NTQwLDEzMz
-kwODA0NjgsNDE1MDM1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIy
-LDcxMTUxODgwMSwxOTE5NDI4NDIsMTA1MTY2MjEzMCwtMjc4NT
-QxNjkwLC0xMjE1ODA3Nzc4LC0yMTE1Mjc5NDQ2LC04NjgzMzM0
-NjNdfQ==
+eyJoaXN0b3J5IjpbOTU5MjAxNDg2LDI4MTY4Njg1OCwtNDU0MD
+kwMTAsLTM0OTU0MzQ4NiwtMTEyOTExNTYwNCwtMTgxNDM3NjE2
+NywxMDQ5NTMyMjQ1LC0xODE0Mzc2MTY3LDgyODEwMTMsMTA5Nj
+U3ODU0MCwxMzM5MDgwNDY4LDQxNTAzNTk1NSwxNjUxNjk3ODI2
+LDM3NjY4MTIyMiw3MTE1MTg4MDEsMTkxOTQyODQyLDEwNTE2Nj
+IxMzAsLTI3ODU0MTY5MCwtMTIxNTgwNzc3OCwtMjExNTI3OTQ0
+Nl19
 -->
