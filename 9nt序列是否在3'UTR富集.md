@@ -117,12 +117,14 @@ registerDoParallel(cores = detectCores() - 1)
 utr_sense_count <- foreach(i = 1:n_simulations, .combine = c) %dopar% { 
    random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE) 
    random_positions <-sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequences_per_simulation, replace = TRUE) 
+    random_strand <- sample(c("+","-"),sequences_per_simulation,replace=TRUE)
    utr_count <- 0 
    for (j in 1:sequences_per_simulation) { 
         chrom <- random_chromosomes[j] 
         pos <- random_positions[j] 
+        str <- random_strand[j]
         utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] 
-        if (any(pos > utr_regions$start & pos < utr_regions$end)) { 
+        if (any(pos > utr_regions$start & pos < utr_regions$effective_end & str == utr_regions$strand)) { 
             utr_count <- utr_count + 1 } } 
    return(utr_count) }
 
@@ -155,7 +157,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDczMjYwNDUsNDk2Mjc1OTg5LDEzNj
+eyJoaXN0b3J5IjpbLTE1MTE3MTAyMjYsNDk2Mjc1OTg5LDEzNj
 M2MjA5NjYsNTcxNTExODIzLDU3NjQxMDk5Miw5NTkyMDE0ODYs
 MjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NTQzNDg2LC0xMTI5MT
 E1NjA0LC0xODE0Mzc2MTY3LDEwNDk1MzIyNDUsLTE4MTQzNzYx
