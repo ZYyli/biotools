@@ -84,6 +84,7 @@ utr_3_prime_regions <- utr_3_prime_regions %>% mutate(effective_end = end-sequen
 
 # 记录每次模拟中位于3'UTR的位点数量
 utr_sense_count <- numeric(n_simulations)
+utr_antisense_count <- numeric(n_simulations)
 
 # 创建一个数据框，保存每个染色体的长度
 chromosome_data <- data.frame(
@@ -103,7 +104,13 @@ for (i in 1:n_simulations) {
      pos <- random_positions[j] 
      str <- random_strand[j]
      utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] 
+     #zhe
      if (any(pos >= utr_regions$start & pos <= utr_regions$effective_end & str == utr_regions$strand)) {
+       utr_count <- utr_count + 1 } }
+  # 保存每次模拟的结果
+  utr_sense_count[i] <- utr_count
+  
+  if (any(pos >= utr_regions$start & pos <= utr_regions$effective_end & str == utr_regions$strand)) {
        utr_count <- utr_count + 1 } }
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
@@ -157,11 +164,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTE3MTAyMjYsNDk2Mjc1OTg5LDEzNj
-M2MjA5NjYsNTcxNTExODIzLDU3NjQxMDk5Miw5NTkyMDE0ODYs
-MjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NTQzNDg2LC0xMTI5MT
-E1NjA0LC0xODE0Mzc2MTY3LDEwNDk1MzIyNDUsLTE4MTQzNzYx
-NjcsODI4MTAxMywxMDk2NTc4NTQwLDEzMzkwODA0NjgsNDE1MD
-M1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIyLDcxMTUxODgwMV19
-
+eyJoaXN0b3J5IjpbLTIyMTk0NTE0MCwtMTUxMTcxMDIyNiw0OT
+YyNzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOTky
+LDk1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1ND
+M0ODYsLTExMjkxMTU2MDQsLTE4MTQzNzYxNjcsMTA0OTUzMjI0
+NSwtMTgxNDM3NjE2Nyw4MjgxMDEzLDEwOTY1Nzg1NDAsMTMzOT
+A4MDQ2OCw0MTUwMzU5NTUsMTY1MTY5NzgyNiwzNzY2ODEyMjJd
+fQ==
 -->
