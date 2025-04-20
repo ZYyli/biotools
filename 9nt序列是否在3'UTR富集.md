@@ -115,7 +115,8 @@ for (i in 1:n_simulations) {
   utr_sense_count[i] <- utr_count
   utr_antisense_count[i] <- utr_anticount
 }
-save(utr_sense_count,
+save(utr_sense_count,file="utr_sense_count.RData")
+save(utr_antisense_count,file="utr_antisense_count.RData")
 
 library(foreach) 
 library(doParallel)
@@ -165,11 +166,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQxNjcxNjAzLC0xNTExNzEwMjI2LDQ5Nj
-I3NTk4OSwxMzYzNjIwOTY2LDU3MTUxMTgyMyw1NzY0MTA5OTIs
-OTU5MjAxNDg2LDI4MTY4Njg1OCwtNDU0MDkwMTAsLTM0OTU0Mz
-Q4NiwtMTEyOTExNTYwNCwtMTgxNDM3NjE2NywxMDQ5NTMyMjQ1
-LC0xODE0Mzc2MTY3LDgyODEwMTMsMTA5NjU3ODU0MCwxMzM5MD
-gwNDY4LDQxNTAzNTk1NSwxNjUxNjk3ODI2LDM3NjY4MTIyMl19
-
+eyJoaXN0b3J5IjpbLTE5NzQ1MDA5NTYsLTE1MTE3MTAyMjYsND
+k2Mjc1OTg5LDEzNjM2MjA5NjYsNTcxNTExODIzLDU3NjQxMDk5
+Miw5NTkyMDE0ODYsMjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NT
+QzNDg2LC0xMTI5MTE1NjA0LC0xODE0Mzc2MTY3LDEwNDk1MzIy
+NDUsLTE4MTQzNzYxNjcsODI4MTAxMywxMDk2NTc4NTQwLDEzMz
+kwODA0NjgsNDE1MDM1OTU1LDE2NTE2OTc4MjYsMzc2NjgxMjIy
+XX0=
 -->
