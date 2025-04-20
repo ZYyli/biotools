@@ -104,14 +104,15 @@ for (i in 1:n_simulations) {
      pos <- random_positions[j] 
      str <- random_strand[j]
      utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] 
-     #zhe
+     #正义链
      if (any(pos >= utr_regions$start & pos <= utr_regions$effective_end & str == utr_regions$strand)) {
-       utr_count <- utr_count + 1 } }
+       utr_count <- utr_count + 1 } 
+      #反义链
+     if (any(pos >= utr_regions$start & pos <= utr_regions$effective_end & str != utr_regions$strand)) {
+       utr_anticount <- utr_anticount + 1 } }
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
-  
-  if (any(pos >= utr_regions$start & pos <= utr_regions$effective_end & str == utr_regions$strand)) {
-       utr_count <- utr_count + 1 } }
+     
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
 }
@@ -164,7 +165,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMTk0NTE0MCwtMTUxMTcxMDIyNiw0OT
+eyJoaXN0b3J5IjpbMTIwODAyODAzNywtMTUxMTcxMDIyNiw0OT
 YyNzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOTky
 LDk1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1ND
 M0ODYsLTExMjkxMTU2MDQsLTE4MTQzNzYxNjcsMTA0OTUzMjI0
