@@ -9,9 +9,7 @@ bedtools intersect -a h38_man_transcript.gtf -b locate_1.bed -wa -wb > sum
 
 #正负链统一
 awk -F'\t' -vOFS='\t' '$7==$15' sum > sum_trans
-wc -l sum_trans #21034次，则模板链(反义链)15171次
-#改名
-mv sum_trans sum_trans_21034
+wc -l sum_trans #13713次
 
 ##筛选3utr mane_select标签的基因gtf文件（公共）
 grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
@@ -165,11 +163,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzgzOTI1NjYsLTE5NzQ1MDA5NTYsLT
-E1MTE3MTAyMjYsNDk2Mjc1OTg5LDEzNjM2MjA5NjYsNTcxNTEx
-ODIzLDU3NjQxMDk5Miw5NTkyMDE0ODYsMjgxNjg2ODU4LC00NT
-QwOTAxMCwtMzQ5NTQzNDg2LC0xMTI5MTE1NjA0LC0xODE0Mzc2
-MTY3LDEwNDk1MzIyNDUsLTE4MTQzNzYxNjcsODI4MTAxMywxMD
-k2NTc4NTQwLDEzMzkwODA0NjgsNDE1MDM1OTU1LDE2NTE2OTc4
-MjZdfQ==
+eyJoaXN0b3J5IjpbMTUyODY5MTA2OCwtMTU3ODM5MjU2NiwtMT
+k3NDUwMDk1NiwtMTUxMTcxMDIyNiw0OTYyNzU5ODksMTM2MzYy
+MDk2Niw1NzE1MTE4MjMsNTc2NDEwOTkyLDk1OTIwMTQ4NiwyOD
+E2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1NDM0ODYsLTExMjkxMTU2
+MDQsLTE4MTQzNzYxNjcsMTA0OTUzMjI0NSwtMTgxNDM3NjE2Ny
+w4MjgxMDEzLDEwOTY1Nzg1NDAsMTMzOTA4MDQ2OCw0MTUwMzU5
+NTVdfQ==
 -->
