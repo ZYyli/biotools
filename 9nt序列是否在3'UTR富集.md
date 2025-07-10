@@ -22,6 +22,7 @@ if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("Biostrings")
 library(Biostrings) 
+
 #读取FASTA文件中的基因组序列
 genome <- readDNAStringSet("D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/Homo_sapiens.GRCh38.dna.primary_assembly.fa") 
 #筛选出主要的常染色体和性染色体
@@ -163,11 +164,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI2NzQ4MjQ4LDE1Mjg2OTEwNjgsLTE1Nz
-gzOTI1NjYsLTE5NzQ1MDA5NTYsLTE1MTE3MTAyMjYsNDk2Mjc1
-OTg5LDEzNjM2MjA5NjYsNTcxNTExODIzLDU3NjQxMDk5Miw5NT
-kyMDE0ODYsMjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NTQzNDg2
-LC0xMTI5MTE1NjA0LC0xODE0Mzc2MTY3LDEwNDk1MzIyNDUsLT
-E4MTQzNzYxNjcsODI4MTAxMywxMDk2NTc4NTQwLDEzMzkwODA0
-NjhdfQ==
+eyJoaXN0b3J5IjpbLTE5NDExODU0MDIsMTUyODY5MTA2OCwtMT
+U3ODM5MjU2NiwtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0OTYy
+NzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOTkyLD
+k1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1NDM0
+ODYsLTExMjkxMTU2MDQsLTE4MTQzNzYxNjcsMTA0OTUzMjI0NS
+wtMTgxNDM3NjE2Nyw4MjgxMDEzLDEwOTY1Nzg1NDAsMTMzOTA4
+MDQ2OF19
 -->
