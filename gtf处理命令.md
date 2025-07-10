@@ -39,7 +39,7 @@ grep '-' locate_1.bed > locate_n.bed
 ```
 (python3.8环境)
 bedtools intersect -a h38.gtf -b locate_1.bed -wa -wb   > merge_1
-##所处链相同说明该原件存在mRNA上
+##正负链统一
 awk -F'\t' -vOFS='\t' '$7==$15' merge_1 > merge_2
 ##删除多余列和值
 awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_2 > merge_3
@@ -127,11 +127,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2NDEwMDY3MCw4MTQyOTY4MTQsMjEyOD
-k0NjEwMCwtMTk0OTY3MDc4MywxMTM2Mjk1MTAzLC0xMTIwNTI0
-MDY2LDE1NTMyNTk0OTAsLTU3OTkyOTk5NiwxMzU0NjY1MTY3LC
-0zNDc3MjkwNzcsLTE3NjU2NjkyOTIsMTc0NDE3ODQwLDEzMjg4
-NzQ4NTQsMTQ3MjIyNDYwOSwtNjc3Mjg5MjQ3LC01MDcwOTAxNT
-EsLTMwNjYzMDYwMSw0ODA5MDc2NTMsLTg2NzMxODU0OCwtMjM1
-OTg0Nzk2XX0=
+eyJoaXN0b3J5IjpbLTEzMTYzODc5NDUsLTI2NDEwMDY3MCw4MT
+QyOTY4MTQsMjEyODk0NjEwMCwtMTk0OTY3MDc4MywxMTM2Mjk1
+MTAzLC0xMTIwNTI0MDY2LDE1NTMyNTk0OTAsLTU3OTkyOTk5Ni
+wxMzU0NjY1MTY3LC0zNDc3MjkwNzcsLTE3NjU2NjkyOTIsMTc0
+NDE3ODQwLDEzMjg4NzQ4NTQsMTQ3MjIyNDYwOSwtNjc3Mjg5Mj
+Q3LC01MDcwOTAxNTEsLTMwNjYzMDYwMSw0ODA5MDc2NTMsLTg2
+NzMxODU0OF19
 -->
