@@ -7,7 +7,7 @@ grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf （公共）
 awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf （公共）
 bedtools intersect -a h38_man_transcript.gtf -b locate_1.bed -wa -wb > sum
 
-#所处链相同说明该原件存在mRNA上，即位于编码链
+#正负链统一
 awk -F'\t' -vOFS='\t' '$7==$15' sum > sum_trans
 wc -l sum_trans #21034次，则模板链(反义链)15171次
 #改名
@@ -165,11 +165,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwMjMzMzM4OCwtMTk3NDUwMDk1NiwtMT
-UxMTcxMDIyNiw0OTYyNzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4
-MjMsNTc2NDEwOTkyLDk1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1ND
-A5MDEwLC0zNDk1NDM0ODYsLTExMjkxMTU2MDQsLTE4MTQzNzYx
-NjcsMTA0OTUzMjI0NSwtMTgxNDM3NjE2Nyw4MjgxMDEzLDEwOT
-Y1Nzg1NDAsMTMzOTA4MDQ2OCw0MTUwMzU5NTUsMTY1MTY5Nzgy
-Nl19
+eyJoaXN0b3J5IjpbLTE1NzgzOTI1NjYsLTE5NzQ1MDA5NTYsLT
+E1MTE3MTAyMjYsNDk2Mjc1OTg5LDEzNjM2MjA5NjYsNTcxNTEx
+ODIzLDU3NjQxMDk5Miw5NTkyMDE0ODYsMjgxNjg2ODU4LC00NT
+QwOTAxMCwtMzQ5NTQzNDg2LC0xMTI5MTE1NjA0LC0xODE0Mzc2
+MTY3LDEwNDk1MzIyNDUsLTE4MTQzNzYxNjcsODI4MTAxMywxMD
+k2NTc4NTQwLDEzMzkwODA0NjgsNDE1MDM1OTU1LDE2NTE2OTc4
+MjZdfQ==
 -->
