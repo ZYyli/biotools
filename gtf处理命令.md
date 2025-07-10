@@ -38,7 +38,7 @@ grep '-' locate_1.bed > locate_n.bed
 ###### 可以对两个基因组特征进行overlap，找到两者重合的区域。比如求两个peaks的交集，或者看很多位点信息在没在peaks或其他区域中
 ```
 (python3.8环境)
-#序列在3'
+#序列在3'UTR的位置
 bedtools intersect -a h38.gtf -b locate_1.bed -wa -wb   > merge_1
 ##正负链统一
 awk -F'\t' -vOFS='\t' '$7==$15 {print}' merge_1 > merge_2
@@ -128,7 +128,7 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2NTEyNDE4MiwxMjM5NzgwMTQ3LDE0MD
+eyJoaXN0b3J5IjpbLTY4MzEyOTA0OCwxMjM5NzgwMTQ3LDE0MD
 Y5MzkxNzAsLTEzMTYzODc5NDUsLTI2NDEwMDY3MCw4MTQyOTY4
 MTQsMjEyODk0NjEwMCwtMTk0OTY3MDc4MywxMTM2Mjk1MTAzLC
 0xMTIwNTI0MDY2LDE1NTMyNTk0OTAsLTU3OTkyOTk5NiwxMzU0
