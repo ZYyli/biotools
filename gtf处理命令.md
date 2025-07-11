@@ -109,7 +109,7 @@ grep 'tag "MANE_Select"' count_c3 > count_cman_select
 ```
 install.packages("openxlsx")
 library("openxlsx")
-merge_ms <- read.table("D:/新桌面/merge_5", header = FALSE, sep = "\t")
+merge_ms <- read.table("D:/新桌面/merge_man_select", header = FALSE, sep = "\t")
 merge_ms <- merge_ms[-c(2,6,8,14)]
 write.xlsx(merge_ms, "D:/新桌面/merge_ms.xlsx")
 merge <- read.table("D:/新桌面/merge_4", header = FALSE, sep = "\t")
@@ -128,11 +128,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg2Nzk5NTE4LC0xOTM0MzA2ODgyLC02OD
-MxMjkwNDgsMTIzOTc4MDE0NywxNDA2OTM5MTcwLC0xMzE2Mzg3
-OTQ1LC0yNjQxMDA2NzAsODE0Mjk2ODE0LDIxMjg5NDYxMDAsLT
-E5NDk2NzA3ODMsMTEzNjI5NTEwMywtMTEyMDUyNDA2NiwxNTUz
-MjU5NDkwLC01Nzk5Mjk5OTYsMTM1NDY2NTE2NywtMzQ3NzI5MD
-c3LC0xNzY1NjY5MjkyLDE3NDQxNzg0MCwxMzI4ODc0ODU0LDE0
-NzIyMjQ2MDldfQ==
+eyJoaXN0b3J5IjpbLTI1NDc0NDIzNiwyODY3OTk1MTgsLTE5Mz
+QzMDY4ODIsLTY4MzEyOTA0OCwxMjM5NzgwMTQ3LDE0MDY5Mzkx
+NzAsLTEzMTYzODc5NDUsLTI2NDEwMDY3MCw4MTQyOTY4MTQsMj
+EyODk0NjEwMCwtMTk0OTY3MDc4MywxMTM2Mjk1MTAzLC0xMTIw
+NTI0MDY2LDE1NTMyNTk0OTAsLTU3OTkyOTk5NiwxMzU0NjY1MT
+Y3LC0zNDc3MjkwNzcsLTE3NjU2NjkyOTIsMTc0NDE3ODQwLDEz
+Mjg4NzQ4NTRdfQ==
 -->
