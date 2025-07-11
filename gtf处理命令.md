@@ -63,7 +63,7 @@ awk -F'\t' -vOFS='\t' '{
     print;
 }' merge_3 > merge_4
 ## 筛选出tag "MANE_Select"的行
-grep 'tag "MANE_Select"' merge_4 > merge_5
+grep 'tag "MANE_Select"' merge_4 > merge_man_select
 ```
 -wa -wb ：输出overlap的区域所在-a和-b中的原内容
 ###### 分别获得正负链的原件出现次数(制表)
@@ -128,11 +128,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MzEyOTA0OCwxMjM5NzgwMTQ3LDE0MD
-Y5MzkxNzAsLTEzMTYzODc5NDUsLTI2NDEwMDY3MCw4MTQyOTY4
-MTQsMjEyODk0NjEwMCwtMTk0OTY3MDc4MywxMTM2Mjk1MTAzLC
-0xMTIwNTI0MDY2LDE1NTMyNTk0OTAsLTU3OTkyOTk5NiwxMzU0
-NjY1MTY3LC0zNDc3MjkwNzcsLTE3NjU2NjkyOTIsMTc0NDE3OD
-QwLDEzMjg4NzQ4NTQsMTQ3MjIyNDYwOSwtNjc3Mjg5MjQ3LC01
-MDcwOTAxNTFdfQ==
+eyJoaXN0b3J5IjpbLTE5MzQzMDY4ODIsLTY4MzEyOTA0OCwxMj
+M5NzgwMTQ3LDE0MDY5MzkxNzAsLTEzMTYzODc5NDUsLTI2NDEw
+MDY3MCw4MTQyOTY4MTQsMjEyODk0NjEwMCwtMTk0OTY3MDc4My
+wxMTM2Mjk1MTAzLC0xMTIwNTI0MDY2LDE1NTMyNTk0OTAsLTU3
+OTkyOTk5NiwxMzU0NjY1MTY3LC0zNDc3MjkwNzcsLTE3NjU2Nj
+kyOTIsMTc0NDE3ODQwLDEzMjg4NzQ4NTQsMTQ3MjIyNDYwOSwt
+Njc3Mjg5MjQ3XX0=
 -->
