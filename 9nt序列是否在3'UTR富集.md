@@ -81,9 +81,10 @@ sequence_length <- 9  #序列长度是9nt
 effective_lengths <- chromosome_lengths - sequence_length +1
 #计算3utr的有效end
 library("dplyr")
-utr_3_prime_regions <- utr_3_prime_regions %>% mutate(effective_end = end-sequence_length+1)
+utr_3_prime_regions_c <- utr_3_prime_regions_c %>% mutate(effective_end = end-sequence_length+1)
+utr_3_prime_regions_n <- utr_3_prime_regions_n %>% mutate(effective_end = end-sequence_length+1)
 
-# 记录每次模拟中位于3'UTR的位点数量
+# 记录每次模拟中位于3'UTR 的位点数量
 utr_sense_count <- numeric(n_simulations)
 utr_antisense_count <- numeric(n_simulations)
 
@@ -167,11 +168,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNzg5MTQyNSw1MDU4NTk2OTAsLTE5ND
-ExODU0MDIsMTUyODY5MTA2OCwtMTU3ODM5MjU2NiwtMTk3NDUw
-MDk1NiwtMTUxMTcxMDIyNiw0OTYyNzU5ODksMTM2MzYyMDk2Ni
-w1NzE1MTE4MjMsNTc2NDEwOTkyLDk1OTIwMTQ4NiwyODE2ODY4
-NTgsLTQ1NDA5MDEwLC0zNDk1NDM0ODYsLTExMjkxMTU2MDQsLT
-E4MTQzNzYxNjcsMTA0OTUzMjI0NSwtMTgxNDM3NjE2Nyw4Mjgx
-MDEzXX0=
+eyJoaXN0b3J5IjpbMjYyMDMwOTMxLDIwMzc4OTE0MjUsNTA1OD
+U5NjkwLC0xOTQxMTg1NDAyLDE1Mjg2OTEwNjgsLTE1NzgzOTI1
+NjYsLTE5NzQ1MDA5NTYsLTE1MTE3MTAyMjYsNDk2Mjc1OTg5LD
+EzNjM2MjA5NjYsNTcxNTExODIzLDU3NjQxMDk5Miw5NTkyMDE0
+ODYsMjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NTQzNDg2LC0xMT
+I5MTE1NjA0LC0xODE0Mzc2MTY3LDEwNDk1MzIyNDUsLTE4MTQz
+NzYxNjddfQ==
 -->
