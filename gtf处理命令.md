@@ -11,9 +11,23 @@ awk -F'\t' '{$2=$6=$8="";print}' xx.gtf > xx.gtf
 ``` 
 -F ：分隔符为制表符
 '{$2=$6=$8="";print}' ：删除第2、6、8列
+
+###  筛选transcript的注释信息
+```
+awk -F'\t' '$3 == "transcript" {print}' Homo_sapiens.GRCh38.113.gtf > h38_transcript.gtf
+grep 'tag "MANE_Select"' h38_transcript.gtf > h38_mane_transcript.gtf
+```
 ###  筛选3‘UTR的基因注释信息
 ```
-grep 'three_prime_utr' Homo_sapiens.GRCh38.113.gtf > h38.gtf
+awk -F'\t' '$3 == "three_prime_utr" {print}' Homo_sapiens.GRCh38.113.gtf > h38_3utr.gtf
+```
+###  筛选5‘UTR的基因注释信息
+```
+awk -F'\t' '$3 == "five_prime_utr" {print}' Homo_sapiens.GRCh38.113.gtf > h38_5utr.gtf
+```
+###  筛选CDS的基因注释信息
+```
+awk -F'\t' '$3 == "CDS" {print}' Homo_sapiens.GRCh38.113.gtf > h38_cds.gtf
 ```
 ### 根据某段序列，从基因组fa文件筛选对应的位置
 [seqkit的使用说明 - 简书](https://www.jianshu.com/p/f28bdc9a3b54)
@@ -32,6 +46,17 @@ seqkit locate --bed -p ATTATGCTT Homo_sapiens.GRCh38.dna.primary_assembly.fa > l
 ```
 grep '+' locate_1.bed > locate_c.bed
 grep '-' locate_1.bed > locate_n.bed
+```
+### 确定序列原件在transcript出现次数
+```
+bedtools intersect -a h38_transcript.gtf -b locate_1.bed -wa -wb > trans_count_1
+##正负链统一 
+awk -F'\t' -vOFS='\t' '$7==$15 {print}' trans_count_1 > trans_count_2
+#278371次
+bedtools intersect -a h38_mane_transcript.gtf -b locate_1.bed -wa -wb > mane_trans_count_1
+##正负链统一 
+awk -F'\t' -vOFS='\t' '$7==$15 {print}' mane_trans_count_1 > mane_trans_count_2
+#
 ```
 ### 交集——序列在3’UTR中的区域位置及数量
 [【bioinfo】bedtools之intersect命令参数_bedtools intersect-CSDN博客](https://blog.csdn.net/sinat_32872729/article/details/126541494)
@@ -128,11 +153,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MTk2NjQxNiwtMjU0NzQ0MjM2LDI4Nj
-c5OTUxOCwtMTkzNDMwNjg4MiwtNjgzMTI5MDQ4LDEyMzk3ODAx
-NDcsMTQwNjkzOTE3MCwtMTMxNjM4Nzk0NSwtMjY0MTAwNjcwLD
-gxNDI5NjgxNCwyMTI4OTQ2MTAwLC0xOTQ5NjcwNzgzLDExMzYy
-OTUxMDMsLTExMjA1MjQwNjYsMTU1MzI1OTQ5MCwtNTc5OTI5OT
-k2LDEzNTQ2NjUxNjcsLTM0NzcyOTA3NywtMTc2NTY2OTI5Miwx
-NzQ0MTc4NDBdfQ==
+eyJoaXN0b3J5IjpbLTEyMTQ0MTMzMDEsMjA2MTk2NjQxNiwtMj
+U0NzQ0MjM2LDI4Njc5OTUxOCwtMTkzNDMwNjg4MiwtNjgzMTI5
+MDQ4LDEyMzk3ODAxNDcsMTQwNjkzOTE3MCwtMTMxNjM4Nzk0NS
+wtMjY0MTAwNjcwLDgxNDI5NjgxNCwyMTI4OTQ2MTAwLC0xOTQ5
+NjcwNzgzLDExMzYyOTUxMDMsLTExMjA1MjQwNjYsMTU1MzI1OT
+Q5MCwtNTc5OTI5OTk2LDEzNTQ2NjUxNjcsLTM0NzcyOTA3Nywt
+MTc2NTY2OTI5Ml19
 -->
