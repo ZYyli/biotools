@@ -50,11 +50,11 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ## 3'UTR正义链或反义链基因组位置（Rstudio）
 ```
 ##正链
-utr_3_prime_regions_n <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
-save(utr_3_prime_regions,file = "utr_3_prime_regions_n.RData")
+utr_3_prime_regions_c <- utr_3_prime_regions[utr_3_prime_regions$strand == "+",]
+save(utr_3_prime_regions_c,file = "utr_3_prime_regions_c.RData")
 ##反链
 utr_3_prime_regions_n <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
-save(utr_3_prime_regions,file = "utr_3_prime_regions_n.RData")
+save(utr_3_prime_regions_n,file = "utr_3_prime_regions_n.RData")
 ```
 ## 基因组正义链或反义链位置范围（Rstudio）
 ```
@@ -167,7 +167,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5OTgyNzYyNCw1MDU4NTk2OTAsLTE5ND
+eyJoaXN0b3J5IjpbMjAzNzg5MTQyNSw1MDU4NTk2OTAsLTE5ND
 ExODU0MDIsMTUyODY5MTA2OCwtMTU3ODM5MjU2NiwtMTk3NDUw
 MDk1NiwtMTUxMTcxMDIyNiw0OTYyNzU5ODksMTM2MzYyMDk2Ni
 w1NzE1MTE4MjMsNTc2NDEwOTkyLDk1OTIwMTQ4NiwyODE2ODY4
