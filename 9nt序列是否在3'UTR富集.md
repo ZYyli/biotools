@@ -56,7 +56,7 @@ save(utr_3_prime_regions_c,file = "utr_3_prime_regions_c.RData")
 utr_3_prime_regions_n <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
 save(utr_3_prime_regions_n,file = "utr_3_prime_regions_n.RData")
 ```
-## 基因组正义链或反义链位置范围（Rstudio）
+## 主要转录本基因组正义链或反义链位置范围（Rstudio）
 ```
 #建立基因组位置信息数据框
 h38_man_transcript <- read.table("h38_man_transcript.gtf",header = FALSE, sep="\t")
@@ -84,7 +84,7 @@ library("dplyr")
 utr_3_prime_regions_c <- utr_3_prime_regions_c %>% mutate(effective_end = end-sequence_length+1)
 utr_3_prime_regions_n <- utr_3_prime_regions_n %>% mutate(effective_end = end-sequence_length+1)
 
-# 记录每次模拟中位于3'UTR正链的位点数量
+# 记录每次模拟中位于3'UTR的位点数量
 utr_sense_count <- numeric(n_simulations)
 utr_antisense_count <- numeric(n_simulations)
 
@@ -106,12 +106,13 @@ for (i in 1:n_simulations) {
      chrom <- random_chromosomes[j] 
      pos <- random_positions[j] 
      str <- random_strand[j]
-     utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] 
+     utr_regions_c <- utr_3_prime_regions_c[utr_3_prime_regions_c$chromosome == chrom,] 
+     utr_regions_n <- utr_3_prime_regions_n[utr_3_prime_regions_n$chromosome == chrom,]
      #正义链
-     if (any(pos >= utr_regions$start & pos <= utr_regions$effective_end & str == utr_regions$strand)) {
+     if (any(pos >= utr_regions_c$start & pos <= utr_regions_c$effective_end & str == utr_regions$strand)) {
        utr_count <- utr_count + 1 } 
       #反义链
-     if (any(pos >= utr_regions$start & pos <= utr_regions$effective_end & str != utr_regions$strand)) {
+     if (any(pos >= utr_regions_n$start & pos <= utr_regions_n$effective_end & str == utr_regions$strand)) {
        utr_anticount <- utr_anticount + 1 } }
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
@@ -168,11 +169,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNDM4NzY0NiwtOTMxNDg3NTIyLDIwMz
-c4OTE0MjUsNTA1ODU5NjkwLC0xOTQxMTg1NDAyLDE1Mjg2OTEw
-NjgsLTE1NzgzOTI1NjYsLTE5NzQ1MDA5NTYsLTE1MTE3MTAyMj
-YsNDk2Mjc1OTg5LDEzNjM2MjA5NjYsNTcxNTExODIzLDU3NjQx
-MDk5Miw5NTkyMDE0ODYsMjgxNjg2ODU4LC00NTQwOTAxMCwtMz
-Q5NTQzNDg2LC0xMTI5MTE1NjA0LC0xODE0Mzc2MTY3LDEwNDk1
-MzIyNDVdfQ==
+eyJoaXN0b3J5IjpbLTEyMDE3NjUyMjYsMTAxNDM4NzY0NiwtOT
+MxNDg3NTIyLDIwMzc4OTE0MjUsNTA1ODU5NjkwLC0xOTQxMTg1
+NDAyLDE1Mjg2OTEwNjgsLTE1NzgzOTI1NjYsLTE5NzQ1MDA5NT
+YsLTE1MTE3MTAyMjYsNDk2Mjc1OTg5LDEzNjM2MjA5NjYsNTcx
+NTExODIzLDU3NjQxMDk5Miw5NTkyMDE0ODYsMjgxNjg2ODU4LC
+00NTQwOTAxMCwtMzQ5NTQzNDg2LC0xMTI5MTE1NjA0LC0xODE0
+Mzc2MTY3XX0=
 -->
