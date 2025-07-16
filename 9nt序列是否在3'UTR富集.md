@@ -133,6 +133,87 @@ count <- utr_sense_count %>%
 count <- as.data.frame(count)
 names(count) <- c("3_utr","Frequency")
 ```
+
+## 随机模拟进行motif在主要转录本正链负链上富集分析（Rstudio）
+```
+##模拟9nt序列的抽取并统计匹配
+set.seed(123)  #设置随机种子
+n_simulations <- 10000  #模拟次数
+sequences_per_simulation <- 36205 #每次模拟抽取的序列数(可变)
+sequence_length <- 9  #序列长度是9nt
+#### genome_length <- sum(chromosome_lengths)  #基因组的长度 ####
+# 预先计算每个染色体的有效长度
+effective_lengths <- chromosome_lengths - sequence_length +1
+#计算3utr的有效end
+library("dplyr")
+utr_3_prime_regions_c <- utr_3_prime_regions_c %>% mutate(effective_end = end-sequence_length+1)
+utr_3_prime_regions_n <- utr_3_prime_regions_n %>% mutate(effective_end = end-sequence_length+1)
+
+# 记录每次模拟中位于3'UTR的位点数量
+utr_sense_count <- numeric(n_simulations)
+utr_antisense_count <- numeric(n_simulations)
+
+# 创建一个数据框，保存每个染色体的长度
+chromosome_data <- data.frame(
+  chromosome = names(chromosome_lengths),
+  length = chromosome_lengths)
+
+# 模拟过程
+for (i in 1:n_simulations) {
+  # 生成随机染色体和随机起始位置、随机正反链
+  random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE)
+  random_positions <- sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequences_per_simulation, replace = TRUE)
+  random_strand <- sample(c("+","-"),sequences_per_simulation,replace=TRUE)
+  # 统计有多少个序列元件位于3'UTR区域
+  utr_count <- 0
+  utr_anticount <- 0
+  for (j in 1:sequences_per_simulation) { 
+     chrom <- random_chromosomes[j] 
+     pos <- random_positions[j] 
+     str <- random_strand[j]
+     utr_regions_c <- utr_3_prime_regions_c[utr_3_prime_regions_c$chromosome == chrom,] 
+     utr_regions_n <- utr_3_prime_regions_n[utr_3_prime_regions_n$chromosome == chrom,]
+     #正义链
+     if (any(pos >= utr_regions_c$start & pos <= utr_regions_c$effective_end & str == utr_regions$strand)) {
+       utr_count <- utr_count + 1 } 
+      #反义链
+     if (any(pos >= utr_regions_n$start & pos <= utr_regions_n$effective_end & str == utr_regions$strand)) {
+       utr_anticount <- utr_anticount + 1 } }
+  # 保存每次模拟的结果
+  utr_sense_count[i] <- utr_count
+  utr_antisense_count[i] <- utr_anticount
+}
+save(utr_sense_count,file="utr_sense_count.RData")
+save(utr_antisense_count,file="utr_antisense_count.RData")
+
+library(foreach) 
+library(doParallel)
+# 注册并行后端 
+registerDoParallel(cores = detectCores() - 1) 
+# 使用foreach循环进行并行模拟 
+utr_sense_count <- foreach(i = 1:n_simulations, .combine = c) %dopar% { 
+   random_chromosomes <- sample(chromosome_data$chromosome, sequences_per_simulation, replace = TRUE) 
+   random_positions <-sample(effective_lengths[match(random_chromosomes,chromosome_data$chromosome)],sequences_per_simulation, replace = TRUE) 
+    random_strand <- sample(c("+","-"),sequences_per_simulation,replace=TRUE)
+   utr_count <- 0 
+   for (j in 1:sequences_per_simulation) { 
+        chrom <- random_chromosomes[j] 
+        pos <- random_positions[j] 
+        str <- random_strand[j]
+        utr_regions <- utr_3_prime_regions[utr_3_prime_regions$chromosome == chrom,] 
+        if (any(pos > utr_regions$start & pos < utr_regions$effective_end & str == utr_regions$strand)) { 
+            utr_count <- utr_count + 1 } } 
+   return(utr_count) }
+
+
+#转换文件内容格式
+count <- utr_sense_count %>% 
+         sort() %>%
+         table()
+count <- as.data.frame(count)
+names(count) <- c("3_utr","Frequency")
+```
+
 ## 检验数据是否符合正态分布
 ##### Anderson-Darling 检验（适用于大样本）
 ```
@@ -154,11 +235,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ4NTUyMDY5LC03ODQ2MDQ4NzIsLTEyMD
-E3NjUyMjYsMTAxNDM4NzY0NiwtOTMxNDg3NTIyLDIwMzc4OTE0
-MjUsNTA1ODU5NjkwLC0xOTQxMTg1NDAyLDE1Mjg2OTEwNjgsLT
-E1NzgzOTI1NjYsLTE5NzQ1MDA5NTYsLTE1MTE3MTAyMjYsNDk2
-Mjc1OTg5LDEzNjM2MjA5NjYsNTcxNTExODIzLDU3NjQxMDk5Mi
-w5NTkyMDE0ODYsMjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NTQz
-NDg2XX0=
+eyJoaXN0b3J5IjpbLTkxMzY2OTQ4NCwtNzg0NjA0ODcyLC0xMj
+AxNzY1MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkx
+NDI1LDUwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC
+0xNTc4MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5
+NjI3NTk4OSwxMzYzNjIwOTY2LDU3MTUxMTgyMyw1NzY0MTA5OT
+IsOTU5MjAxNDg2LDI4MTY4Njg1OCwtNDU0MDkwMTAsLTM0OTU0
+MzQ4Nl19
 -->
