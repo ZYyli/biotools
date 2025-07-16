@@ -1,20 +1,5 @@
 # 准备文件
-## 全基因组长度并统计次数
-h38.gtf是已经筛选过3'UTR的基因注释文件
-``` 
-#统计该序列在基因组(man_slect、transcript)中出现的次数
-grep 'tag "MANE_Select"' Homo_sapiens.GRCh38.113.gtf > h38_man.gtf （公共）
-awk -F'\t' '$3 == "transcript" {print}' h38_man.gtf > h38_man_transcript.gtf （公共）
-bedtools intersect -a h38_man_transcript.gtf -b locate_1.bed -wa -wb > sum
-
-#正负链统一
-awk -F'\t' -vOFS='\t' '$7==$15' sum > sum_trans
-wc -l sum_trans #13713次，改名为sum_trans_13713
-
-##筛选3utr mane_select标签的基因gtf文件（公共）
-grep 'tag "MANE_Select"' h38.gtf > h38_man_3utr.gtf
-```
-
+## 获取全基因组长度
 ```
 ##Rstudio  获取染色体长度（公共）
 #安装包
@@ -169,11 +154,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDE3NjUyMjYsMTAxNDM4NzY0NiwtOT
-MxNDg3NTIyLDIwMzc4OTE0MjUsNTA1ODU5NjkwLC0xOTQxMTg1
-NDAyLDE1Mjg2OTEwNjgsLTE1NzgzOTI1NjYsLTE5NzQ1MDA5NT
-YsLTE1MTE3MTAyMjYsNDk2Mjc1OTg5LDEzNjM2MjA5NjYsNTcx
-NTExODIzLDU3NjQxMDk5Miw5NTkyMDE0ODYsMjgxNjg2ODU4LC
-00NTQwOTAxMCwtMzQ5NTQzNDg2LC0xMTI5MTE1NjA0LC0xODE0
-Mzc2MTY3XX0=
+eyJoaXN0b3J5IjpbMTEzOTc4MjE4MywtMTIwMTc2NTIyNiwxMD
+E0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5MTQyNSw1MDU4NTk2
+OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OCwtMTU3ODM5MjU2Ni
+wtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0OTYyNzU5ODksMTM2
+MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOTkyLDk1OTIwMTQ4Ni
+wyODE2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1NDM0ODYsLTExMjkx
+MTU2MDRdfQ==
 -->
