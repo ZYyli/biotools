@@ -66,7 +66,7 @@ gtftools -i mane_introns.bed mane_exons.gtf
 ##元件在intron中出现次数
 bedtools intersect -a mane_introns.bed -b locate_1.bed -wa -wb > mane_intron_1
 ##正负链统一 
-awk -F'\t' -vOFS='\t' '$4==$12 {print}' mane_intron_1 > mane_intron_2
+awk -F'\t' -vOFS='\t' '$4==$13 {print}' mane_intron_1 > mane_intron_2
 ```
 ### 交集——序列在3’UTR中的区域位置及数量
 [【bioinfo】bedtools之intersect命令参数_bedtools intersect-CSDN博客](https://blog.csdn.net/sinat_32872729/article/details/126541494)
@@ -163,11 +163,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDUyNjk5NzM1LDE1NjM0NTk0NDYsODQzMT
-U2Mjk1LDExNjYzNzE0MCwxMTkyODA4NzIzLDIwNDY0MzExMDQs
-OTU5OTM3NzQ1LC00NjExODIzMDMsLTEyMTQ0MTMzMDEsMjA2MT
-k2NjQxNiwtMjU0NzQ0MjM2LDI4Njc5OTUxOCwtMTkzNDMwNjg4
-MiwtNjgzMTI5MDQ4LDEyMzk3ODAxNDcsMTQwNjkzOTE3MCwtMT
-MxNjM4Nzk0NSwtMjY0MTAwNjcwLDgxNDI5NjgxNCwyMTI4OTQ2
-MTAwXX0=
+eyJoaXN0b3J5IjpbMTU2MzQ1OTQ0NiwxNTYzNDU5NDQ2LDg0Mz
+E1NjI5NSwxMTY2MzcxNDAsMTE5MjgwODcyMywyMDQ2NDMxMTA0
+LDk1OTkzNzc0NSwtNDYxMTgyMzAzLC0xMjE0NDEzMzAxLDIwNj
+E5NjY0MTYsLTI1NDc0NDIzNiwyODY3OTk1MTgsLTE5MzQzMDY4
+ODIsLTY4MzEyOTA0OCwxMjM5NzgwMTQ3LDE0MDY5MzkxNzAsLT
+EzMTYzODc5NDUsLTI2NDEwMDY3MCw4MTQyOTY4MTQsMjEyODk0
+NjEwMF19
 -->
