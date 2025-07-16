@@ -62,7 +62,7 @@ awk -F'\t' -vOFS='\t' '$7==$15 {print}' mane_trans_count_1 > mane_trans_count_2
 ```
 ##获取intrond位置信息
 awk '$3 == "exon"' Homo_sapiens.GRCh38.113.gtf | grep 'transcript_biotype "protein_coding"' | grep 'tag "MANE_Select"' > mane_exons.gtf
-gtftools -i introns mane_exons.gtf > mane_introns.bed
+gtftools -i mane_introns.bed mane_exons.gtf
 ##元件在intron中出现次数
 bedtools intersect -a mane_introns.bed -b locate_1.bed -wa -wb > mane_intron_count_1
 ##正负链统一 
@@ -163,11 +163,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNTk1MzIyMCwxMTY2MzcxNDAsMTE5Mj
-gwODcyMywyMDQ2NDMxMTA0LDk1OTkzNzc0NSwtNDYxMTgyMzAz
-LC0xMjE0NDEzMzAxLDIwNjE5NjY0MTYsLTI1NDc0NDIzNiwyOD
-Y3OTk1MTgsLTE5MzQzMDY4ODIsLTY4MzEyOTA0OCwxMjM5Nzgw
-MTQ3LDE0MDY5MzkxNzAsLTEzMTYzODc5NDUsLTI2NDEwMDY3MC
-w4MTQyOTY4MTQsMjEyODk0NjEwMCwtMTk0OTY3MDc4MywxMTM2
-Mjk1MTAzXX0=
+eyJoaXN0b3J5IjpbODQzMTU2Mjk1LDExNjYzNzE0MCwxMTkyOD
+A4NzIzLDIwNDY0MzExMDQsOTU5OTM3NzQ1LC00NjExODIzMDMs
+LTEyMTQ0MTMzMDEsMjA2MTk2NjQxNiwtMjU0NzQ0MjM2LDI4Nj
+c5OTUxOCwtMTkzNDMwNjg4MiwtNjgzMTI5MDQ4LDEyMzk3ODAx
+NDcsMTQwNjkzOTE3MCwtMTMxNjM4Nzk0NSwtMjY0MTAwNjcwLD
+gxNDI5NjgxNCwyMTI4OTQ2MTAwLC0xOTQ5NjcwNzgzLDExMzYy
+OTUxMDNdfQ==
 -->
