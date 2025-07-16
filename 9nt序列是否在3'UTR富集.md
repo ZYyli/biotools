@@ -35,11 +35,11 @@ save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/
 ## 3'UTR正义链或反义链基因组位置（Rstudio）
 ```
 ##正链
-utr_3_prime_regions_c <- utr_3_prime_regions[utr_3_prime_regions$strand == "+",]
-save(utr_3_prime_regions_c,file = "utr_3_prime_regions_c.RData")
+utr_3_prime_regions_p <- utr_3_prime_regions[utr_3_prime_regions$strand == "+",]
+save(utr_3_prime_regions_p,file = "utr_3_prime_regions_p.RData")
 ##反链
-utr_3_prime_regions_n <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
-save(utr_3_prime_regions_n,file = "utr_3_prime_regions_n.RData")
+utr_3_prime_regions_m <- utr_3_prime_regions[utr_3_prime_regions$strand == "-",]
+save(utr_3_prime_regions_m,file = "utr_3_prime_regions_m.RData")
 ```
 ## 主要转录本基因组正义链或反义链位置范围（Rstudio）
 ```
@@ -51,7 +51,9 @@ h38_man_transcript <- h38_man_transcript %>%
      rename(chromosome =V1,start =V4,end=V5,strand =V7) %>%
      select(chromosome, start, end, strand)
 #筛选正/反义链
-h38_man_transcript_n <- h38_man_transcript[h38_man_transcript$strand =="-",]
+h38_man_transcript_p <- h38_man_transcript[h38_man_transcript$strand =="+",]
+save(h38_man_transcript_p,file="h38_man_transcript_p.RData")
+h38_man_transcript_m <- h38_man_transcript[h38_man_transcript$strand =="-",]
 save(h38_man_transcript_n,file="h38_man_transcript_n.RData")
 ```
 ## 随机模拟进行motif在3UTR正链负链上富集分析（Rstudio）
@@ -235,7 +237,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMzY2OTQ4NCwtNzg0NjA0ODcyLC0xMj
+eyJoaXN0b3J5IjpbLTc4NDk0MTA2NiwtNzg0NjA0ODcyLC0xMj
 AxNzY1MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkx
 NDI1LDUwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC
 0xNTc4MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5
