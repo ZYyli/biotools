@@ -146,7 +146,7 @@ sequence_length <- 9  #序列长度是9nt
 #### genome_length <- sum(chromosome_lengths)  #基因组的长度 ####
 # 预先计算每个染色体的有效长度
 effective_lengths <- chromosome_lengths - sequence_length +1
-#计算主要 的有效end
+#计算主要转录本的有效end
 library("dplyr")
 h38_man_transcript_p <- h38_man_transcript_p %>% mutate(effective_end = end-sequence_length+1)
 h38_man_transcript_m <- h38_man_transcript_m %>% mutate(effective_end = end-sequence_length+1)
@@ -173,8 +173,8 @@ for (i in 1:n_simulations) {
      chrom <- random_chromosomes[j] 
      pos <- random_positions[j] 
      str <- random_strand[j]
-     utr_regions_c <- utr_3_prime_regions_c[utr_3_prime_regions_c$chromosome == chrom,] 
-     utr_regions_n <- utr_3_prime_regions_n[utr_3_prime_regions_n$chromosome == chrom,]
+     mrna_regions_p <- h38_man_transcript_p[utr_3_prime_regions_c$chromosome == chrom,] 
+     mrna_regions_m <- h38_man_transcript_m[utr_3_prime_regions_n$chromosome == chrom,]
      #正义链
      if (any(pos >= utr_regions_c$start & pos <= utr_regions_c$effective_end & str == utr_regions$strand)) {
        utr_count <- utr_count + 1 } 
@@ -237,11 +237,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODIxOTI5NjMsLTc4NDYwNDg3MiwtMT
-IwMTc2NTIyNiwxMDE0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5
-MTQyNSw1MDU4NTk2OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OC
-wtMTU3ODM5MjU2NiwtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0
-OTYyNzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOT
-kyLDk1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1
-NDM0ODZdfQ==
+eyJoaXN0b3J5IjpbLTYzODQ3MjE3MCwtNzg0NjA0ODcyLC0xMj
+AxNzY1MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkx
+NDI1LDUwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC
+0xNTc4MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5
+NjI3NTk4OSwxMzYzNjIwOTY2LDU3MTUxMTgyMyw1NzY0MTA5OT
+IsOTU5MjAxNDg2LDI4MTY4Njg1OCwtNDU0MDkwMTAsLTM0OTU0
+MzQ4Nl19
 -->
