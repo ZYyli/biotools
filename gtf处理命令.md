@@ -14,7 +14,7 @@ awk -F'\t' '{$2=$6=$8="";print}' xx.gtf > xx.gtf
 
 ###  筛选transcript的注释信息
 ```
-awk -F'\t' '$3 == "transcript" {print}' Homo_sapiens.GRCh38.113.gtf > h38_transcript.gtf
+awk -F'\t' '$3 == "transcript" {print}' Homo_sapiens.GRCh38.113.gtf | > h38_transcript.gtf
 grep 'tag "MANE_Select"' h38_transcript.gtf > h38_mane_transcript.gtf
 ```
 ###  筛选3‘UTR的基因注释信息
@@ -153,11 +153,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTQ0MTMzMDEsMjA2MTk2NjQxNiwtMj
-U0NzQ0MjM2LDI4Njc5OTUxOCwtMTkzNDMwNjg4MiwtNjgzMTI5
-MDQ4LDEyMzk3ODAxNDcsMTQwNjkzOTE3MCwtMTMxNjM4Nzk0NS
-wtMjY0MTAwNjcwLDgxNDI5NjgxNCwyMTI4OTQ2MTAwLC0xOTQ5
-NjcwNzgzLDExMzYyOTUxMDMsLTExMjA1MjQwNjYsMTU1MzI1OT
-Q5MCwtNTc5OTI5OTk2LDEzNTQ2NjUxNjcsLTM0NzcyOTA3Nywt
-MTc2NTY2OTI5Ml19
+eyJoaXN0b3J5IjpbMTM1NDc2NzgzLC0xMjE0NDEzMzAxLDIwNj
+E5NjY0MTYsLTI1NDc0NDIzNiwyODY3OTk1MTgsLTE5MzQzMDY4
+ODIsLTY4MzEyOTA0OCwxMjM5NzgwMTQ3LDE0MDY5MzkxNzAsLT
+EzMTYzODc5NDUsLTI2NDEwMDY3MCw4MTQyOTY4MTQsMjEyODk0
+NjEwMCwtMTk0OTY3MDc4MywxMTM2Mjk1MTAzLC0xMTIwNTI0MD
+Y2LDE1NTMyNTk0OTAsLTU3OTkyOTk5NiwxMzU0NjY1MTY3LC0z
+NDc3MjkwNzddfQ==
 -->
