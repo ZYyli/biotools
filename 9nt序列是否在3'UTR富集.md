@@ -152,8 +152,8 @@ h38_man_transcript_p <- h38_man_transcript_p %>% mutate(effective_end = end-sequ
 h38_man_transcript_m <- h38_man_transcript_m %>% mutate(effective_end = end-sequence_length+1)
 
 # 记录每次模拟中位于3'UTR的位点数量
-utr_sense_count <- numeric(n_simulations)
-utr_antisense_count <- numeric(n_simulations)
+mrna_sense_count <- numeric(n_simulations)
+_antisense_count <- numeric(n_simulations)
 
 # 创建一个数据框，保存每个染色体的长度
 chromosome_data <- data.frame(
@@ -173,13 +173,13 @@ for (i in 1:n_simulations) {
      chrom <- random_chromosomes[j] 
      pos <- random_positions[j] 
      str <- random_strand[j]
-     mrna_regions_p <- h38_man_transcript_p[utr_3_prime_regions_c$chromosome == chrom,] 
-     mrna_regions_m <- h38_man_transcript_m[utr_3_prime_regions_n$chromosome == chrom,]
+     mrna_regions_p <- h38_man_transcript_p[h38_man_transcript_p$chromosome == chrom,] 
+     mrna_regions_m <- h38_man_transcript_m[h38_man_transcript_m$chromosome == chrom,]
      #正义链
-     if (any(pos >= utr_regions_c$start & pos <= utr_regions_c$effective_end & str == utr_regions$strand)) {
+     if (any(pos >= mrna_regions_p$start & pos <= mrna_regions_p$effective_end & str == mrna_regions_p$strand)) {
        utr_count <- utr_count + 1 } 
       #反义链
-     if (any(pos >= utr_regions_n$start & pos <= utr_regions_n$effective_end & str == utr_regions$strand)) {
+     if (any(pos >= mrna_regions_m$start & pos <= mrna_regions_m$effective_end & str == mrna_regions_m$strand)) {
        utr_anticount <- utr_anticount + 1 } }
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
@@ -237,7 +237,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzODQ3MjE3MCwtNzg0NjA0ODcyLC0xMj
+eyJoaXN0b3J5IjpbLTY5MTA1MDk2MywtNzg0NjA0ODcyLC0xMj
 AxNzY1MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkx
 NDI1LDUwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC
 0xNTc4MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5
