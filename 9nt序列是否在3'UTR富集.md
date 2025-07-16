@@ -68,8 +68,8 @@ sequence_length <- 9  #序列长度是9nt
 effective_lengths <- chromosome_lengths - sequence_length +1
 #计算3utr的有效end
 library("dplyr")
-utr_3_prime_regions_c <- utr_3_prime_regions_c %>% mutate(effective_end = end-sequence_length+1)
-utr_3_prime_regions_n <- utr_3_prime_regions_n %>% mutate(effective_end = end-sequence_length+1)
+utr_3_prime_regions_p <- utr_3_prime_regions_p %>% mutate(effective_end = end-sequence_length+1)
+utr_3_prime_regions_m <- utr_3_prime_regions_m %>% mutate(effective_end = end-sequence_length+1)
 
 # 记录每次模拟中位于3'UTR的位点数量
 utr_sense_count <- numeric(n_simulations)
@@ -93,10 +93,10 @@ for (i in 1:n_simulations) {
      chrom <- random_chromosomes[j] 
      pos <- random_positions[j] 
      str <- random_strand[j]
-     utr_regions_c <- utr_3_prime_regions_c[utr_3_prime_regions_c$chromosome == chrom,] 
-     utr_regions_n <- utr_3_prime_regions_n[utr_3_prime_regions_n$chromosome == chrom,]
+     utr_regions_p <- utr_3_prime_regions_p[utr_3_prime_regions_p$chromosome == chrom,] 
+     utr_regions_m <- utr_3_prime_regions_m[utr_3_prime_regions_m$chromosome == chrom,]
      #正义链
-     if (any(pos >= utr_regions_c$start & pos <= utr_regions_c$effective_end & str == utr_regions$strand)) {
+     if (any(pos >= utr_regions_p$start & pos <= utr_regions_c$effective_end & str == utr_regions$strand)) {
        utr_count <- utr_count + 1 } 
       #反义链
      if (any(pos >= utr_regions_n$start & pos <= utr_regions_n$effective_end & str == utr_regions$strand)) {
@@ -237,11 +237,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NDk0MTA2NiwtNzg0NjA0ODcyLC0xMj
-AxNzY1MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkx
-NDI1LDUwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC
-0xNTc4MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5
-NjI3NTk4OSwxMzYzNjIwOTY2LDU3MTUxMTgyMyw1NzY0MTA5OT
-IsOTU5MjAxNDg2LDI4MTY4Njg1OCwtNDU0MDkwMTAsLTM0OTU0
-MzQ4Nl19
+eyJoaXN0b3J5IjpbLTEzODcyMDA0OTcsLTc4NDYwNDg3MiwtMT
+IwMTc2NTIyNiwxMDE0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5
+MTQyNSw1MDU4NTk2OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OC
+wtMTU3ODM5MjU2NiwtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0
+OTYyNzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOT
+kyLDk1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1
+NDM0ODZdfQ==
 -->
