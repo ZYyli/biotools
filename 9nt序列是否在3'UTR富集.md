@@ -96,10 +96,10 @@ for (i in 1:n_simulations) {
      utr_regions_p <- utr_3_prime_regions_p[utr_3_prime_regions_p$chromosome == chrom,] 
      utr_regions_m <- utr_3_prime_regions_m[utr_3_prime_regions_m$chromosome == chrom,]
      #正义链
-     if (any(pos >= utr_regions_p$start & pos <= utr_regions_c$effective_end & str == utr_regions$strand)) {
+     if (any(pos >= utr_regions_p$start & pos <= utr_regions_p$effective_end & str == utr_regions_p$strand)) {
        utr_count <- utr_count + 1 } 
       #反义链
-     if (any(pos >= utr_regions_n$start & pos <= utr_regions_n$effective_end & str == utr_regions$strand)) {
+     if (any(pos >= utr_regions_m$start & pos <= utr_regions_m$effective_end & str == utr_regions_m$strand)) {
        utr_anticount <- utr_anticount + 1 } }
   # 保存每次模拟的结果
   utr_sense_count[i] <- utr_count
@@ -146,10 +146,10 @@ sequence_length <- 9  #序列长度是9nt
 #### genome_length <- sum(chromosome_lengths)  #基因组的长度 ####
 # 预先计算每个染色体的有效长度
 effective_lengths <- chromosome_lengths - sequence_length +1
-#计算3utr的有效end
+#计算主要 的有效end
 library("dplyr")
-utr_3_prime_regions_c <- utr_3_prime_regions_c %>% mutate(effective_end = end-sequence_length+1)
-utr_3_prime_regions_n <- utr_3_prime_regions_n %>% mutate(effective_end = end-sequence_length+1)
+h38_man_transcript_p <- h38_man_transcript_p %>% mutate(effective_end = end-sequence_length+1)
+h38_man_transcript_m <- h38_man_transcript_m %>% mutate(effective_end = end-sequence_length+1)
 
 # 记录每次模拟中位于3'UTR的位点数量
 utr_sense_count <- numeric(n_simulations)
@@ -237,7 +237,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODcyMDA0OTcsLTc4NDYwNDg3MiwtMT
+eyJoaXN0b3J5IjpbLTE3ODIxOTI5NjMsLTc4NDYwNDg3MiwtMT
 IwMTc2NTIyNiwxMDE0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5
 MTQyNSw1MDU4NTk2OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OC
 wtMTU3ODM5MjU2NiwtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0
