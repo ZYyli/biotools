@@ -47,7 +47,7 @@ seqkit locate --bed -p ATTATGCTT Homo_sapiens.GRCh38.dna.primary_assembly.fa > l
 grep '+' locate_1.bed > locate_c.bed
 grep '-' locate_1.bed > locate_n.bed
 ```
-### 确定序列原件在transcript出现次数
+### 确定序列元件在编码基因主要transcript出现次数
 ```
 bedtools intersect -a protein_coding_transcript.gtf -b locate_1.bed -wa -wb > trans_count_1
 ##正负链统一 
@@ -58,6 +58,7 @@ bedtools intersect -a protein_coding_mane_transcript.gtf -b locate_1.bed -wa -wb
 awk -F'\t' -vOFS='\t' '$7==$15 {print}' mane_trans_count_1 > mane_trans_count_2
 #
 ```
+### 确定元件在内含子中出现的 
 ### 交集——序列在3’UTR中的区域位置及数量
 [【bioinfo】bedtools之intersect命令参数_bedtools intersect-CSDN博客](https://blog.csdn.net/sinat_32872729/article/details/126541494)
 ###### 可以对两个基因组特征进行overlap，找到两者重合的区域。比如求两个peaks的交集，或者看很多位点信息在没在peaks或其他区域中
@@ -153,11 +154,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0NjQzMTEwNCw5NTk5Mzc3NDUsLTQ2MT
-E4MjMwMywtMTIxNDQxMzMwMSwyMDYxOTY2NDE2LC0yNTQ3NDQy
-MzYsMjg2Nzk5NTE4LC0xOTM0MzA2ODgyLC02ODMxMjkwNDgsMT
-IzOTc4MDE0NywxNDA2OTM5MTcwLC0xMzE2Mzg3OTQ1LC0yNjQx
-MDA2NzAsODE0Mjk2ODE0LDIxMjg5NDYxMDAsLTE5NDk2NzA3OD
-MsMTEzNjI5NTEwMywtMTEyMDUyNDA2NiwxNTUzMjU5NDkwLC01
-Nzk5Mjk5OTZdfQ==
+eyJoaXN0b3J5IjpbODA1NTMzNTgyLDIwNDY0MzExMDQsOTU5OT
+M3NzQ1LC00NjExODIzMDMsLTEyMTQ0MTMzMDEsMjA2MTk2NjQx
+NiwtMjU0NzQ0MjM2LDI4Njc5OTUxOCwtMTkzNDMwNjg4MiwtNj
+gzMTI5MDQ4LDEyMzk3ODAxNDcsMTQwNjkzOTE3MCwtMTMxNjM4
+Nzk0NSwtMjY0MTAwNjcwLDgxNDI5NjgxNCwyMTI4OTQ2MTAwLC
+0xOTQ5NjcwNzgzLDExMzYyOTUxMDMsLTExMjA1MjQwNjYsMTU1
+MzI1OTQ5MF19
 -->
