@@ -185,8 +185,8 @@ for (i in 1:n_simulations) {
   mrna_sense_count [i] <- mrna_count
   mrna_antisense_count [i] <- mrna_anticount
 }
-save(mrna_sense_count,file="utr_sense_count.RData")
-save(utr_antisense_count,file="utr_antisense_count.RData")
+save(mrna_sense_count,file="mrna_sense_count.RData")
+save(mrna_antisense_count,file="mrna_antisense_count.RData")
 
 library(foreach) 
 library(doParallel)
@@ -209,11 +209,11 @@ utr_sense_count <- foreach(i = 1:n_simulations, .combine = c) %dopar% {
 
 
 #转换文件内容格式
-count <- utr_sense_count %>% 
+count <- mrna_sense_count %>% 
          sort() %>%
          table()
 count <- as.data.frame(count)
-names(count) <- c("3_utr","Frequency")
+names(count) <- c("mrna","Frequency")
 ```
 
 ## 检验数据是否符合正态分布
@@ -237,11 +237,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzY2NTEwNjIsLTc4NDYwNDg3MiwtMT
-IwMTc2NTIyNiwxMDE0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5
-MTQyNSw1MDU4NTk2OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OC
-wtMTU3ODM5MjU2NiwtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0
-OTYyNzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOT
-kyLDk1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1
-NDM0ODZdfQ==
+eyJoaXN0b3J5IjpbLTM0NTUwODY3OSwtNzg0NjA0ODcyLC0xMj
+AxNzY1MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkx
+NDI1LDUwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC
+0xNTc4MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5
+NjI3NTk4OSwxMzYzNjIwOTY2LDU3MTUxMTgyMyw1NzY0MTA5OT
+IsOTU5MjAxNDg2LDI4MTY4Njg1OCwtNDU0MDkwMTAsLTM0OTU0
+MzQ4Nl19
 -->
