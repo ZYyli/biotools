@@ -54,7 +54,7 @@ h38_man_transcript <- h38_man_transcript %>%
 h38_man_transcript_n <- h38_man_transcript[h38_man_transcript$strand =="-",]
 save(h38_man_transcript_n,file="h38_man_transcript_n.RData")
 ```
-## 随机模拟进行富集分析（Rstudio）
+## 随机模拟进行mo富集分析（Rstudio）
 ```
 ##模拟9nt序列的抽取并统计匹配
 set.seed(123)  #设置随机种子
@@ -154,11 +154,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NDYwNDg3MiwtMTIwMTc2NTIyNiwxMD
-E0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5MTQyNSw1MDU4NTk2
-OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OCwtMTU3ODM5MjU2Ni
-wtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0OTYyNzU5ODksMTM2
-MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOTkyLDk1OTIwMTQ4Ni
-wyODE2ODY4NTgsLTQ1NDA5MDEwLC0zNDk1NDM0ODYsLTExMjkx
-MTU2MDRdfQ==
+eyJoaXN0b3J5IjpbOTQ5MTQ0NzkwLC03ODQ2MDQ4NzIsLTEyMD
+E3NjUyMjYsMTAxNDM4NzY0NiwtOTMxNDg3NTIyLDIwMzc4OTE0
+MjUsNTA1ODU5NjkwLC0xOTQxMTg1NDAyLDE1Mjg2OTEwNjgsLT
+E1NzgzOTI1NjYsLTE5NzQ1MDA5NTYsLTE1MTE3MTAyMjYsNDk2
+Mjc1OTg5LDEzNjM2MjA5NjYsNTcxNTExODIzLDU3NjQxMDk5Mi
+w5NTkyMDE0ODYsMjgxNjg2ODU4LC00NTQwOTAxMCwtMzQ5NTQz
+NDg2XX0=
 -->
