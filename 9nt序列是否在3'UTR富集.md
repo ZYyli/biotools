@@ -1,7 +1,7 @@
 # 准备文件
-## 获取全基因组长度
+## 获取全基因组长度（Rstudio ）
 ```
-##Rstudio  获取染色体长度（公共）
+##获取染色体长度（公共）
 #安装包
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
@@ -154,7 +154,7 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzOTc4MjE4MywtMTIwMTc2NTIyNiwxMD
+eyJoaXN0b3J5IjpbLTc4NDYwNDg3MiwtMTIwMTc2NTIyNiwxMD
 E0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5MTQyNSw1MDU4NTk2
 OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OCwtMTU3ODM5MjU2Ni
 wtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0OTYyNzU5ODksMTM2
