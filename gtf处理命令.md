@@ -66,10 +66,14 @@ gtftools -i mane_introns.bed mane_exons.gtf
 ##获取intrond位置信息
 awk '$3 == "exon"' Homo_sapiens.GRCh38.113.gtf | grep 'transcript_biotype "protein_coding"' > mane_exons.gtf
 gtftools -i introns.bed exons.gtf
-##元件在intron中出现次数
+##元件在mane_intron中出现次数
 bedtools intersect -a mane_introns.bed -b locate_1.bed -wa -wb > mane_intron_1
 ##正负链统一 
 awk -F'\t' -vOFS='\t' '$4==$13 {print}' mane_intron_1 > mane_intron_2
+##元件在intron中出现次数
+bedtools intersect -a introns.bed -b locate_1.bed -wa -wb > intron_1
+##正负链统一 
+awk -F'\t' -vOFS='\t' '$4==$13 {print}' intron_1 > intron_2
 ```
 ### 交集——序列在3’UTR中的区域位置及数量
 [【bioinfo】bedtools之intersect命令参数_bedtools intersect-CSDN博客](https://blog.csdn.net/sinat_32872729/article/details/126541494)
@@ -82,6 +86,7 @@ bedtools intersect -a h38.gtf -b locate_1.bed -wa -wb   > merge_1
 awk -F'\t' -vOFS='\t' '$7==$15 {print}' merge_1 > merge_2
 ##删除多余列和值
 awk -F'\t' -vOFS='\t' '{$2=$6=$8=$14="";print}' merge_2 > merge_3
+g
 awk -F'\t' -vOFS='\t' '{
     # 初始化一个新的第九列字符串
     new_col9 = "";
@@ -166,11 +171,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3OTMxMDcxMSwxNTYzNDU5NDQ2LDE1Nj
-M0NTk0NDYsODQzMTU2Mjk1LDExNjYzNzE0MCwxMTkyODA4NzIz
-LDIwNDY0MzExMDQsOTU5OTM3NzQ1LC00NjExODIzMDMsLTEyMT
-Q0MTMzMDEsMjA2MTk2NjQxNiwtMjU0NzQ0MjM2LDI4Njc5OTUx
-OCwtMTkzNDMwNjg4MiwtNjgzMTI5MDQ4LDEyMzk3ODAxNDcsMT
-QwNjkzOTE3MCwtMTMxNjM4Nzk0NSwtMjY0MTAwNjcwLDgxNDI5
-NjgxNF19
+eyJoaXN0b3J5IjpbMTU5OTA5NTk5MiwxOTc5MzEwNzExLDE1Nj
+M0NTk0NDYsMTU2MzQ1OTQ0Niw4NDMxNTYyOTUsMTE2NjM3MTQw
+LDExOTI4MDg3MjMsMjA0NjQzMTEwNCw5NTk5Mzc3NDUsLTQ2MT
+E4MjMwMywtMTIxNDQxMzMwMSwyMDYxOTY2NDE2LC0yNTQ3NDQy
+MzYsMjg2Nzk5NTE4LC0xOTM0MzA2ODgyLC02ODMxMjkwNDgsMT
+IzOTc4MDE0NywxNDA2OTM5MTcwLC0xMzE2Mzg3OTQ1LC0yNjQx
+MDA2NzBdfQ==
 -->
