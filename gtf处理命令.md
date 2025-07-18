@@ -129,6 +129,10 @@ awk -F'\t' -vOFS='\t' '$10 > 0  {print}' count_n > count_n1
 ```
 ##正负链操作一致
 awk -F'\t' -vOFS='\t' '{$2=$6=$8="";print}' count_c1 > count_c2
+#统计非mane_select的3utr中motif出现次数
+grep 'transcript_biotype "protein_coding"' merge_3 > merge_5
+wc -l merge_5
+
 awk -F'\t' -vOFS='\t' '{
     # 初始化一个新的第九列字符串
     new_col9 = "";
@@ -173,11 +177,11 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzYxNDUxNjEsMTQ5OTUxNjAwNSwxOT
-c5MzEwNzExLDE1NjM0NTk0NDYsMTU2MzQ1OTQ0Niw4NDMxNTYy
-OTUsMTE2NjM3MTQwLDExOTI4MDg3MjMsMjA0NjQzMTEwNCw5NT
-k5Mzc3NDUsLTQ2MTE4MjMwMywtMTIxNDQxMzMwMSwyMDYxOTY2
-NDE2LC0yNTQ3NDQyMzYsMjg2Nzk5NTE4LC0xOTM0MzA2ODgyLC
-02ODMxMjkwNDgsMTIzOTc4MDE0NywxNDA2OTM5MTcwLC0xMzE2
-Mzg3OTQ1XX0=
+eyJoaXN0b3J5IjpbLTExNzg4MTUxNDksLTIwMzYxNDUxNjEsMT
+Q5OTUxNjAwNSwxOTc5MzEwNzExLDE1NjM0NTk0NDYsMTU2MzQ1
+OTQ0Niw4NDMxNTYyOTUsMTE2NjM3MTQwLDExOTI4MDg3MjMsMj
+A0NjQzMTEwNCw5NTk5Mzc3NDUsLTQ2MTE4MjMwMywtMTIxNDQx
+MzMwMSwyMDYxOTY2NDE2LC0yNTQ3NDQyMzYsMjg2Nzk5NTE4LC
+0xOTM0MzA2ODgyLC02ODMxMjkwNDgsMTIzOTc4MDE0NywxNDA2
+OTM5MTcwXX0=
 -->
