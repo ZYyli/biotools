@@ -24,12 +24,12 @@ save(chromosome_lengths,file = "chromosome_lengths.RData")
 ## 3'UTR基因组位置文件（Rstudio ）
  ```
 ##获取3utr 标签mane_select的位置信息（公共）
-utr_3_prime_regions <- read.table("D:/新桌面/h38_man_3utr.gtf", header = FALSE,sep = "\t")
+utr_3_prime_regions <- read.table("h38_man_3utr.gtf", header = FALSE,sep = "\t")
 library(dplyr)
 utr_3_prime_regions <- utr_3_prime_regions %>% 
   rename(chromosome = V1, start = V4, end = V5, strand = V7) %>% 
   select(chromosome, start, end, strand)
-save(utr_3_prime_regions,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/utr_3_prime_regions.RData")
+save(utr_3_prime_regions,file = "utr_3_prime_regions.RData")
 ```
 
 ## 3'UTR正义链或反义链基因组位置（Rstudio）
@@ -238,11 +238,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzAyMzI0NjEsLTQ4MTI0NzQ1MSwyMT
-MwMzc2MjMsLTM0NTUwODY3OSwtNzg0NjA0ODcyLC0xMjAxNzY1
-MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkxNDI1LD
-UwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC0xNTc4
-MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5NjI3NT
-k4OSwxMzYzNjIwOTY2LDU3MTUxMTgyMyw1NzY0MTA5OTIsOTU5
-MjAxNDg2XX0=
+eyJoaXN0b3J5IjpbMjMzMTAwNjk2LC00ODEyNDc0NTEsMjEzMD
+M3NjIzLC0zNDU1MDg2NzksLTc4NDYwNDg3MiwtMTIwMTc2NTIy
+NiwxMDE0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5MTQyNSw1MD
+U4NTk2OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OCwtMTU3ODM5
+MjU2NiwtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0OTYyNzU5OD
+ksMTM2MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOTkyLDk1OTIw
+MTQ4Nl19
 -->
