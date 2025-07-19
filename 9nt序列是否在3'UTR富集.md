@@ -44,11 +44,10 @@ save(utr_3_prime_regions_m,file = "utr_3_prime_regions_m.RData")
 ## 主要转录本基因组正义链或反义链位置范围（Rstudio）
 ```
 #建立基因组位置信息数据框
-h38_man_transcript <- read.table("h38_man_transcript.gtf",header = FALSE, sep="\t")
+h38_man_transcript <- read.table("protein_coding_mane_transcript.gtf",header = FALSE, sep="\t")
 #改列名，筛选特定列
 library(dplyr)
 h38_man_transcript <- h38_man_transcript %>%
-
      rename(chromosome =V1,start =V4,end=V5,strand =V7) %>%
      select(chromosome, start, end, strand)
 #筛选正/反义链
@@ -238,11 +237,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMzMTAwNjk2LC00ODEyNDc0NTEsMjEzMD
-M3NjIzLC0zNDU1MDg2NzksLTc4NDYwNDg3MiwtMTIwMTc2NTIy
-NiwxMDE0Mzg3NjQ2LC05MzE0ODc1MjIsMjAzNzg5MTQyNSw1MD
-U4NTk2OTAsLTE5NDExODU0MDIsMTUyODY5MTA2OCwtMTU3ODM5
-MjU2NiwtMTk3NDUwMDk1NiwtMTUxMTcxMDIyNiw0OTYyNzU5OD
-ksMTM2MzYyMDk2Niw1NzE1MTE4MjMsNTc2NDEwOTkyLDk1OTIw
-MTQ4Nl19
+eyJoaXN0b3J5IjpbLTQzMDI1MTM4LDIzMzEwMDY5NiwtNDgxMj
+Q3NDUxLDIxMzAzNzYyMywtMzQ1NTA4Njc5LC03ODQ2MDQ4NzIs
+LTEyMDE3NjUyMjYsMTAxNDM4NzY0NiwtOTMxNDg3NTIyLDIwMz
+c4OTE0MjUsNTA1ODU5NjkwLC0xOTQxMTg1NDAyLDE1Mjg2OTEw
+NjgsLTE1NzgzOTI1NjYsLTE5NzQ1MDA5NTYsLTE1MTE3MTAyMj
+YsNDk2Mjc1OTg5LDEzNjM2MjA5NjYsNTcxNTExODIzLDU3NjQx
+MDk5Ml19
 -->
