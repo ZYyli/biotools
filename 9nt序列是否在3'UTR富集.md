@@ -9,7 +9,7 @@ BiocManager::install("Biostrings")
 library(Biostrings) 
 
 #读取FASTA文件中的基因组序列
-genome <- readDNAStringSet("D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/Homo_sapiens.GRCh38.dna.primary_assembly.fa") 
+genome <- readDNAStringSet("Homo_sapiens.GRCh38.dna.primary_assembly.fa") 
 #筛选出主要的常染色体和性染色体
 main_chromosomes <- grep("^(\\d+|X|Y)", names(genome), value = TRUE)
 genome_main <- genome[main_chromosomes]
@@ -19,7 +19,7 @@ names(chromosome_lengths) <- c("1","10","11","12","13","14","15","16","17","18",
                                "2","20","21","22","3","4","5","6","7","8","9","X","Y")
 #查看染色体信息（例如，chromosome名和长度） 
 chromosome_lengths
-save(chromosome_lengths,file = "D:/新桌面/zhaolab/生信/元件匹配_12.19/ATTTTGCTT/R数据文件/chromosome_lengths.RData")
+save(chromosome_lengths,file = "chromosome_lengths.RData")
 ```
 ## 3'UTR基因组位置文件（Rstudio ）
  ```
@@ -238,11 +238,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MTI0NzQ1MSwyMTMwMzc2MjMsLTM0NT
-UwODY3OSwtNzg0NjA0ODcyLC0xMjAxNzY1MjI2LDEwMTQzODc2
-NDYsLTkzMTQ4NzUyMiwyMDM3ODkxNDI1LDUwNTg1OTY5MCwtMT
-k0MTE4NTQwMiwxNTI4NjkxMDY4LC0xNTc4MzkyNTY2LC0xOTc0
-NTAwOTU2LC0xNTExNzEwMjI2LDQ5NjI3NTk4OSwxMzYzNjIwOT
-Y2LDU3MTUxMTgyMyw1NzY0MTA5OTIsOTU5MjAxNDg2LDI4MTY4
-Njg1OF19
+eyJoaXN0b3J5IjpbLTE4MzAyMzI0NjEsLTQ4MTI0NzQ1MSwyMT
+MwMzc2MjMsLTM0NTUwODY3OSwtNzg0NjA0ODcyLC0xMjAxNzY1
+MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkxNDI1LD
+UwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC0xNTc4
+MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5NjI3NT
+k4OSwxMzYzNjIwOTY2LDU3MTUxMTgyMyw1NzY0MTA5OTIsOTU5
+MjAxNDg2XX0=
 -->
