@@ -48,6 +48,7 @@ h38_man_transcript <- read.table("h38_man_transcript.gtf",header = FALSE, sep="\
 #改列名，筛选特定列
 library(dplyr)
 h38_man_transcript <- h38_man_transcript %>%
+
      rename(chromosome =V1,start =V4,end=V5,strand =V7) %>%
      select(chromosome, start, end, strand)
 #筛选正/反义链
@@ -237,11 +238,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMDM3NjIzLC0zNDU1MDg2NzksLTc4ND
-YwNDg3MiwtMTIwMTc2NTIyNiwxMDE0Mzg3NjQ2LC05MzE0ODc1
-MjIsMjAzNzg5MTQyNSw1MDU4NTk2OTAsLTE5NDExODU0MDIsMT
-UyODY5MTA2OCwtMTU3ODM5MjU2NiwtMTk3NDUwMDk1NiwtMTUx
-MTcxMDIyNiw0OTYyNzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4Mj
-MsNTc2NDEwOTkyLDk1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1NDA5
-MDEwXX0=
+eyJoaXN0b3J5IjpbLTQ4MTI0NzQ1MSwyMTMwMzc2MjMsLTM0NT
+UwODY3OSwtNzg0NjA0ODcyLC0xMjAxNzY1MjI2LDEwMTQzODc2
+NDYsLTkzMTQ4NzUyMiwyMDM3ODkxNDI1LDUwNTg1OTY5MCwtMT
+k0MTE4NTQwMiwxNTI4NjkxMDY4LC0xNTc4MzkyNTY2LC0xOTc0
+NTAwOTU2LC0xNTExNzEwMjI2LDQ5NjI3NTk4OSwxMzYzNjIwOT
+Y2LDU3MTUxMTgyMyw1NzY0MTA5OTIsOTU5MjAxNDg2LDI4MTY4
+Njg1OF19
 -->
