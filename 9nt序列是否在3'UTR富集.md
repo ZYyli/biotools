@@ -54,7 +54,7 @@ h38_man_transcript <- h38_man_transcript %>%
 h38_man_transcript_p <- h38_man_transcript[h38_man_transcript$strand =="+",]
 save(h38_man_transcript_p,file="h38_man_transcript_p.RData")
 h38_man_transcript_m <- h38_man_transcript[h38_man_transcript$strand =="-",]
-save(h38_man_transcript_n,file="h38_man_transcript_n.RData")
+save(h38_man_transcript_m,file="h38_man_transcript_m.RData")
 ```
 ## 随机模拟进行motif在3UTR正链负链上富集分析（Rstudio）
 ```
@@ -237,11 +237,11 @@ shapiro.test(utr_sense_count)
 注意：Shapiro-Wilk 适用于n ≤ 5000的数据集，对于更大数据集，使用 Kolmogorov-Smirnov 或 Anderson-Darling。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0NTUwODY3OSwtNzg0NjA0ODcyLC0xMj
-AxNzY1MjI2LDEwMTQzODc2NDYsLTkzMTQ4NzUyMiwyMDM3ODkx
-NDI1LDUwNTg1OTY5MCwtMTk0MTE4NTQwMiwxNTI4NjkxMDY4LC
-0xNTc4MzkyNTY2LC0xOTc0NTAwOTU2LC0xNTExNzEwMjI2LDQ5
-NjI3NTk4OSwxMzYzNjIwOTY2LDU3MTUxMTgyMyw1NzY0MTA5OT
-IsOTU5MjAxNDg2LDI4MTY4Njg1OCwtNDU0MDkwMTAsLTM0OTU0
-MzQ4Nl19
+eyJoaXN0b3J5IjpbMjEzMDM3NjIzLC0zNDU1MDg2NzksLTc4ND
+YwNDg3MiwtMTIwMTc2NTIyNiwxMDE0Mzg3NjQ2LC05MzE0ODc1
+MjIsMjAzNzg5MTQyNSw1MDU4NTk2OTAsLTE5NDExODU0MDIsMT
+UyODY5MTA2OCwtMTU3ODM5MjU2NiwtMTk3NDUwMDk1NiwtMTUx
+MTcxMDIyNiw0OTYyNzU5ODksMTM2MzYyMDk2Niw1NzE1MTE4Mj
+MsNTc2NDEwOTkyLDk1OTIwMTQ4NiwyODE2ODY4NTgsLTQ1NDA5
+MDEwXX0=
 -->
