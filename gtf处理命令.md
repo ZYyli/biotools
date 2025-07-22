@@ -182,11 +182,10 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 ```
 #序列在3'UTR的位置
 bedtools intersect -a h38.gtf -b locate_1.bed -wa -wb   > merge_1
-grep 'transcript_biotype "protein_coding"' merge_1 | grep 'tag "MANE_Select"'
-awk -F'\t' -vOFS='\t' '$7 != $15 {print}' analysis_1752208539_merge_1 >
+awk -F'\t' -vOFS='\t' '$7 != $15 {print}' merge_1 | grep 'transcript_biotype "protein_coding"' | grep 'tag "MANE_Select"' > ansense_3utr
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTI5NDI3ODgsLTIwODA0NTY1NTksMT
+eyJoaXN0b3J5IjpbLTE5NTAwMDY2NTgsLTIwODA0NTY1NTksMT
 k3NTkzMTkxMywtMjAzNjE0NTE2MSwxNDk5NTE2MDA1LDE5Nzkz
 MTA3MTEsMTU2MzQ1OTQ0NiwxNTYzNDU5NDQ2LDg0MzE1NjI5NS
 wxMTY2MzcxNDAsMTE5MjgwODcyMywyMDQ2NDMxMTA0LDk1OTkz
