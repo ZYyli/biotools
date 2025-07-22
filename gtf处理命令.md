@@ -176,12 +176,18 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 [seqkit序列处理神器的常用命令 - 组学大讲堂问答社区](https://www.omicsclass.com/article/1903)
 [seqkit：序列梳理神器-统计、格式转换、长度筛选、质量值转换、翻译、反向互补、抽样、去重、滑窗、拆分等30项全能...-CSDN博客](https://blog.csdn.net/woodcorpse/article/details/114827537)
 [使用awk随机截取细菌DNA基因组指定长度片段_微生物单菌基因组contig上截取特定基因片段如何操作-CSDN博客](https://blog.csdn.net/weixin_44022515/article/details/102889358)
+
+
+### 与RNA序列互补的motif在3utr上出现的次数
+```
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NTkzMTkxMywtMjAzNjE0NTE2MSwxND
-k5NTE2MDA1LDE5NzkzMTA3MTEsMTU2MzQ1OTQ0NiwxNTYzNDU5
-NDQ2LDg0MzE1NjI5NSwxMTY2MzcxNDAsMTE5MjgwODcyMywyMD
-Q2NDMxMTA0LDk1OTkzNzc0NSwtNDYxMTgyMzAzLC0xMjE0NDEz
-MzAxLDIwNjE5NjY0MTYsLTI1NDc0NDIzNiwyODY3OTk1MTgsLT
-E5MzQzMDY4ODIsLTY4MzEyOTA0OCwxMjM5NzgwMTQ3LDE0MDY5
-MzkxNzBdfQ==
+eyJoaXN0b3J5IjpbODkwNjAwNzU0LDE5NzU5MzE5MTMsLTIwMz
+YxNDUxNjEsMTQ5OTUxNjAwNSwxOTc5MzEwNzExLDE1NjM0NTk0
+NDYsMTU2MzQ1OTQ0Niw4NDMxNTYyOTUsMTE2NjM3MTQwLDExOT
+I4MDg3MjMsMjA0NjQzMTEwNCw5NTk5Mzc3NDUsLTQ2MTE4MjMw
+MywtMTIxNDQxMzMwMSwyMDYxOTY2NDE2LC0yNTQ3NDQyMzYsMj
+g2Nzk5NTE4LC0xOTM0MzA2ODgyLC02ODMxMjkwNDgsMTIzOTc4
+MDE0N119
 -->
