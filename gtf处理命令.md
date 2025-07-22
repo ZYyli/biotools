@@ -182,10 +182,10 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 ```
 #序列在3'UTR的位置
 bedtools intersect -a h38.gtf -b locate_1.bed -wa -wb   > merge_1
-
+awk -F'\t' -vOFS='\t' '$7 != $15 {print}' analysis_1752208539_merge_1 >
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDEzOTg3MzcsMTk3NTkzMTkxMywtMj
+eyJoaXN0b3J5IjpbLTIwODA0NTY1NTksMTk3NTkzMTkxMywtMj
 AzNjE0NTE2MSwxNDk5NTE2MDA1LDE5NzkzMTA3MTEsMTU2MzQ1
 OTQ0NiwxNTYzNDU5NDQ2LDg0MzE1NjI5NSwxMTY2MzcxNDAsMT
 E5MjgwODcyMywyMDQ2NDMxMTA0LDk1OTkzNzc0NSwtNDYxMTgy
