@@ -184,12 +184,15 @@ saveWorkbook(wb, file = merge_file, overwrite = TRUE)
 bedtools intersect -a h38.gtf -b locate_1.bed -wa -wb   > merge_1
 awk -F'\t' -vOFS='\t' '$7 != $15 {print}' merge_1 | grep 'transcript_biotype "protein_coding"' | grep 'tag "MANE_Select"' > antisense_3utr
 ```
+
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjY5ODkwMDk5LC0yMDgwNDU2NTU5LDE5Nz
-U5MzE5MTMsLTIwMzYxNDUxNjEsMTQ5OTUxNjAwNSwxOTc5MzEw
-NzExLDE1NjM0NTk0NDYsMTU2MzQ1OTQ0Niw4NDMxNTYyOTUsMT
-E2NjM3MTQwLDExOTI4MDg3MjMsMjA0NjQzMTEwNCw5NTk5Mzc3
-NDUsLTQ2MTE4MjMwMywtMTIxNDQxMzMwMSwyMDYxOTY2NDE2LC
-0yNTQ3NDQyMzYsMjg2Nzk5NTE4LC0xOTM0MzA2ODgyLC02ODMx
-MjkwNDhdfQ==
+eyJoaXN0b3J5IjpbLTYwMDg5NTQ5MSwyNjk4OTAwOTksLTIwOD
+A0NTY1NTksMTk3NTkzMTkxMywtMjAzNjE0NTE2MSwxNDk5NTE2
+MDA1LDE5NzkzMTA3MTEsMTU2MzQ1OTQ0NiwxNTYzNDU5NDQ2LD
+g0MzE1NjI5NSwxMTY2MzcxNDAsMTE5MjgwODcyMywyMDQ2NDMx
+MTA0LDk1OTkzNzc0NSwtNDYxMTgyMzAzLC0xMjE0NDEzMzAxLD
+IwNjE5NjY0MTYsLTI1NDc0NDIzNiwyODY3OTk1MTgsLTE5MzQz
+MDY4ODJdfQ==
 -->
